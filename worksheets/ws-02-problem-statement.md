@@ -4,7 +4,7 @@
 
 ---
 
-## Ringkasan Materi
+## Ringkasan Materi 
 
 ### Problem Formation Model
 
@@ -67,53 +67,51 @@ Masalah riset yang layak harus memenuhi 5 kriteria:
 PROBLEM STATEMENT BUILDER
 
 Domain & Konteks
-  Domain   : ____________________
-  Konteks  : ____________________
+  Domain   : Sistem Informasi Akademik / Desain UI/UX.
+  Konteks  : Perancangan antarmuka aplikasi My CIC dari platform berbasis web menjadi mobile device menggunakan software Figma.
 
 System Context
-  Input       : ____________________
-  Process     : ____________________
-  Output      : ____________________
-  Outcome     : ____________________
-  Constraints : ____________________
-  Stakeholders: ____________________
+  Input       : Interaksi pengguna (mahasiswa) saat mencari informasi akademik seperti biodata, nilai, jadwal kuliah, atau KRS.
+  Process     : Navigasi antarmuka (user flow) dalam mencari dan memproses informasi akademik melalui tombol dan menu yang dirancang.
+  Output      : Tampilan visual informasi akademik mahasiswa secara lengkap dan terstruktur pada layar smartphone.
+  Outcome     : Mahasiswa merasa lebih nyaman, mudah, dan tidak kebingungan saat menggunakan layanan informasi akademik My CIC.
+  Constraints : Solusi yang dirancang sebatas purwarupa (prototype) visual, menargetkan audiens mahasiswa Universitas Catur Insan Cendekia secara spesifik, dan wajib berbasis mobile.
+  Stakeholders: Mahasiswa sebagai pengguna utama dan Universitas Catur Insan Cendekia sebagai penyedia layanan.
 
 Fenomena → Problem
-  Fenomena yang diamati             : ____________________
-  Gejala (symptom) yang terukur     : ____________________
-  Masalah yang didiagnosis          : ____________________
-  Masalah riset (researchable)      : ____________________
-  Variabel yang terukur             : ____________________
+  Fenomena yang diamati             : Tingkat kunjungan mahasiswa ke website My CIC hanya meningkat pada saat-saat tertentu saja.
+  Gejala (symptom) yang terukur     : Terdapat keluhan dari beberapa mahasiswa bahwa tampilan antarmuka membosankan, kurang menarik, dan beberapa menu/tombol tidak dipahami.
+  Masalah yang didiagnosis          : Sistem saat ini masih berbasis web (bukan mobile), desain UI kurang efektif/efisien, serta fitur akademik yang disajikan tidak lengkap (misal: belum ada KRS dan jadwal kuliah).
+  Masalah riset (researchable)      : Bagaimana merancang purwarupa (prototype) aplikasi My CIC berbasis mobile device dengan UI/UX yang lebih terstruktur, menarik, dan memenuhi kebutuhan kelengkapan informasi akademik mahasiswa?
+  Variabel yang terukur             : Kualitas elemen antarmuka (UI) dan kemudahan/kenyamanan pengalaman pengguna (UX) dalam mengakses menu.
 
 Problem Quality Check
-  [ ] Clarity — Apakah satu orang membaca akan paham?
+  [x] Clarity — Apakah satu orang membaca akan paham?
   [ ] Measurability — Apakah ada metrik kuantitatif?
-  [ ] Relevance — Apakah penting untuk domain?
-  [ ] Testability — Apakah bisa gagal?
-  [ ] Impact — Apakah ada kontribusi jika terjawab?
+  [x] Relevance — Apakah penting untuk domain?
+  [x] Testability — Apakah bisa gagal?
+  [x] Impact — Apakah ada kontribusi jika terjawab?
 
 Problem Statement (1 paragraf):
-  ____________________
+  Layanan informasi akademik My CIC saat ini masih berbasis web dan memiliki antarmuka yang kurang efektif, membosankan, serta memiliki beberapa tombol navigasi yang tidak dipahami oleh pengguna. Kondisi ini diperparah dengan tidak lengkapnya fitur administrasi penting seperti Kartu Rencana Studi (KRS) dan jadwal kuliah, yang berujung pada minimnya tingkat kunjungan mahasiswa di luar periode tertentu. Oleh karena itu, penelitian ini bertujuan merancang prototype aplikasi My CIC berbasis mobile device menggunakan Figma untuk menghasilkan solusi antarmuka (UI/UX) yang lebih modern, minimalis, lengkap, dan nyaman digunakan oleh mahasiswa Universitas Catur Insan Cendekia.
 ```
 
 ---
 
 ## Latihan 1 — Dari Topik ke Masalah Riset
 
-Pilih satu topik di bidang TI yang diminati. Transformasikan melalui 5 tahap Problem Formation Model.
-
-**Topik awal:** ________________________________________
+**Topik awal:** Perancangan Antarmuka Aplikasi Akademik Mobile.
 
 | Tahap | Hasil |
 |-------|-------|
-| Reality | *Contoh: Aplikasi e-commerce sering ditinggalkan saat checkout* |
-| Observed Issue (Symptom) | *Contoh: Bounce rate checkout 68%* |
-| Diagnosed Problem (Root Cause) | |
-| Researchable Problem | |
-| Measurable Variable | |
+| Reality | Website My CIC kurang aktif dikunjungi oleh mahasiswa. |
+| Observed Issue (Symptom) | Mahasiswa menganggap website membosankan dan bingung dengan beberapa tombol di dalamnya. |
+| Diagnosed Problem (Root Cause) |Layanan belum adaptif untuk mobile device dan informasi yang disajikan (seperti administrasi keuangan dan KRS) tidak lengkap. |
+| Researchable Problem |Bagaimana cara merancang desain antarmuka aplikasi sistem informasi berbasis mobile yang sesuai dengan kebutuhan mahasiswa Universitas Catur Insan Cendekia? |
+| Measurable Variable |Kualitas pengalaman pengguna (UX) dan kejelasan visual elemen desain (UI).|
 
-**Apakah terjebak solution-first thinking?** [ ] Ya / [ ] Tidak
-> Jika ya, kembali ke tahap mana? ________________________
+**Apakah terjebak solution-first thinking?** [x] Ya / [ ] Tidak
+> Jika ya, kembali ke tahap mana? Kembali ke tahap Diagnosed Problem ke Researchable Problem. Jurnal ini sejak awal (bahkan di judul) langsung memaksakan "Menggunakan Aplikasi Figma" sebagai solusinya. Seharusnya, dalam riset, kita mencari solusi/metode perancangan terbaik (misal UCD atau Design Thinking) dan membuktikan efektivitas desainnya, bukan sekadar mendeklarasikan alat editing apa yang dipakai.
 
 ---
 
@@ -123,14 +121,14 @@ Gambarkan konteks sistem dari masalah riset di Latihan 1.
 
 | Komponen | Deskripsi |
 |----------|----------|
-| Input | *Contoh: Request HTTP dari browser pengguna* |
-| Process | |
-| Output | |
-| Outcome | |
-| Constraints | |
-| Stakeholders | |
+| Input | Aksi interaktif pengguna seperti memasukkan data login atau menekan tombol navigasi menu. |
+| Process |Pengorganisasian alur informasi dari halaman utama menuju detail akademik seperti KRS atau ujian online.|
+| Output |Representasi visual (teks, tata letak grafis, warna) dari data akademik pada layar smartphone.|
+| Outcome |Terciptanya interaksi dengan website/mobile apps yang mudah, menyenangkan, dan berguna bagi mahasiswa.|
+| Constraints |Penelitian dibatasi hanya pada tahap pembuatan prototype desain visual menggunakan Figma.|
+| Stakeholders |Mahasiswa sebagai target audiens dan institusi kampus (Universitas CIC).|
 
-**Komponen mana yang paling relevan dengan masalah riset?** _______________
+**Komponen mana yang paling relevan dengan masalah riset?** Output (tampilan antarmuka yang modern) dan Outcome (kenyamanan/kemudahan penggunaan).
 
 ---
 
@@ -140,18 +138,16 @@ Evaluasi problem statement yang sudah dibuat menggunakan 5 kriteria.
 
 | Kriteria | Skor (1-5) | Justifikasi |
 |----------|-----------|-------------|
-| Clarity | *Contoh: 4 — cukup jelas tapi perlu spesifikasi dataset* | |
-| Measurability | | |
-| Relevance | | |
-| Testability | | |
-| Impact | | |
+| Clarity | 4 |Akar masalah (UI buruk dan fitur kurang) serta solusi (mobile prototype) dijabarkan dengan sangat jelas.|
+| Measurability |2|Jurnal tidak mengukur perbaikan desain secara statistik/metrik pasti. Klaim "menarik" dan "minimalis" sangat subjektif.|
+| Relevance |5|Mengembangkan UI layanan akademik sangat krusial bagi digitalisasi institusi pendidikan.|
+| Testability |3|Desain bisa diuji (falsifiable) ke mahasiswa, meski jurnal ini berhenti hanya sampai menampilkan gambar hasil desain.|
+| Impact |4|Penyelesaian masalah ini secara langsung mempermudah urusan administrasi mahasiswa kampus tersebut.|
 
-**Skor total:** _____ / 25
+**Skor total:** 18 / 25
 
 **Problem statement versi final (1 paragraf):**
-> ___________________________________________________
-> ___________________________________________________
-
+> Layanan informasi akademik My CIC saat ini masih berbasis web dan memiliki antarmuka yang kurang efektif, membosankan, serta memiliki beberapa tombol navigasi yang tidak dipahami oleh pengguna. Kondisi ini diperparah dengan tidak lengkapnya fitur administrasi penting seperti Kartu Rencana Studi (KRS) dan jadwal kuliah, yang berujung pada minimnya tingkat kunjungan mahasiswa di luar periode tertentu. Oleh karena itu, penelitian ini bertujuan merancang prototype aplikasi My CIC berbasis mobile device menggunakan Figma untuk menghasilkan solusi antarmuka (UI/UX) yang lebih modern, minimalis, lengkap, dan nyaman digunakan oleh mahasiswa Universitas Catur Insan Cendekia.
 ---
 
 ## Refleksi
@@ -159,5 +155,4 @@ Evaluasi problem statement yang sudah dibuat menggunakan 5 kriteria.
 > Bandingkan "masalah" yang biasa ditemui saat coding (bug, error) dengan masalah riset. Apa perbedaan fundamental dalam cara mendefinisikan dan mendekati keduanya?
 
 **Jawaban:**
-> ___________________________________________________
-> ___________________________________________________
+> Masalah engineering (seperti bug kode atau server error) memiliki batasan yang sangat jelas: sesuatu tidak berfungsi sebagaimana mestinya, dan tujuannya adalah memperbaikinya agar sistem berjalan (solve). Pendekatannya bersifat teknis dan solutif seketika. Sebaliknya, masalah riset (seperti "mengapa mahasiswa kebingungan melihat menu") adalah tentang celah pengetahuan (knowledge gap). Tujuannya bukan sekadar memperbaiki tombol, melainkan membuktikan dan memahami mengapa tata letak tertentu lebih efektif secara kognitif dibandingkan yang lain (understand & prove). Dalam riset UI/UX, kita memvalidasi interaksi manusia dengan sistem secara sistematis, bukan sekadar menambal kode yang rusak.
