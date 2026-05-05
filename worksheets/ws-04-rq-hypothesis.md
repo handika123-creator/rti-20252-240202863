@@ -67,34 +67,33 @@ Jika rantai ini tidak lengkap, RQ belum mature. Bi-directional: RQ yang tidak bi
 ```
 RQ-CONTRIBUTION-HYPOTHESIS
 
-Gap Statement  : ____________________
+Gap Statement  : Ketiadaan validasi empiris kuantitatif (seperti pengujian System Usability Scale) pada perancangan antarmuka mobile sistem informasi akademik pasca-pembuatan artefak visual.
 
 Research Question:
-  Tipe         : [ ] Comparison  [ ] Improvement  [ ] Exploratory
-  Formulasi    : ____________________
-  Variabel IV  : ____________________
-  Variabel DV  : ____________________
-  Metrik       : ____________________
-  Dataset      : ____________________
-  Baseline     : ____________________
-
+  Tipe         : [ ] Comparison  [x] Improvement  [ ] Exploratory
+  Formulasi    : Apakah perancangan prototype antarmuka mobile menggunakan pendekatan Design Thinking menghasilkan skor System Usability Scale (SUS) yang secara signifikan lebih tinggi dibandingkan antarmuka website My CIC eksisting berdasarkan pengujian terhadap mahasiswa?
+  Variabel IV  : Jenis Antarmuka (Website My CIC Eksisting vs Prototype Mobile My CIC Baru)
+  Variabel DV  : Tingkat Kegunaan (Usability)
+  Metrik       : Skor System Usability Scale (Skala 0-100)
+  Dataset      : Respons kuesioner SUS dari sampel mahasiswa yang telah menguji kedua antarmuka.
+  Baseline     : Skor SUS dari antarmuka website My CIC eksisting (sistem legacy).
 Quality Check RQ:
-  [ ] Variabel spesifik
-  [ ] Metrik jelas
-  [ ] Baseline ada
-  [ ] Konteks disebutkan
-  [ ] Memerlukan eksperimen (bukan hanya survei literatur)
+  [x] Variabel spesifik
+  [x] Metrik jelas
+  [x] Baseline ada
+  [x] Konteks disebutkan
+  [x] Memerlukan eksperimen (bukan hanya survei literatur)
 
 Contribution Statement:
-  Apa yang baru diketahui : ____________________
-  Jenis kontribusi        : [ ] Improvement  [ ] Comparison  [ ] Novel approach
-  Gap yang diisi          : ____________________
+  Apa yang baru diketahui : Bukti empiris mengenai seberapa besar efektivitas dan peningkatan usabilitas dari transisi website akademik menjadi aplikasi mobile yang dirancang melalui Design Thinking.
+  Jenis kontribusi        : [x] Improvement  [ ] Comparison  [ ] Novel approach
+  Gap yang diisi          : Method Gap (Menyediakan validasi empiris yang terstandar pada artefak desain mobile yang sebelumnya absen di literatur baseline).
 
 Hypothesis Pair:
-  H₀ : ____________________
-  H₁ : ____________________
-  Threshold              : ____________________
-  Justifikasi threshold  : ____________________
+  H₀ : Tidak ada peningkatan skor SUS secara signifikan (skor mobile $\le$ skor web) antara prototype aplikasi mobile dan website eksisting.
+  H₁ : Prototype aplikasi mobile menghasilkan skor SUS yang secara signifikan lebih tinggi dibandingkan antarmuka website eksisting.
+  Threshold              : p-value < 0.05 pada uji statistik komparasi (T-Test) dan skor akhir minimum 68.
+  Justifikasi threshold  : p-value < 0.05 membuktikan bahwa perbaikan tersebut bukan kebetulan (signifikan secara statistik), dan skor 68 adalah batas kelayakan (Acceptable) standar global untuk instrumen SUS.
 ```
 
 ---
@@ -103,24 +102,24 @@ Hypothesis Pair:
 
 Gunakan gap yang ditemukan di WS-03. Transformasikan menjadi Research Question.
 
-**Gap dari WS-03:** ____________________________________
+**Gap dari WS-03:** Method Gap (Ketiadaan validasi empiris menggunakan metrik kuantitatif pasca-pembuatan artefak prototype antarmuka akademik mobile).
 
 **RQ versi pertama (tulis bebas):**
-> ___________________________________________________
+> Bagaimana cara membuat UI/UX mobile My CIC yang lebih modern dan mudah digunakan oleh mahasiswa?
 
 **Evaluasi RQ:**
 
 | Komponen | Ada? | Isi |
 |----------|------|-----|
-| Metode spesifik | *Contoh: Ya — CNN vs RF* | |
-| Metrik terukur | | |
-| Baseline | | |
-| Dataset/konteks | | |
+| Metode spesifik |Tidak|Hanya menyebut "membuat UI/UX" tanpa metode perancangan spesifik.|
+| Metrik terukur |Tidak|Kata "mudah digunakan" sangat subjektif dan tidak ada alat ukurnya.|
+| Baseline |Tidak|Tidak ada pembanding terhadap sistem yang lama.|
+| Dataset/konteks |Ya|Konteksnya aplikasi My CIC untuk mahasiswa.|
 
-**Tipe RQ:** [ ] Comparison / [ ] Improvement / [ ] Exploratory
+**Tipe RQ:** [ ] Comparison / [x] Improvement / [ ] Exploratory
 
 **RQ versi revisi (setelah evaluasi):**
-> ___________________________________________________
+> Apakah perancangan prototype antarmuka mobile menggunakan pendekatan Design Thinking menghasilkan skor System Usability Scale (SUS) yang secara signifikan lebih tinggi dibandingkan antarmuka website My CIC eksisting berdasarkan pengujian terhadap mahasiswa?
 
 ---
 
@@ -130,14 +129,14 @@ Rumuskan pasangan hipotesis dari RQ di Latihan 1.
 
 | Komponen | Isi |
 |----------|-----|
-| H₀ | *Contoh: Tidak ada perbedaan signifikan F1-Score antara CNN dan RF pada dataset CIC-MalMem-2022* |
-| H₁ | |
-| Metrik | |
-| Threshold | |
-| Justifikasi threshold | |
+| H₀ | Tidak ada peningkatan skor SUS secara signifikan (skor mobile $\le$ skor web) antara prototype antarmuka mobile dengan website akademik eksisting. |
+| H₁ |Terdapat peningkatan skor SUS secara signifikan pada prototype antarmuka mobile dibandingkan dengan website akademik eksisting.|
+| Metrik |Skor kuantitatif System Usability Scale (0 - 100).|
+| Threshold |p-value < 0.05 (uji beda/T-Test) dan capaian skor prototype minimum 68.|
+| Justifikasi threshold |Mengonfirmasi bahwa peningkatan yang terjadi bersifat valid secara statistik dan memenuhi standar kelayakan minimum usability industri.|
 
-**Apakah hipotesis ini falsifiable?** [ ] Ya / [ ] Tidak
-> Bagaimana cara membuktikannya salah? ___________________
+**Apakah hipotesis ini falsifiable?** [x] Ya / [ ] Tidak
+> Bagaimana cara membuktikannya salah? H₀ gagal ditolak (terbukti salah) jika hasil pengolahan data kuesioner menunjukkan rata-rata skor SUS prototype mobile sama dengan atau justru lebih rendah daripada skor website lama.
 
 ---
 
@@ -147,14 +146,14 @@ Lengkapi rantai dari RQ hingga metode analisis.
 
 | Tahap | Isi |
 |-------|-----|
-| RQ | *Contoh: Apakah CNN menghasilkan F1-Score lebih tinggi dari RF...* |
-| Variable (IV) | *Contoh: Jenis algoritma (CNN vs RF)* |
-| Variable (DV) | |
-| Metric | |
-| Data source | |
-| Analysis method | |
+| RQ | Apakah perancangan prototype mobile dengan Design Thinking menghasilkan skor SUS lebih tinggi dibandingkan website eksisting? |
+| Variable (IV) | Jenis/Platform Antarmuka (Website Eksisting vs Prototype Mobile). |
+| Variable (DV) |Tingkat Kegunaan (Usability Level).|
+| Metric |Instrumen hitung System Usability Scale (skor 0-100).|
+| Data source |Data primer: Hasil angket kuesioner SUS dari mahasiswa yang mensimulasikan task pada kedua antarmuka.|
+| Analysis method |Uji Prasyarat (Normalitas) dan Uji Komparatif Statistik (misal: Paired Sample T-Test jika respondennya sama).|
 
-**Apakah rantai lengkap?** [ ] Ya / [ ] Tidak
+**Apakah rantai lengkap?** [x] Ya / [ ] Tidak
 > Jika tidak, tahap mana yang perlu direvisi? ______________
 
 ---
@@ -163,6 +162,9 @@ Lengkapi rantai dari RQ hingga metode analisis.
 
 > Ambil satu judul skripsi/paper yang pernah dibaca. Coba ekstrak RQ-nya. Apakah RQ tersebut memenuhi semua komponen (metode, metrik, baseline, konteks)? Jika tidak, apa yang hilang?
 
-**Judul:** _____________________________________________
-**RQ yang diekstrak:** __________________________________
-**Komponen yang hilang:** _______________________________
+**Judul:** Perancangan User Interface dan User Experience Aplikasi My CIC (Muhyidin et al., 2020)
+**RQ yang diekstrak:** Bagaimana merancang antarmuka (UI/UX) mobile untuk aplikasi My CIC yang memiliki desain menarik dan modern?
+**Komponen yang hilang:** 
+  ~Metode spesifik evaluasi tidak disebutkan.
+  ~Metrik terukur tidak ada (hanya klaim subjektif "menarik dan modern").
+  ~Baseline (perbandingan dengan efisiensi sistem lama) tidak disertakan sama sekali. RQ tersebut masih berada di level Engineering (sekadar membangun), bukan Research (membuktikan secara empiris).
