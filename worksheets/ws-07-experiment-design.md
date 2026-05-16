@@ -68,36 +68,36 @@ Ancaman validitas harus diidentifikasi **sebelum** eksperimen dan mitigasinya di
 ```
 EXPERIMENT DESIGN
 
-Research Question : ____________________
-Hypothesis        : ____________________
-Tipe Eksperimen   : [ ] Comparison  [ ] Ablation  [ ] Parameter
+Research Question : Apakah perancangan prototype antarmuka mobile menggunakan pendekatan Design Thinking menghasilkan skor System Usability Scale (SUS) dan waktu penyelesaian tugas yang secara signifikan lebih baik dibandingkan antarmuka website My CIC eksisting berdasarkan pengujian terhadap mahasiswa?
+Hypothesis        : H₁: Terdapat peningkatan skor SUS yang signifikan dan penurunan Time on Task pada prototype aplikasi mobile dibandingkan dengan website eksisting.
+Tipe Eksperimen   : [x] Comparison  [ ] Ablation  [ ] Parameter
 
 Kondisi Eksperimen:
 | Kondisi | Deskripsi | IV Value | CV Settings |
 |---------|-----------|----------|-------------|
-| Control |           |          |             |
-| Treatment |         |          |             |
+| Control | Mahasiswa menguji coba website sistem akademik lama (Sistem Eksisting) | Antarmuka Website | Skenario tugas A, B, dan C; dilakukan dalam lingkungan ber-WiFi; profil responden lintas jurusan. |
+| Treatment | Mahasiswa menguji coba purwarupa (prototype) aplikasi baru (Sistem Usulan) | Antarmuka Aplikasi Mobile | Skenario tugas A, B, dan C; dilakukan dalam lingkungan ber-WiFi; profil responden lintas jurusan. |
 
 Fairness Checklist:
-  [ ] Dataset identik untuk semua kondisi
-  [ ] Preprocessing setara
-  [ ] Tuning effort setara
-  [ ] Environment identik
-  [ ] Metrik evaluasi sama
+  [x] Dataset identik untuk semua kondisi
+  [x] Preprocessing setara
+  [x] Tuning effort setara
+  [x] Environment identik
+  [x] Metrik evaluasi sama
 
 Threat Analysis:
 | Threat Type | Ancaman Spesifik | Mitigasi |
 |-------------|-----------------|----------|
-| Internal    |                 |          |
-| External    |                 |          |
-| Construct   |                 |          |
-| Conclusion  |                 |          |
+| Internal    | Learning/Order Effect: Responden yang menguji Website dulu lalu ke Mobile mungkin menjadi lebih cepat di Mobile karena sudah hafal tata letak/alur tugasnya. | Counterbalancing: Membagi responden menjadi dua kelompok. 50% responden menguji Web dulu lalu Mobile, 50% lagi menguji Mobile dulu baru Web. |
+| External    | Selection Bias: Pengujian hanya dilakukan pada mahasiswa Fakultas IT yang secara bawaan lebih mahir beradaptasi dengan UI baru. | Stratified Random Sampling: Merekrut responden yang proporsional dari fakultas non-IT (seperti Ekonomi atau Komunikasi). |
+| Construct   | Misinterpretation of Metric: Responden memberi nilai SUS rendah karena loading halaman lama (faktor server/sinyal), bukan karena UI/UX-nya buruk. | Clear Briefing: Memberikan peringatan tertulis bahwa kuesioner murni menilai "tata letak, navigasi, dan kemudahan fitur", bukan koneksi. |
+| Conclusion  | Low Statistical Power: Jumlah sampel terlalu sedikit (misal < 10) sehingga uji komparasi gagal mendeteksi signifikansi statistik. | Adequate Sample Size: Menetapkan batas minimal 30 responden (sejalan dengan standar validitas riset Winandy et al., 2024). |
 
 Statistical Plan:
-  Uji statistik   : ____________________
-  Justifikasi      : ____________________
-  Alpha            : ____________________
-  Effect size min  : ____________________
+  Uji statistik   : Paired Sample T-Test (jika data berdistribusi normal) atau Wilcoxon Signed-Rank Test (jika data tidak normal). 
+  Justifikasi      : Menguji signifikansi perbedaan nilai rata-rata dari dua kondisi (Web vs Mobile) yang berasal dari satu kelompok responden yang sama (Within-Subjects Design).
+  Alpha            : 0.05 (Tingkat kepercayaan 95%)
+  Effect size min  : Cohen's d > 0.5 (Mencari efek perbaikan skala menengah/signifikan dari segi kepuasan pengguna).
 ```
 
 ---
@@ -106,13 +106,13 @@ Statistical Plan:
 
 Susun desain eksperimen berdasarkan RQ, variabel, dan sistem dari WS-04 sampai WS-06.
 
-**RQ:** __________________________________________________
-**Tipe eksperimen:** [ ] Comparison / [ ] Ablation / [ ] Parameter
+**RQ:** Apakah perancangan prototype antarmuka mobile menghasilkan skor SUS yang secara signifikan lebih tinggi dibandingkan antarmuka website My CIC eksisting?
+**Tipe eksperimen:** [x] Comparison / [ ] Ablation / [ ] Parameter
 
 | Kondisi | Deskripsi | IV Value | CV Settings |
 |---------|-----------|----------|-------------|
-| Control | *Contoh: RF baseline dari literatur* | *RF* | *Dataset X, 80:20 split, seed 42* |
-| Treatment | | | |
+| Control | Baseline menggunakan website My CIC eksisting. | Web-based UI | Lembar instruksi Task identik (Cek KRS, Nilai, Jadwal). Waktu timeout 3 menit per task. |
+| Treatment | Purwarupa aplikasi yang dibangun berdasarkan Design Thinking. | Mobile App UI | Lembar instruksi Task identik (Cek KRS, Nilai, Jadwal). Waktu timeout 3 menit per task. |
 
 ---
 
@@ -122,13 +122,13 @@ Evaluasi apakah desain eksperimen di Latihan 1 sudah fair.
 
 | Kriteria | Status | Detail |
 |----------|--------|--------|
-| Dataset identik | *Contoh: ✅ — sama-sama pakai CIC-MalMem-2022* | |
-| Preprocessing setara | | |
-| Tuning effort setara | | |
-| Environment identik | | |
-| Metrik evaluasi sama | | |
+| Dataset identik | ✅ Memenuhi | Semua mahasiswa partisipan masuk dalam kriteria inklusi yang sama (aktif kuliah, pengguna SIAKAD). |
+| Preprocessing setara | ✅ Memenuhi | Pendampingan sebelum tes (penjelasan goal) durasi dan materinya sama untuk kedua platform. |
+| Tuning effort setara | ✅ Memenuhi | Peneliti sama sekali tidak boleh memberi hint atau bantuan klik saat responden merasa stuck di kedua tes. |
+| Environment identik | ✅ Memenuhi | Diuji secara luring (in-person) menggunakan perangkat standar dan jaringan yang diawasi langsung oleh peneliti. |
+| Metrik evaluasi sama | ✅ Memenuhi | Alat pencatat menggunakan lembar kuesioner SUS dari format instrumen asli (Brooke, 1996). |
 
-**Ada yang tidak fair?** [ ] Ya / [ ] Tidak
+**Ada yang tidak fair?** [ ] Ya / [x] Tidak
 > Jika ya, bagaimana cara memperbaikinya? ________________
 
 ---
@@ -139,14 +139,14 @@ Identifikasi ancaman validitas untuk desain eksperimen ini.
 
 | Threat Type | Ancaman Spesifik | Mitigasi |
 |-------------|-----------------|----------|
-| Internal | *Contoh: Data leakage antara train-test* | *Contoh: Gunakan stratified split, validasi tidak ada overlap* |
-| External | | |
-| Construct | | |
-| Conclusion | | |
+| Internal | *Data Leakage/Carryover Effect (Mengingat alur dari tes pertama). | Diterapkan Counterbalancing AB/BA (diacak siapa yang mulai dengan Mobile atau Web). |
+| External | Bias demografi (responden terlalu tech-savvy). | Kriteria eksklusi (tidak merekrut mahasiswa yang jago coding/UI-UX design). |
+| Construct | Pertanyaan SUS nomor genap yang kalimatnya negatif sering salah dipahami. | Diterjemahkan ke Bahasa Indonesia yang sudah tervalidasi atau ditekankan agar baca pelan-pelan. |
+| Conclusion | Asumsi normalitas data untuk uji parametrik T-Test tidak terpenuhi. | Jika gagal uji normalitas Shapiro-Wilk, bergeser ke uji non-parametrik (Wilcoxon). |
 
-**Ancaman mana yang paling sulit dimitigasi?** _____________
+**Ancaman mana yang paling sulit dimitigasi?** Internal Validity (Carryover Effect)
 **Mengapa?**
-> ___________________________________________________
+> Karena dalam uji usabilitas, pengguna yang sudah berhasil mencari letak menu KRS di versi Website kemungkinan besar secara psikologis sudah tahu "kata kunci" apa yang harus dicari (misalnya masuk ke sub-menu 'Akademik'). Otak mereka tidak lagi bekerja dari nol saat menguji versi Mobile. Walaupun urutannya sudah diacak (counterbalancing), sisa-sisa memori eksperimen tetap membayangi kemurnian beban kognitif di tes kedua.
 
 ---
 
@@ -155,6 +155,6 @@ Identifikasi ancaman validitas untuk desain eksperimen ini.
 > Sebuah paper melaporkan "metode kami mengalahkan semua baseline." Apa 3 pertanyaan pertama yang harus diajukan untuk mengevaluasi klaim ini?
 
 **Jawaban:**
-1. ___________________________________________________
-2. ___________________________________________________
-3. ___________________________________________________
+1. Apakah Baseline yang dipilih valid dan mutakhir? (Atau hanya straw man/sistem lama yang sengaja dipilih karena mudah dikalahkan, alih-alih mengalahkan sistem SOTA).
+2. Apakah kondisinya benar-benar identik (Fairness)? (Jangan-jangan sistem usulan dites dengan hardware lebih bagus, instruksi lebih mudah, atau dataset yang berbeda dari baseline).
+3. Apakah signifikansinya diuji secara statistik? (Apakah selisih poin kemenangannya terbukti konsisten lewat p-value atau sekadar beda tipis karena faktor kebetulan (variansi acak)?).
