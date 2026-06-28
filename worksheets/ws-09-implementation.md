@@ -73,32 +73,35 @@ Mengandalkan "install library terbaru" berbahaya: versi berbeda = perilaku berbe
 EXPERIMENT SETUP DOCUMENTATION
 
 Hardware:
-  CPU     : ____________________
-  RAM     : ____________________
-  GPU     : ____________________
-  Storage : ____________________
+  CPU     : AMD Ryzen 3 7320U
+  RAM     : 8 GB
+  GPU     : AMD Radeon Graphics
+  Storage : 256 GB SSD (119 GB + 117 GB)
 
 Software:
-  OS        : ____________________
-  Runtime   : ____________________
-  Framework : ____________________
+  OS        : Windows 11 Home Single Language
+  Runtime   : Figma (Browser-based) & Node.js
+  Framework : Chrome 126.x
 
 Dependencies:
 | Library | Version | Sumber | Hash/Checksum |
 |---------|---------|--------|---------------|
-|         |         |        |               |
-|         |         |        |               |
+| Figma App | Latest | Official | - |
+| Chrome | 126.x | Google | - |
+| NumPy | 1.26.4 | PyPI | - |
+| SciPy | 1.12.0 | PyPI | - |
+| Matplotlib | 3.8.3 | PyPI | - |
 
 Konfigurasi:
-  Config file     : ____________________
-  Random seed     : ____________________
-  Hyperparameters : ____________________
+  Config file     : config_params.json
+  Random seed     : 42
+  Hyperparameters : default
 
 Reproducibility Check:
-  [ ] Dependency terdokumentasi (requirements.txt / lock file)
-  [ ] Seed ditetapkan di semua level (Python, NumPy, framework)
-  [ ] Config di version control
-  [ ] README instruksi reproduksi lengkap
+  [x] Dependency terdokumentasi (requirements.txt / lock file)
+  [x] Seed ditetapkan di semua level (Python, NumPy, framework)
+  [x] Config di version control
+  [x] README instruksi reproduksi lengkap
 ```
 
 ---
@@ -109,23 +112,23 @@ Dokumentasikan environment untuk eksperimen Anda (boleh environment saat ini ata
 
 | Komponen | Spesifikasi |
 |----------|------------|
-| CPU | *Contoh: Intel Core i7-12700H, 14 Core* |
-| RAM | *Contoh: 32 GB DDR5* |
-| GPU | *Contoh: NVIDIA RTX 3060 6GB / CPU-only jika tidak ada GPU* |
-| OS | *Contoh: Ubuntu 22.04 LTS / Windows 11* |
-| Runtime | |
-| Framework | |
-| Random Seed | |
+| CPU | AMD Ryzen 3 7320U |
+| RAM | 8 GB |
+| GPU | AMD Radeon Graphics |
+| OS | Windows 11 Home Single Language |
+| Runtime | Figma, Node.js |
+| Framework | Figma Interactive Prototype, Chrome 126.x |
+| Random Seed | 42 |
 
 **Dependencies (minimal 5):**
 
 | Library | Version | Alasan Dibutuhkan |
 |---------|---------|-------------------|
-| *Contoh: scikit-learn* | *1.3.2* | *Klasifikasi + evaluasi metrik* |
-| | | |
-| | | |
-| | | |
-| | | |
+| Figma App | Latest | Simulasi interaksi purwarupa |
+| Chrome | 126.x | Pengujian sistem web eksisting |
+| NumPy | 1.26.4 | Pengolahan data kuantitatif |
+| SciPy | 1.12.0 | Uji statistik Paired Sample T-Test |
+| Matplotlib | 3.8.3 | Visualisasi data hasil usabilitas |
 
 ---
 
@@ -135,25 +138,21 @@ Rancang tes repeatability sederhana: jalankan kode yang sama 3× di environment 
 
 | Run | Seed | Metrik Utama | Hasil Sama? |
 |-----|------|-------------|-------------|
-| 1 | *Contoh: 42* | *Contoh: Accuracy* | — |
-| 2 | | | [ ] Ya / [ ] Tidak |
-| 3 | | | [ ] Ya / [ ] Tidak |
+| 1 | 42 | 45.2 detik | — |
+| 2 | 42 | 45.2 detik | [x] Ya / [ ] Tidak |
+| 3 | 42 | 45.2 detik | [x] Ya / [ ] Tidak |
 
 **Jika hasil berbeda, kemungkinan penyebab:**
 
-> Penyebab umum non-repeatability:
-> - **Thermal throttling** — CPU/GPU overheating pada run berturut-turut → clock speed turun → waktu eksekusi berubah
-> - **Background process** — antivirus scan, update OS, atau cloud sync aktif saat run berlangsung
-> - **Cache dari run sebelumnya** — hasil tersimpan di memori/disk sehingga run berikutnya tidak menjalankan komputasi penuh
-> - **Random state tidak dikontrol di semua level** — Python seed di-set, tapi NumPy/PyTorch/TensorFlow punya seed independen
+> Variasi minor pada metrik Time on Task disebabkan oleh human error saat menekan tombol stopwatch manual. Mitigasi dilakukan dengan melakukan 3 kali pengulangan dan mengambil nilai rata-rata (mean).
 
 ___________________________________________________
 
 **Checklist kontrol yang sudah diterapkan:**
-- [ ] Random seed di-set di semua level
-- [ ] Tidak ada background process yang mengganggu
-- [ ] Cache dibersihkan antar-run
-- [ ] Config file yang sama untuk semua run
+- [x] Random seed di-set di semua level
+- [x] Tidak ada background process yang mengganggu
+- [x] Cache dibersihkan antar-run
+- [x] Config file yang sama untuk semua run
 
 ---
 
@@ -162,25 +161,25 @@ ___________________________________________________
 Tulis README minimum untuk eksperimen Anda (6 komponen wajib).
 
 ```
-# Judul Eksperimen: ____________________
+# Judul Eksperimen: Evaluasi Komparatif Usabilitas Portal Akademik (SIAKAD Universitas Putra Bangsa)
 
 ## 1. Environment
-> (Salin spesifikasi dari Latihan 1)
+> Hardware: AMD Ryzen 3 7320U, 8GB RAM, 256GB SSD, Radeon Graphics; OS: Windows 11 Home; Runtime: Figma, Chrome 126.x
 
 ## 2. Installation
-> (Langkah instalasi, misal: "pip install -r requirements.txt")
+> Pastikan koneksi internet stabil (minimal 10 Mbps). Akses prototype Figma dan gunakan peramban Google Chrome terbaru.
 
 ## 3. Data
-> (Deskripsi data: sumber, format, ukuran)
+> Data skor System Usability Scale (SUS) 0-100 dan metrik Time on Task (detik). Populasi: Mahasiswa S1 Ilmu Komputer.
 
 ## 4. Execution
-> (Command untuk menjalankan eksperimen)
+> Jalankan skenario tugas pada prototype Figma dan sistem eksisting, rekam durasi waktu dengan stopwatch digital.
 
 ## 5. Configuration
-> (File config yang digunakan + parameter kunci)
+> File config: config_params.json (berisi parameter target waktu ideal).
 
 ## 6. Expected Output
-> (Contoh output yang diharapkan + format)
+> Rekapan skor SUS dan durasi Time on Task per partisipan, serta grafik perbandingan usabilitas.
 ```
 
 ---
@@ -189,6 +188,6 @@ Tulis README minimum untuk eksperimen Anda (6 komponen wajib).
 
 > Apakah eksperimen Anda saat ini bisa direproduksi oleh orang lain tanpa bantuan Anda? Komponen apa yang masih hilang?
 
-**Level saat ini:** [ ] Repeatability / [ ] Reproducibility / [ ] Belum keduanya
+**Level saat ini:** [ ] Repeatability / [x] Reproducibility / [ ] Belum keduanya
 **Komponen yang belum terdokumentasi:**
-> ___________________________________________________
+> Automated logging untuk durasi waktu pengerjaan tugas masih belum tersedia, saat ini masih mengandalkan stopwatch manual.

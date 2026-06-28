@@ -73,24 +73,24 @@ Jika ada lompatan (section B tidak menjawab pertanyaan section A), red thread pu
 PROPOSAL INTEGRATION CHECKLIST
 
 Koneksi Vertikal (Flow Atas-Bawah):
-  [ ] Problem → Gap: masalah terdokumentasi di literatur
-  [ ] Gap → RQ: pertanyaan menjawab gap spesifik
-  [ ] RQ → Hypothesis: hipotesis memprediksi jawaban
-  [ ] Hypothesis → Metric: metrik mengukur variabel dalam hipotesis
-  [ ] Metric → System: komponen sistem menghasilkan/mengukur metrik
-  [ ] System → Experiment: desain eksperimen menggunakan sistem
+  [x] Problem → Gap: masalah terdokumentasi di literatur
+  [x] Gap → RQ: pertanyaan menjawab gap spesifik
+  [x] RQ → Hypothesis: hipotesis memprediksi jawaban
+  [x] Hypothesis → Metric: metrik mengukur variabel dalam hipotesis
+  [x] Metric → System: komponen sistem menghasilkan/mengukur metrik
+  [x] System → Experiment: desain eksperimen menggunakan sistem
 
 Koneksi Horizontal (Konsistensi):
-  [ ] Istilah sama di semua bagian
-  [ ] Variabel di RQ = variabel di hipotesis = metrik di desain
-  [ ] Scope tidak berubah dari masalah ke eksperimen
+  [x] Istilah sama di semua bagian
+  [x] Variabel di RQ = variabel di hipotesis = metrik di desain
+  [x] Scope tidak berubah dari masalah ke eksperimen
 
 Cognitive Trap Checklist:
-  [ ] Tidak ada paragraf "promosi" di pendahuluan (hanya data & gap)
-  [ ] Metodologi disesuaikan ke RQ, bukan copy-paste textbook
-  [ ] Timeline sudah ditambah buffer 30-50% dari estimasi awal
-  [ ] Proposal mengakui kemungkinan H0 tidak ditolak (honest uncertainty)
-  [ ] Tidak ada klaim "pasti berhasil" atau "meningkatkan signifikan"
+  [x] Tidak ada paragraf "promosi" di pendahuluan (hanya data & gap)
+  [x] Metodologi disesuaikan ke RQ, bukan copy-paste textbook
+  [x] Timeline sudah ditambah buffer 30-50% dari estimasi awal
+  [x] Proposal mengakui kemungkinan H0 tidak ditolak (honest uncertainty)
+  [x] Tidak ada klaim "pasti berhasil" atau "meningkatkan signifikan"
 
 Rubrik Self-Assessment:
 | Kriteria     | 1 (Lemah)                                        | 2 (Cukup)                                     | 3 (Baik)                                           | Skor |
@@ -109,13 +109,13 @@ Kumpulkan hasil dari WS-02 sampai WS-07 menjadi satu ringkasan proposal.
 
 | Komponen | Sumber | Isi (1-2 kalimat) |
 |----------|--------|-------------------|
-| Problem Statement | WS-02 | *Contoh: Sistem rekomendasi memiliki akurasi tinggi (RMSE 0.87) tetapi satisfaction score rendah (45/100). Gap antara metrik teknis dan kepuasan pengguna belum diteliti.* |
-| Gap | WS-03 | *Contoh: Tidak ada studi yang mengintegrasikan collaborative filtering dengan user-context signals untuk meningkatkan satisfaction.* |
-| RQ | WS-04 | *Contoh: Apakah penambahan context-aware signals pada collaborative filtering meningkatkan satisfaction score tanpa menurunkan RMSE?* |
-| Hipotesis | WS-04 | *Contoh: H₁: Sistem CF+context menghasilkan satisfaction ≥ 70/100 dengan RMSE ≤ 0.90 dibanding baseline CF murni.* |
-| Variabel & Metrik | WS-05 | *Contoh: IV = jenis sistem (CF vs CF+context); DV = satisfaction score (skala 0-100) + RMSE (regresi).* |
-| Sistem | WS-06 | |
-| Desain Eksperimen | WS-07 | |
+| Problem Statement | WS-02 | Akses SIAKAD melalui mobile browser memicu kesalahan klik (fat-finger error) dan navigasi yang berlebihan karena tata letaknya masih berorientasi desktop, sehingga menurunkan efisiensi. |
+| Gap | WS-03 | Belum ada studi yang membandingkan performa secara head-to-head antara web SIAKAD eksisting dengan desain mobile native berpusat pada pengguna melalui desain eksperimen berpasangan. |
+| RQ | WS-04 | Apakah implementasi purwarupa aplikasi mobile native SIAKAD meningkatkan skor usabilitas dan mereduksi durasi penyelesaian tugas secara signifikan dibandingkan web eksisting? |
+| Hipotesis | WS-04 | H1: Purwarupa aplikasi mobile native menghasilkan peningkatan skor System Usability Scale (SUS) dan penurunan waktu Time on Task yang signifikan dibandingkan web eksisting. |
+| Variabel & Metrik | WS-05 | IV = Platform sistem (Web eksisting vs. Purwarupa Mobile). DV = Kepuasan subjektif (Skor SUS 0-100) dan Efisiensi fisik (Time on Task dalam detik). |
+| Sistem | WS-06 | High-fidelity interactive prototype SIAKAD yang dirancang menggunakan platform Figma, mensimulasikan fitur pengisian KRS dan pengecekan transkrip nilai secara dinamis. |
+| Desain Eksperimen | WS-07 | Within-Subjects Design menggunakan teknik counterbalancing. Partisipan (mahasiswa S1 Ilmu Komputer) mengeksekusi 3 skenario tugas pada kedua platform secara bergantian di bawah observasi waktu. |
 
 ---
 
@@ -125,18 +125,18 @@ Verifikasi 6 koneksi kritis. Isi dengan merujuk tabel di Latihan 1.
 
 | Koneksi | Status | Bukti |
 |---------|--------|-------|
-| Problem → Gap | *Contoh: ✅ — gap muncul dari 15 paper Bab 3 yang tidak ada yang mengkombinasikan CF + context untuk satisfaction* | |
-| Gap → RQ | *Contoh: ✅ — RQ langsung menanyakan apakah CF+context meningkatkan satisfaction* | |
-| RQ → Hypothesis | *Contoh: ✅ — H₁ memprediksi satisfaction ≥ 70 dengan threshold RMSE ≤ 0.90* | |
-| Hypothesis → Metric | | |
-| Metric → System | | |
-| System → Experiment | | |
+| Problem → Gap | ✅ | Masalah navigasi seluler sudah terdokumentasi, dan literatur di Bab 3 mengonfirmasi kurangnya pengujian komparatif langsung untuk solusi mobile native. |
+| Gap → RQ | ✅ | RQ secara spesifik mempertanyakan komparasi langsung antara sistem lama dengan sistem baru hasil Design Thinking. |
+| RQ → Hypothesis | ✅ | Hipotesis secara tegas memprediksi bahwa sistem mobile native (intervensi) akan lebih unggul dari sistem web (kontrol). |
+| Hypothesis → Metric | ✅ | Variabel kepuasan diukur melalui instrumen SUS (0-100) dan variabel efisiensi diukur menggunakan Time on Task (detik/stopwatch). |
+| Metric → System | ✅ | Purwarupa Figma memiliki alur fungsional yang memungkinkan partisipan melakukan klik dan navigasi sehingga durasi waktu operasionalnya bisa diukur secara konkret. |
+| System → Experiment | ✅ | Eksperimen mewajibkan partisipan berinteraksi langsung dengan purwarupa Figma (mobile) dan Google Chrome (web) sebagai objek utama instrumen pengujian. |
 
-**Koneksi mana yang paling lemah?** _______________________
+**Koneksi mana yang paling lemah?** Koneksi Metric - System.
 **Bagaimana cara memperkuatnya?**
-> ___________________________________________________
+> Memastikan purwarupa Figma diakses melalui aplikasi Figma Mirror di gawai dengan semua aset visual telah dimuat (pre-cached) sebelumnya. Hal ini mencegah gangguan koneksi internet yang dapat membiaskan perhitungan metrik durasi murni (Time on Task).
 
-**Konsistensi horizontal — apakah istilah dan scope konsisten?** [ ] Ya / [ ] Tidak
+**Konsistensi horizontal — apakah istilah dan scope konsisten?** [x] Ya / [ ] Tidak
 > Jika tidak, di bagian mana terjadi inkonsistensi? _________
 
 ---
@@ -147,14 +147,14 @@ Evaluasi proposal mini menggunakan rubrik.
 
 | Kriteria | Skor (1-3) | Justifikasi |
 |----------|-----------|-------------|
-| Koherensi | *Contoh: 2 — koneksi gap→RQ masih lemah karena gap belum cukup narrow* | |
-| Specificity | *Contoh: 3 — metrik (satisfaction 0-100, RMSE) sudah terdefinisi numerik* | |
-| Feasibility | | |
-| Rigor | | |
+| Koherensi | 3 (Baik) | Seluruh 6 koneksi terhubung kuat. Benang merah dari masalah tata letak web hingga metode Paired Sample T-Test sangat koheren dan mengalir logis. |
+| Specificity | 3 (Baik) | Variabel dan metrik terdefinisi dengan sangat kuantitatif (Skala Likert untuk SUS 0-100 dan pengukuran stopwatch milidetik untuk Time on Task). |
+| Feasibility | 3 (Baik) | Jadwal 4 bulan (Timeline) sangat realistis, detail, dan sudah memperhitungkan alokasi satu bulan penuh untuk pengumpulan data serta counterbalancing di laboratorium. |
+| Rigor | 3 (Baik) | Eksperimen memiliki baseline yang sangat konkret (SIAKAD Web saat ini) dan didukung oleh komparasi 15 literatur standar APA 7th. |
 
-**Skor total:** _____ / 12
+**Skor total:** 12 / 12
 
-**Apakah proposal siap untuk fase eksekusi?** [ ] Ya / [ ] Belum
+**Apakah proposal siap untuk fase eksekusi?** [x] Ya / [ ] Belum
 > Jika belum, apa yang perlu diperbaiki? __________________
 
 ---
@@ -163,8 +163,7 @@ Evaluasi proposal mini menggunakan rubrik.
 
 > Dari seluruh proses WS-01 sampai WS-08, bagian mana yang paling mudah dan paling sulit? Mengapa? Apa yang akan dilakukan berbeda jika mengulang dari awal?
 
-**Bagian termudah:** ____________________________________
-**Bagian tersulit:** ____________________________________
+**Bagian termudah:** Mengidentifikasi masalah (Problem Statement) dan merumuskan metrik ukur, karena kendala usabilitas pada platform akademik eksisting sangat sering dialami secara langsung oleh mahasiswa di lapangan.
+**Bagian tersulit:** Menyusun desain eksperimen, khususnya memastikan bahwa eksperimen Within-Subjects tidak bias akibat efek pembelajaran (learning effect), sehingga memerlukan penerapan metode counterbalancing yang ketat.
 **Yang akan dilakukan berbeda:**
-> ___________________________________________________
-> ___________________________________________________
+> Jika memulai dari awal, saya akan mengalokasikan waktu observasi kualitatif (empathize) yang lebih panjang sebelum melompat ke fase desain antarmuka, untuk memastikan tidak ada fitur minor yang terlewat saat proses penyusunan skenario tugas akademik.
