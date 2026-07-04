@@ -53,52 +53,42 @@ Ancaman validitas harus diidentifikasi **sebelum** eksperimen dan mitigasinya di
 | Kegagalan | Bug → fix → release | H₀ tidak ditolak → tetap kontribusi ilmiah |
 | Sukses | 100% test pass | Evidence valid — mendukung atau menolak hipotesis |
 
-### Istilah Penting
-
-- **Causality** — Hubungan sebab-akibat (covariance + temporal + elimination)
-- **Controlled Experiment** — Ubah satu variabel, kontrol sisanya, amati efek
-- **Fairness** — Semua metode diuji pada kondisi yang benar-benar identik
-- **Threats to Validity** — Faktor yang bisa melemahkan kesimpulan jika tidak dimitigasi
-- **Conclusion Validity** — Validitas statistik: power, sample size, uji yang tepat
-
 ---
 
 ## Template A.7 — Desain Eksperimen Lengkap
 
-```
-EXPERIMENT DESIGN
+**EXPERIMENT DESIGN**
 
-Research Question : Apakah perancangan prototype antarmuka mobile menggunakan pendekatan Design Thinking menghasilkan skor System Usability Scale (SUS) dan waktu penyelesaian tugas yang secara signifikan lebih baik dibandingkan antarmuka website My CIC eksisting berdasarkan pengujian terhadap mahasiswa?
-Hypothesis        : H₁: Terdapat peningkatan skor SUS yang signifikan dan penurunan Time on Task pada prototype aplikasi mobile dibandingkan dengan website eksisting.
-Tipe Eksperimen   : [x] Comparison  [ ] Ablation  [ ] Parameter
+**Research Question :** Bagaimana tingkat usabilitas fitur Kartu Hasil Studi (KHS) pada SIM UPB jika diukur menggunakan metode *System Usability Scale* (SUS) dibandingkan dengan standar *acceptable score*?
+**Hypothesis        :** Skor rata-rata SUS fitur KHS SIM UPB > 68 (Sistem memenuhi standar kelayakan usabilitas).
+**Tipe Eksperimen   :** [x] Comparison (Komparasi terhadap Standar Referensi)  [ ] Ablation  [ ] Parameter
 
-Kondisi Eksperimen:
-| Kondisi | Deskripsi | IV Value | CV Settings |
+**Kondisi Eksperimen (Desain Komparatif Referensi):**
+| Kondisi | Deskripsi | IV Value (Objek) | CV Settings (Parameter Kontrol) |
 |---------|-----------|----------|-------------|
-| Control | Mahasiswa menguji coba website sistem akademik lama (Sistem Eksisting) | Antarmuka Website | Skenario tugas A, B, dan C; dilakukan dalam lingkungan ber-WiFi; profil responden lintas jurusan. |
-| Treatment | Mahasiswa menguji coba purwarupa (prototype) aplikasi baru (Sistem Usulan) | Antarmuka Aplikasi Mobile | Skenario tugas A, B, dan C; dilakukan dalam lingkungan ber-WiFi; profil responden lintas jurusan. |
+| **Control** (*Baseline*) | Ambang batas kelayakan usabilitas global menurut literatur. | Skor Konstan: 68 | Aturan *Curved Grading Scale* (A-F). |
+| **Treatment** (*Tested*) | Pengujian evaluasi pada antarmuka sistem eksisting. | Fitur KHS SIM UPB | Responden mahasiswa, skenario tugas seragam, instrumen SUS 10 item. |
 
-Fairness Checklist:
-  [x] Dataset identik untuk semua kondisi
-  [x] Preprocessing setara
-  [x] Tuning effort setara
-  [x] Environment identik
-  [x] Metrik evaluasi sama
+**Fairness Checklist:**
+  [x] Dataset/Responden representatif untuk kondisi yang diuji.
+  [x] Pembersihan data (*preprocessing*) setara (membuang jawaban bias/asal).
+  [x] Usaha pengujian setara (tidak ada *treatment* khusus bagi kelompok responden tertentu).
+  [x] Lingkungan pengujian (*environment*) diatur menggunakan instruksi tugas baku.
+  [x] Metrik evaluasi sama (Skala SUS 0-100).
 
-Threat Analysis:
+**Threat Analysis:**
 | Threat Type | Ancaman Spesifik | Mitigasi |
 |-------------|-----------------|----------|
-| Internal    | Learning/Order Effect: Responden yang menguji Website dulu lalu ke Mobile mungkin menjadi lebih cepat di Mobile karena sudah hafal tata letak/alur tugasnya. | Counterbalancing: Membagi responden menjadi dua kelompok. 50% responden menguji Web dulu lalu Mobile, 50% lagi menguji Mobile dulu baru Web. |
-| External    | Selection Bias: Pengujian hanya dilakukan pada mahasiswa Fakultas IT yang secara bawaan lebih mahir beradaptasi dengan UI baru. | Stratified Random Sampling: Merekrut responden yang proporsional dari fakultas non-IT (seperti Ekonomi atau Komunikasi). |
-| Construct   | Misinterpretation of Metric: Responden memberi nilai SUS rendah karena loading halaman lama (faktor server/sinyal), bukan karena UI/UX-nya buruk. | Clear Briefing: Memberikan peringatan tertulis bahwa kuesioner murni menilai "tata letak, navigasi, dan kemudahan fitur", bukan koneksi. |
-| Conclusion  | Low Statistical Power: Jumlah sampel terlalu sedikit (misal < 10) sehingga uji komparasi gagal mendeteksi signifikansi statistik. | Adequate Sample Size: Menetapkan batas minimal 30 responden (sejalan dengan standar validitas riset Winandy et al., 2024). |
+| **Internal** | *Acquiescence Bias* (Responden malas membaca dan menjawab setuju semua). | Menyaring data yang memiliki pola jawaban garis lurus (*straight-lining*) dan memastikan kalkulasi inversi skor berjalan benar. |
+| **External** | Sampel responden hanya berasal dari satu program studi yang melek IT. | Melakukan penyebaran kuesioner dengan teknik *Stratified Random Sampling* lintas fakultas. |
+| **Construct** | Form evaluasi keliru dipahami sebagai pengujian kecepatan *server* kampus. | Penegasan di instruksi awal kuesioner bahwa yang dinilai murni tata letak dan desain antarmuka. |
+| **Conclusion** | Ukuran sampel terlalu kecil (di bawah 30) sehingga distribusi data tidak normal dan uji beda gagal. | Menargetkan minimal sampel $N \ge 30$ untuk memenuhi *Central Limit Theorem* agar distribusi normal. |
 
-Statistical Plan:
-  Uji statistik   : Paired Sample T-Test (jika data berdistribusi normal) atau Wilcoxon Signed-Rank Test (jika data tidak normal). 
-  Justifikasi      : Menguji signifikansi perbedaan nilai rata-rata dari dua kondisi (Web vs Mobile) yang berasal dari satu kelompok responden yang sama (Within-Subjects Design).
-  Alpha            : 0.05 (Tingkat kepercayaan 95%)
-  Effect size min  : Cohen's d > 0.5 (Mencari efek perbaikan skala menengah/signifikan dari segi kepuasan pengguna).
-```
+**Statistical Plan:**
+  **Uji statistik** : *One-Sample T-Test* (Uji-T Satu Sampel)
+  **Justifikasi** : Digunakan untuk membandingkan nilai rata-rata dari satu kelompok sampel independen (Skor SUS KHS) dengan satu nilai referensi atau standar populasi (Skor *Acceptable* 68).
+  **Alpha** : 0.05 ($p < 0.05$)
+  **Effect size min**: *Cohen's d* $\ge$ 0.5 (Tingkat signifikansi praktis moderat).
 
 ---
 
@@ -106,30 +96,30 @@ Statistical Plan:
 
 Susun desain eksperimen berdasarkan RQ, variabel, dan sistem dari WS-04 sampai WS-06.
 
-**RQ:** Apakah perancangan prototype antarmuka mobile menghasilkan skor SUS yang secara signifikan lebih tinggi dibandingkan antarmuka website My CIC eksisting?
+**RQ:** Bagaimana tingkat usabilitas fitur Kartu Hasil Studi (KHS) pada SIM UPB jika diukur menggunakan metode *System Usability Scale* (SUS) dibandingkan dengan standar *acceptable score*?
 **Tipe eksperimen:** [x] Comparison / [ ] Ablation / [ ] Parameter
 
 | Kondisi | Deskripsi | IV Value | CV Settings |
 |---------|-----------|----------|-------------|
-| Control | Baseline menggunakan website My CIC eksisting. | Web-based UI | Lembar instruksi Task identik (Cek KRS, Nilai, Jadwal). Waktu timeout 3 menit per task. |
-| Treatment | Purwarupa aplikasi yang dibangun berdasarkan Design Thinking. | Mobile App UI | Lembar instruksi Task identik (Cek KRS, Nilai, Jadwal). Waktu timeout 3 menit per task. |
+| **Control** | Nilai ambang batas (*threshold*) SUS yang divalidasi oleh literatur sebagai standar sistem layak pakai (*Acceptable*). | Nilai Uji (*Test Value*) = 68 | Standar global evaluasi (Bangor et al., 2009). |
+| **Treatment** | Observasi kuantitatif terhadap mahasiswa pengguna fitur KHS pada sistem yang berjalan. | Interaksi dengan UI KHS SIM UPB | 10 item kuesioner SUS dan skenario instruksi tugas konstan. |
 
 ---
 
 ## Latihan 2 — Fairness Checklist
 
-Evaluasi apakah desain eksperimen di Latihan 1 sudah fair.
+Evaluasi apakah desain eksperimen di Latihan 1 sudah *fair*.
 
 | Kriteria | Status | Detail |
 |----------|--------|--------|
-| Dataset identik | ✅ Memenuhi | Semua mahasiswa partisipan masuk dalam kriteria inklusi yang sama (aktif kuliah, pengguna SIAKAD). |
-| Preprocessing setara | ✅ Memenuhi | Pendampingan sebelum tes (penjelasan goal) durasi dan materinya sama untuk kedua platform. |
-| Tuning effort setara | ✅ Memenuhi | Peneliti sama sekali tidak boleh memberi hint atau bantuan klik saat responden merasa stuck di kedua tes. |
-| Environment identik | ✅ Memenuhi | Diuji secara luring (in-person) menggunakan perangkat standar dan jaringan yang diawasi langsung oleh peneliti. |
-| Metrik evaluasi sama | ✅ Memenuhi | Alat pencatat menggunakan lembar kuesioner SUS dari format instrumen asli (Brooke, 1996). |
+| **Dataset identik** | ✅ Setara | Sampel responden ditarik dari populasi yang sama (mahasiswa UPB aktif) yang memiliki beban kepentingan yang sama terhadap KHS. |
+| **Preprocessing setara** | ✅ Setara | Perlakuan pembersihan data (*data cleaning*) diberlakukan sama pada semua entri responden sebelum diolah di *spreadsheet*. |
+| **Tuning effort setara** | ✅ Setara | Tidak ada manipulasi antarmuka/bantuan tambahan (*prompting*) yang diberikan kepada responden saat mereka mengerjakan skenario tugas. |
+| **Environment identik** | ✅ Setara | Instruksi tugas dan skenario navigasi dikunci agar setiap responden memulai evaluasi dengan beban kognitif awal yang sama. |
+| **Metrik evaluasi sama** | ✅ Setara | Pembandingan dilakukan secara persis antara skor komposit SUS (0-100) melawan nilai target standar (68). |
 
 **Ada yang tidak fair?** [ ] Ya / [x] Tidak
-> Jika ya, bagaimana cara memperbaikinya? ________________
+> **Jika ya, bagaimana cara memperbaikinya?** (Dalam desain observasi eksperimental ini, kondisi pengujian sudah diisolasi dengan baik melalui penyeragaman instrumen pengukuran).
 
 ---
 
@@ -139,22 +129,22 @@ Identifikasi ancaman validitas untuk desain eksperimen ini.
 
 | Threat Type | Ancaman Spesifik | Mitigasi |
 |-------------|-----------------|----------|
-| Internal | *Data Leakage/Carryover Effect (Mengingat alur dari tes pertama). | Diterapkan Counterbalancing AB/BA (diacak siapa yang mulai dengan Mobile atau Web). |
-| External | Bias demografi (responden terlalu tech-savvy). | Kriteria eksklusi (tidak merekrut mahasiswa yang jago coding/UI-UX design). |
-| Construct | Pertanyaan SUS nomor genap yang kalimatnya negatif sering salah dipahami. | Diterjemahkan ke Bahasa Indonesia yang sudah tervalidasi atau ditekankan agar baca pelan-pelan. |
-| Conclusion | Asumsi normalitas data untuk uji parametrik T-Test tidak terpenuhi. | Jika gagal uji normalitas Shapiro-Wilk, bergeser ke uji non-parametrik (Wilcoxon). |
+| **Internal** | Responden kebingungan dengan pertanyaan genap SUS yang menggunakan kalimat bernada negatif (*negative phrasing*). | Menyertakan penjelasan singkat di bagian *header* formulir, dan mengeliminasi data responden yang skornya saling bertolak belakang ekstrim. |
+| **External** | Desain fitur KHS berubah di tengah-tengah masa penyebaran kuesioner karena *update patch* dari kampus. | Membatasi durasi pengambilan data survei (maksimal 1-2 minggu) untuk memastikan sistem yang diuji tidak mengalami *update version*. |
+| **Construct** | Responden menjawab asal-asalan karena merasa kuesionernya terlalu panjang atau tidak ada untungnya bagi mereka (*Survey Fatigue*). | Menjaga agar kuesioner tetap ringkas (hanya 10 item inti SUS + 1 kolom saran) tanpa menambah variabel pengganggu lainnya. |
+| **Conclusion** | Kesalahan penarikan kesimpulan akibat salah menghitung pola skor inversi (pertanyaan ganjil dikurangi 1, pertanyaan genap 5 dikurangi nilai jawaban). | Menggunakan *template/formula* perhitungan otomatis yang sudah terverifikasi (misalnya perhitungan bawaan Excel untuk standar SUS) daripada menghitung manual. |
 
-**Ancaman mana yang paling sulit dimitigasi?** Internal Validity (Carryover Effect)
+**Ancaman mana yang paling sulit dimitigasi?** **External Threat** (Perubahan sistem tanpa pemberitahuan dari *developer* kampus).
 **Mengapa?**
-> Karena dalam uji usabilitas, pengguna yang sudah berhasil mencari letak menu KRS di versi Website kemungkinan besar secara psikologis sudah tahu "kata kunci" apa yang harus dicari (misalnya masuk ke sub-menu 'Akademik'). Otak mereka tidak lagi bekerja dari nol saat menguji versi Mobile. Walaupun urutannya sudah diacak (counterbalancing), sisa-sisa memori eksperimen tetap membayangi kemurnian beban kognitif di tes kedua.
+> Karena penelitian kita berada di posisi *end-user* observasional dan kita tidak memiliki kontrol terhadap jadwal pemeliharaan ( *maintenance/update*) sistem akademik kampus. Jika UI/UX diubah oleh *developer* tepat di tengah masa survei, setengah data responden kita menjadi tidak relevan karena menilai antarmuka yang sudah usang, merusak validitas eksperimen.
 
 ---
 
 ## Refleksi
 
-> Sebuah paper melaporkan "metode kami mengalahkan semua baseline." Apa 3 pertanyaan pertama yang harus diajukan untuk mengevaluasi klaim ini?
+> Sebuah paper melaporkan "sistem/metode kami mengalahkan semua baseline." Apa 3 pertanyaan pertama yang harus diajukan untuk mengevaluasi klaim ini?
 
 **Jawaban:**
-1. Apakah Baseline yang dipilih valid dan mutakhir? (Atau hanya straw man/sistem lama yang sengaja dipilih karena mudah dikalahkan, alih-alih mengalahkan sistem SOTA).
-2. Apakah kondisinya benar-benar identik (Fairness)? (Jangan-jangan sistem usulan dites dengan hardware lebih bagus, instruksi lebih mudah, atau dataset yang berbeda dari baseline).
-3. Apakah signifikansinya diuji secara statistik? (Apakah selisih poin kemenangannya terbukti konsisten lewat p-value atau sekadar beda tipis karena faktor kebetulan (variansi acak)?).
+1. **Apakah pemilihan *baseline*-nya jujur (*fair*)?** (Apakah sistem tersebut dibandingkan dengan standar kelayakan industri yang sesungguhnya (seperti SUS 68) atau hanya dibandingkan dengan *straw man* / sistem lama yang memang sudah cacat dan usang?).
+2. **Apakah metrik yang digunakan benar-benar valid (*Construct Validity*)?** (Apakah klaim "mengalahkan" itu didasarkan pada skor pengalaman pengguna (*user experience*) yang objektif atau hanya opini subjektif dari pengembangnya sendiri tanpa kuesioner terstandar?).
+3. **Apakah klaim signifikansi didukung oleh ukuran sampel dan uji statistik yang memadai (*Conclusion Validity*)?** (Apakah peningkatan tersebut diuji dengan pengujian statistik seperti *T-Test* dengan *p-value* $< 0.05$ dan jumlah sampel minimal, atau perbedaannya terjadi hanya karena kebetulan acak dari 5 orang penguji saja?).

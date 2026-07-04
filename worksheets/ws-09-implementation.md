@@ -80,28 +80,26 @@ Hardware:
 
 Software:
   OS        : Windows 11 Home Single Language
-  Runtime   : Figma (Browser-based) & Node.js
-  Framework : Chrome 126.x
+  Runtime   : Web Browser (Chrome/Edge untuk Google Forms)
+  Framework : Google Forms (Instrumen) & Microsoft Excel (Analisis)
 
 Dependencies:
-| Library | Version | Sumber | Hash/Checksum |
+| Library/Tool | Version | Sumber | Peran / Fungsi |
 |---------|---------|--------|---------------|
-| Figma App | Latest | Official | - |
-| Chrome | 126.x | Google | - |
-| NumPy | 1.26.4 | PyPI | - |
-| SciPy | 1.12.0 | PyPI | - |
-| Matplotlib | 3.8.3 | PyPI | - |
+| Google Forms | 2026 Build | cloud | Platform perekaman Skala Likert responden |
+| MS Excel | Office 2021 | lokal | Kalkulasi *reverse coding* (Inversi skor SUS) |
+| IBM SPSS | v26.0 | lokal | Pengujian hipotesis (*One-Sample T-Test*) |
 
 Konfigurasi:
-  Config file     : config_params.json
-  Random seed     : 42
-  Hyperparameters : default
+  Config file     : Template Excel Master_SUS_Calculator.xlsx
+  Random seed     : Kriteria Inklusi Responden Acak Berstrata
+  Hyperparameters : Threshold Baseline SUS = 68, Alpha = 0.05
 
 Reproducibility Check:
-  [x] Dependency terdokumentasi (requirements.txt / lock file)
-  [x] Seed ditetapkan di semua level (Python, NumPy, framework)
-  [x] Config di version control
-  [x] README instruksi reproduksi lengkap
+  [x] File data mentah (*raw data* .csv) tersimpan aman dan tidak dimanipulasi.
+  [x] Rumus kalkulasi (inversi skor SUS) didokumentasikan dalam file Master_SUS_Calculator.xlsx.
+  [x] File data mentah dan *file* analisis terpisah secara fisik untuk menjaga integritas data.
+  [x] README instruksi reproduksi mencakup langkah *data cleaning* dan prosedur statistik di SPSS.
 ```
 
 ---
@@ -112,23 +110,23 @@ Dokumentasikan environment untuk eksperimen Anda (boleh environment saat ini ata
 
 | Komponen | Spesifikasi |
 |----------|------------|
-| CPU | AMD Ryzen 3 7320U |
-| RAM | 8 GB |
-| GPU | AMD Radeon Graphics |
-| OS | Windows 11 Home Single Language |
-| Runtime | Figma, Node.js |
-| Framework | Figma Interactive Prototype, Chrome 126.x |
-| Random Seed | 42 |
+| **CPU** | AMD Ryzen 3 7320U with Radeon Graphics |
+| **RAM** | 8 GB |
+| **GPU** | AMD Radeon(TM) Graphics |
+| **OS** | Windows 11 Home Single Language |
+| **Runtime** | Chrome Browser & Excel Engine |
+| **Framework** | Google Forms |
+| **Kriteria Input** | Mahasiswa UPB aktif (divalidasi via pertanyaan screening di Google Form) |
 
 **Dependencies (minimal 5):**
 
-| Library | Version | Alasan Dibutuhkan |
+| Library/Tool | Version | Alasan Dibutuhkan |
 |---------|---------|-------------------|
-| Figma App | Latest | Simulasi interaksi purwarupa |
-| Chrome | 126.x | Pengujian sistem web eksisting |
-| NumPy | 1.26.4 | Pengolahan data kuantitatif |
-| SciPy | 1.12.0 | Uji statistik Paired Sample T-Test |
-| Matplotlib | 3.8.3 | Visualisasi data hasil usabilitas |
+| Google Forms | Latest | Pengumpulan data SUS 10-item yang terstruktur dan mudah di-*export*. |
+| Microsoft Excel | Office 2021 | Validasi data, *data cleaning* (straight-lining), dan kalkulasi skor SUS. |
+| IBM SPSS | v26 | Uji hipotesis statistik (*One-Sample T-Test*) untuk membandingkan skor SUS dengan threshold 68. |
+| Google Drive | Sync-v2 | Penyimpanan *raw data* yang aman dan sinkronisasi antar perangkat. |
+| SUS Scoring Template | v1.0 | Standarisasi perhitungan agar tidak ada *human error* dalam rumus konversi. |
 
 ---
 
@@ -136,23 +134,20 @@ Dokumentasikan environment untuk eksperimen Anda (boleh environment saat ini ata
 
 Rancang tes repeatability sederhana: jalankan kode yang sama 3× di environment yang sama.
 
-| Run | Seed | Metrik Utama | Hasil Sama? |
+| Run | Input File | Metrik Utama | Hasil Sama? |
 |-----|------|-------------|-------------|
-| 1 | 42 | 45.2 detik | — |
-| 2 | 42 | 45.2 detik | [x] Ya / [ ] Tidak |
-| 3 | 42 | 45.2 detik | [x] Ya / [ ] Tidak |
+| 1 | Raw_Data_KHS.csv | Skor Mean SUS & P-Value | — |
+| 2 | Raw_Data_KHS.csv | Skor Mean SUS & P-Value | [x] Ya |
+| 3 | Raw_Data_KHS.csv | Skor Mean SUS & P-Value | [x] Ya |
 
-**Jika hasil berbeda, kemungkinan penyebab:**
-
-> Variasi minor pada metrik Time on Task disebabkan oleh human error saat menekan tombol stopwatch manual. Mitigasi dilakukan dengan melakukan 3 kali pengulangan dan mengambil nilai rata-rata (mean).
 
 ___________________________________________________
 
 **Checklist kontrol yang sudah diterapkan:**
-- [x] Random seed di-set di semua level
-- [x] Tidak ada background process yang mengganggu
-- [x] Cache dibersihkan antar-run
-- [x] Config file yang sama untuk semua run
+- [x] Tautan kuesioner ditutup (*closed accepting responses*) sebelum diekspor ke CSV.
+- [x] Rumus kalkulasi di Excel dikunci (*protected sheet*) agar tidak berubah.
+- [x] File *Raw Data* dipisahkan dari file *Analysis Data*.
+- [x] Parameter *Test Value* (68) di SPSS diketik secara absolut.
 
 ---
 
@@ -164,22 +159,32 @@ Tulis README minimum untuk eksperimen Anda (6 komponen wajib).
 # Judul Eksperimen: Evaluasi Komparatif Usabilitas Portal Akademik (SIAKAD Universitas Putra Bangsa)
 
 ## 1. Environment
-> Hardware: AMD Ryzen 3 7320U, 8GB RAM, 256GB SSD, Radeon Graphics; OS: Windows 11 Home; Runtime: Figma, Chrome 126.x
+> Hardware: AMD Ryzen 3 7320U, 8GB RAM, 256GB SSD, Radeon Graphics; OS: Windows 11 Home; Runtime: Microsoft Excel (Office 2021) dan IBM SPSS v26.
 
 ## 2. Installation
-> Pastikan koneksi internet stabil (minimal 10 Mbps). Akses prototype Figma dan gunakan peramban Google Chrome terbaru.
+> Unduh repositori ini.
+> Buka 'Master_SUS_Calculator.xlsx' menggunakan MS Excel.
+> Pastikan IBM SPSS sudah terpasang untuk tahap pengujian hipotesis akhir.
 
 ## 3. Data
-> Data skor System Usability Scale (SUS) 0-100 dan metrik Time on Task (detik). Populasi: Mahasiswa S1 Ilmu Komputer.
+> Sumber: Kuesioner primer Google Forms (Juni/Juli 2026).
+> Ukuran: N >= 30 Mahasiswa Aktif UPB.
+> Format: Raw_KHS_Responses.csv (File berisi timestamp dan jawaban skala Likert 1-5 murni).
 
 ## 4. Execution
-> Jalankan skenario tugas pada prototype Figma dan sistem eksisting, rekam durasi waktu dengan stopwatch digital.
+> Salin kolom item pertanyaan SUS (Q1-Q10) dari Raw_KHS_Responses.csv.
+> Tempelkan ke Sheet "Input" pada file Master_SUS_Calculator.xlsx.
+> Buka Sheet "Result" untuk melihat skor rata-rata komposit secara otomatis.
+> Salin kolom "Total Skor SUS Individu" ke SPSS dan jalankan One-Sample T-Test terhadap nilai 68.
 
 ## 5. Configuration
-> File config: config_params.json (berisi parameter target waktu ideal).
+> Reverse Coding Positif (Ganjil): Jawaban - 1
+> Reverse Coding Negatif (Genap): 5 - Jawaban
+> Skor Individu SUS: (Total Nilai Ganjil + Ganjil + Genap + Genap) * 2.5
 
 ## 6. Expected Output
-> Rekapan skor SUS dan durasi Time on Task per partisipan, serta grafik perbandingan usabilitas.
+> Rata-rata Skor SUS (Angka 0-100) dan penempatan huruf mutu (Grade A-F).
+> Output SPSS menunjukkan nilai signifikansi (P-Value < 0.05).
 ```
 
 ---
@@ -190,4 +195,4 @@ Tulis README minimum untuk eksperimen Anda (6 komponen wajib).
 
 **Level saat ini:** [ ] Repeatability / [x] Reproducibility / [ ] Belum keduanya
 **Komponen yang belum terdokumentasi:**
-> Automated logging untuk durasi waktu pengerjaan tugas masih belum tersedia, saat ini masih mengandalkan stopwatch manual.
+> Komponen yang sudah terdokumentasi meliputi raw data yang di-anonymized serta template rumus Excel. Dengan instruksi di README, pihak lain (dosen/peneliti lain) dapat melakukan kalkulasi ulang dan mendapatkan hasil yang konsisten dengan riset saya.

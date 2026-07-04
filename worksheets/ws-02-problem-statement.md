@@ -64,54 +64,51 @@ Masalah riset yang layak harus memenuhi 5 kriteria:
 ## Template A.2 — Problem Statement Builder
 
 ```
-PROBLEM STATEMENT BUILDER
+**Domain & Konteks**
+*   **Domain:** Interaksi Manusia dan Komputer (HCI) / Sistem Informasi
+*   **Konteks:** Evaluasi Usabilitas Antarmuka Sistem Informasi Akademik
 
-Domain & Konteks
-  Domain   : Sistem Informasi Akademik / Desain UI/UX.
-  Konteks  : Perancangan antarmuka aplikasi My CIC dari platform berbasis web menjadi mobile device menggunakan software Figma.
+**System Context**
+*   **Input:** Interaksi klik dan navigasi dari mahasiswa pada platform SIM UPB.
+*   **Process:** Sistem merender tata letak informasi dan data akademik semester.
+*   **Output:** Antarmuka visual halaman Kartu Hasil Studi (KHS).
+*   **Outcome:** Mahasiswa berhasil mengakses, membaca, dan memahami nilai akademiknya secara mandiri.
+*   **Constraints:** Evaluasi berfokus pada sisi antarmuka pengguna (front-end UI/UX), tanpa mengakses atau mengubah basis data (backend).
+*   **Stakeholders:** Mahasiswa (end-user), Pengelola Akademik (pengambil keputusan).
 
-System Context
-  Input       : Interaksi pengguna (mahasiswa) saat mencari informasi akademik seperti biodata, nilai, jadwal kuliah, atau KRS.
-  Process     : Navigasi antarmuka (user flow) dalam mencari dan memproses informasi akademik melalui tombol dan menu yang dirancang.
-  Output      : Tampilan visual informasi akademik mahasiswa secara lengkap dan terstruktur pada layar smartphone.
-  Outcome     : Mahasiswa merasa lebih nyaman, mudah, dan tidak kebingungan saat menggunakan layanan informasi akademik My CIC.
-  Constraints : Solusi yang dirancang sebatas purwarupa (prototype) visual, menargetkan audiens mahasiswa Universitas Catur Insan Cendekia secara spesifik, dan wajib berbasis mobile.
-  Stakeholders: Mahasiswa sebagai pengguna utama dan Universitas Catur Insan Cendekia sebagai penyedia layanan.
+**Fenomena → Problem**
+*   **Fenomena yang diamati:** Mahasiswa rutin mengakses fitur KHS setiap akhir semester, namun sering muncul keluhan non-formal terkait tata letak atau kesulitan teknis saat mengunduh/membaca data.
+*   **Gejala (symptom) yang terukur:** Ketiadaan metrik kelayakan yang jelas; keluhan masih bersifat subjektif dan sporadis.
+*   **Masalah yang didiagnosis:** Belum adanya evaluasi empiris yang mengukur tingkat usabilitas fitur KHS pada SIM UPB secara standar dan terpusat.
+*   **Masalah riset (researchable):** Bagaimana tingkat usabilitas fitur KHS pada SIM UPB jika diukur menggunakan metode standar *System Usability Scale* (SUS)?
+*   **Variabel yang terukur:** Skor komposit *System Usability Scale* (skala 0-100).
 
-Fenomena → Problem
-  Fenomena yang diamati             : Tingkat kunjungan mahasiswa ke website My CIC hanya meningkat pada saat-saat tertentu saja.
-  Gejala (symptom) yang terukur     : Terdapat keluhan dari beberapa mahasiswa bahwa tampilan antarmuka membosankan, kurang menarik, dan beberapa menu/tombol tidak dipahami.
-  Masalah yang didiagnosis          : Sistem saat ini masih berbasis web (bukan mobile), desain UI kurang efektif/efisien, serta fitur akademik yang disajikan tidak lengkap (misal: belum ada KRS dan jadwal kuliah).
-  Masalah riset (researchable)      : Bagaimana merancang purwarupa (prototype) aplikasi My CIC berbasis mobile device dengan UI/UX yang lebih terstruktur, menarik, dan memenuhi kebutuhan kelengkapan informasi akademik mahasiswa?
-  Variabel yang terukur             : Kualitas elemen antarmuka (UI) dan kemudahan/kenyamanan pengalaman pengguna (UX) dalam mengakses menu.
+**Problem Quality Check**
+*   [x] **Clarity** — Apakah satu orang membaca akan paham?
+*   [x] **Measurability** — Apakah ada metrik kuantitatif?
+*   [x] **Relevance** — Apakah penting untuk domain?
+*   [x] **Testability** — Apakah bisa gagal?
+*   [x] **Impact** — Apakah ada kontribusi jika terjawab?
 
-Problem Quality Check
-  [x] Clarity — Apakah satu orang membaca akan paham?
-  [ ] Measurability — Apakah ada metrik kuantitatif?
-  [x] Relevance — Apakah penting untuk domain?
-  [x] Testability — Apakah bisa gagal?
-  [x] Impact — Apakah ada kontribusi jika terjawab?
-
-Problem Statement (1 paragraf):
-  Layanan informasi akademik My CIC saat ini masih berbasis web dan memiliki antarmuka yang kurang efektif, membosankan, serta memiliki beberapa tombol navigasi yang tidak dipahami oleh pengguna. Kondisi ini diperparah dengan tidak lengkapnya fitur administrasi penting seperti Kartu Rencana Studi (KRS) dan jadwal kuliah, yang berujung pada minimnya tingkat kunjungan mahasiswa di luar periode tertentu. Oleh karena itu, penelitian ini bertujuan merancang prototype aplikasi My CIC berbasis mobile device menggunakan Figma untuk menghasilkan solusi antarmuka (UI/UX) yang lebih modern, minimalis, lengkap, dan nyaman digunakan oleh mahasiswa Universitas Catur Insan Cendekia.
-```
+**Problem Statement (1 paragraf):**
+Fitur Kartu Hasil Studi (KHS) pada Sistem Informasi Manajemen (SIM) UPB merupakan instrumen vital bagi mahasiswa di setiap akhir semester, namun ketiadaan evaluasi usabilitas yang empiris menyebabkan kelayakan antarmuka sistem saat ini tidak diketahui secara pasti (*Empiric Gap*). Tanpa adanya pengukuran yang terstandar, keluhan pengguna terkait navigasi dan tata letak informasi hanya menjadi asumsi subjektif yang sulit ditindaklanjuti. Oleh karena itu, riset ini akan mengevaluasi tingkat usabilitas fitur KHS menggunakan instrumen *System Usability Scale* (SUS) untuk menghasilkan data kuantitatif yang mengidentifikasi hambatan interaksi secara objektif, guna merumuskan rekomendasi perbaikan berbasis data bagi pengelola akademik.
 
 ---
 
 ## Latihan 1 — Dari Topik ke Masalah Riset
 
-**Topik awal:** Perancangan Antarmuka Aplikasi Akademik Mobile.
+**Topik awal:** Evaluasi Antarmuka Sistem Informasi Manajemen (SIM) UPB
 
 | Tahap | Hasil |
 |-------|-------|
-| Reality | Website My CIC kurang aktif dikunjungi oleh mahasiswa. |
-| Observed Issue (Symptom) | Mahasiswa menganggap website membosankan dan bingung dengan beberapa tombol di dalamnya. |
-| Diagnosed Problem (Root Cause) |Layanan belum adaptif untuk mobile device dan informasi yang disajikan (seperti administrasi keuangan dan KRS) tidak lengkap. |
-| Researchable Problem |Bagaimana cara merancang desain antarmuka aplikasi sistem informasi berbasis mobile yang sesuai dengan kebutuhan mahasiswa Universitas Catur Insan Cendekia? |
-| Measurable Variable |Kualitas pengalaman pengguna (UX) dan kejelasan visual elemen desain (UI).|
+| **Reality** | Mahasiswa secara masif menggunakan fitur KHS di SIM UPB setiap periode akhir semester. |
+| **Observed Issue (Symptom)** | Terdapat indikasi kebingungan dalam navigasi, pembacaan hierarki informasi (seperti perbedaan IPS dan IPK), atau kendala pencetakan dokumen KHS. |
+| **Diagnosed Problem (Root Cause)** | Institusi belum memiliki rekam data objektif terkait kepuasan dan kemudahan pengguna spesifik pada fitur KHS tersebut. |
+| **Researchable Problem** | Berapa tingkat kelayakan usabilitas (skor SUS) fitur KHS SIM UPB saat ini jika dibandingkan dengan standar global *acceptable score*? |
+| **Measurable Variable** | Nilai kuantitatif *System Usability Scale* (0-100) dan respons item kuesioner. |
 
-**Apakah terjebak solution-first thinking?** [x] Ya / [ ] Tidak
-> Jika ya, kembali ke tahap mana? Kembali ke tahap Diagnosed Problem ke Researchable Problem. Jurnal ini sejak awal (bahkan di judul) langsung memaksakan "Menggunakan Aplikasi Figma" sebagai solusinya. Seharusnya, dalam riset, kita mencari solusi/metode perancangan terbaik (misal UCD atau Design Thinking) dan membuktikan efektivitas desainnya, bukan sekadar mendeklarasikan alat editing apa yang dipakai.
+**Apakah terjebak solution-first thinking?** [ ] Ya / [x] Tidak
+> **Jika ya, kembali ke tahap mana?** — (Tidak terjebak, karena rumusan masalah difokuskan pada pengukuran/evaluasi keadaan saat ini, bukan langsung menawarkan pembuatan desain baru).
 
 ---
 
@@ -121,14 +118,14 @@ Gambarkan konteks sistem dari masalah riset di Latihan 1.
 
 | Komponen | Deskripsi |
 |----------|----------|
-| Input | Aksi interaktif pengguna seperti memasukkan data login atau menekan tombol navigasi menu. |
-| Process |Pengorganisasian alur informasi dari halaman utama menuju detail akademik seperti KRS atau ujian online.|
-| Output |Representasi visual (teks, tata letak grafis, warna) dari data akademik pada layar smartphone.|
-| Outcome |Terciptanya interaksi dengan website/mobile apps yang mudah, menyenangkan, dan berguna bagi mahasiswa.|
-| Constraints |Penelitian dibatasi hanya pada tahap pembuatan prototype desain visual menggunakan Figma.|
-| Stakeholders |Mahasiswa sebagai target audiens dan institusi kampus (Universitas CIC).|
+| **Input** | Aksi pengguna (mahasiswa) melakukan login, navigasi menu, dan interaksi pada halaman KHS. |
+| **Process** | Sistem memproses permintaan, menarik (*query*) data nilai mahasiswa, dan menyajikannya dalam format tampilan *web*. |
+| **Output** | Tampilan visual antarmuka (UI) halaman KHS yang berisi tabel mata kuliah dan nilai. |
+| **Outcome** | Pemahaman mahasiswa mengenai status capaian akademik secara cepat, akurat, dan tanpa frustrasi. |
+| **Constraints** | Penelitian dibatasi hanya pada pengukuran persepsi pengguna akhir (usabilitas) dan tidak menyentuh optimasi basis data atau modifikasi kode sistem secara langsung. |
+| **Stakeholders** | Responden mahasiswa sebagai penguji, dan pihak manajemen kampus sebagai penerima rekomendasi perbaikan. |
 
-**Komponen mana yang paling relevan dengan masalah riset?** Output (tampilan antarmuka yang modern) dan Outcome (kenyamanan/kemudahan penggunaan).
+**Komponen mana yang paling relevan dengan masalah riset?** Output (antarmuka visual) dan Outcome (kemudahan pemahaman pengguna).
 
 ---
 
@@ -138,16 +135,17 @@ Evaluasi problem statement yang sudah dibuat menggunakan 5 kriteria.
 
 | Kriteria | Skor (1-5) | Justifikasi |
 |----------|-----------|-------------|
-| Clarity | 4 |Akar masalah (UI buruk dan fitur kurang) serta solusi (mobile prototype) dijabarkan dengan sangat jelas.|
-| Measurability |2|Jurnal tidak mengukur perbaikan desain secara statistik/metrik pasti. Klaim "menarik" dan "minimalis" sangat subjektif.|
-| Relevance |5|Mengembangkan UI layanan akademik sangat krusial bagi digitalisasi institusi pendidikan.|
-| Testability |3|Desain bisa diuji (falsifiable) ke mahasiswa, meski jurnal ini berhenti hanya sampai menampilkan gambar hasil desain.|
-| Impact |4|Penyelesaian masalah ini secara langsung mempermudah urusan administrasi mahasiswa kampus tersebut.|
+| **Clarity** | 5 | Sangat jelas. Fokus spesifik hanya pada fitur KHS pada SIM UPB dan metrik yang digunakan sudah disebutkan (SUS). |
+| **Measurability** | 5 | Menggunakan skor kuesioner SUS yang memproduksi data numerik interval (0-100) yang siap diuji secara statistik. |
+| **Relevance** | 5 | Sangat relevan di bidang Sistem Informasi untuk memastikan fungsionalitas sistem berjalan selaras dengan kebutuhan *User Experience* (UX). |
+| **Testability** | 5 | Bersifat *falsifiable*. Hipotesis bahwa sistem sudah "layak" bisa terbukti salah jika skor SUS ternyata jatuh di bawah standar *acceptable* (misal: di bawah 68). |
+| **Impact** | 5 | Menghasilkan rekomendasi perbaikan yang nyata (*data-driven*) bagi pihak universitas, menghilangkan tebak-tebakan dalam pengembangan *update* sistem berikutnya. |
 
-**Skor total:** 18 / 25
+**Skor total:** **25** / 25
 
 **Problem statement versi final (1 paragraf):**
-> Layanan informasi akademik My CIC saat ini masih berbasis web dan memiliki antarmuka yang kurang efektif, membosankan, serta memiliki beberapa tombol navigasi yang tidak dipahami oleh pengguna. Kondisi ini diperparah dengan tidak lengkapnya fitur administrasi penting seperti Kartu Rencana Studi (KRS) dan jadwal kuliah, yang berujung pada minimnya tingkat kunjungan mahasiswa di luar periode tertentu. Oleh karena itu, penelitian ini bertujuan merancang prototype aplikasi My CIC berbasis mobile device menggunakan Figma untuk menghasilkan solusi antarmuka (UI/UX) yang lebih modern, minimalis, lengkap, dan nyaman digunakan oleh mahasiswa Universitas Catur Insan Cendekia.
+> Fitur Kartu Hasil Studi (KHS) pada Sistem Informasi Manajemen (SIM) UPB merupakan instrumen vital bagi mahasiswa di setiap akhir semester, namun ketiadaan evaluasi usabilitas yang empiris menyebabkan kelayakan antarmuka sistem saat ini tidak diketahui secara pasti (*Empiric Gap*). Tanpa adanya pengukuran yang terstandar, keluhan pengguna terkait navigasi dan tata letak informasi hanya menjadi asumsi subjektif yang sulit ditindaklanjuti. Oleh karena itu, riset ini akan mengevaluasi tingkat usabilitas fitur KHS menggunakan instrumen *System Usability Scale* (SUS) untuk menghasilkan data kuantitatif yang mengidentifikasi hambatan interaksi secara objektif, guna merumuskan rekomendasi perbaikan berbasis data bagi pengelola akademik.
+
 ---
 
 ## Refleksi
@@ -155,4 +153,5 @@ Evaluasi problem statement yang sudah dibuat menggunakan 5 kriteria.
 > Bandingkan "masalah" yang biasa ditemui saat coding (bug, error) dengan masalah riset. Apa perbedaan fundamental dalam cara mendefinisikan dan mendekati keduanya?
 
 **Jawaban:**
-> Masalah engineering (seperti bug kode atau server error) memiliki batasan yang sangat jelas: sesuatu tidak berfungsi sebagaimana mestinya, dan tujuannya adalah memperbaikinya agar sistem berjalan (solve). Pendekatannya bersifat teknis dan solutif seketika. Sebaliknya, masalah riset (seperti "mengapa mahasiswa kebingungan melihat menu") adalah tentang celah pengetahuan (knowledge gap). Tujuannya bukan sekadar memperbaiki tombol, melainkan membuktikan dan memahami mengapa tata letak tertentu lebih efektif secara kognitif dibandingkan yang lain (understand & prove). Dalam riset UI/UX, kita memvalidasi interaksi manusia dengan sistem secara sistematis, bukan sekadar menambal kode yang rusak.
+> Masalah *coding* (*Engineering Problem*) seperti *bug* atau fitur yang *error* didefinisikan sebagai kegagalan sistem dalam berfungsi sesuai instruksi. Pendekatannya bersifat solutif seketika: mencari penyebab teknis di baris kode dan memperbaikinya agar sistem kembali berjalan (*solve it*). Keberhasilannya diukur dari apakah *error* tersebut hilang atau tidak.
+> Sebaliknya, masalah riset (*Research Problem*) tidak selalu berarti ada yang "rusak". Masalah riset didefinisikan sebagai ketidaktahuan (*knowledge gap*)—misalnya, kita memiliki sistem akademik yang berfungsi, tapi kita tidak tahu apakah itu mudah digunakan oleh mahasiswa awam. Pendekatannya bersifat investigatif: mendesain pengukuran (seperti kuesioner SUS) untuk menghasilkan bukti empiris. Tujuan utamanya bukan untuk langsung mereparasi sistem, melainkan untuk memberikan pemahaman baru (*understand & prove it*) yang tervalidasi secara ilmiah.

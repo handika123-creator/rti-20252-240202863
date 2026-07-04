@@ -12,9 +12,7 @@ Seorang engineer bertanya "apakah sistem bekerja?" — seorang peneliti bertanya
 
 ### System as Experiment Model
 
-```
-RQ → Variable → System Component → Experimental Setup → Output
-```
+`RQ → Variable → System Component → Experimental Setup → Output`
 
 Setiap komponen sistem harus bisa ditelusuri ke variabel riset (top-down), dan setiap pengukuran harus menjawab RQ (bottom-up).
 
@@ -43,19 +41,6 @@ Jika variabel tidak bisa di-map ke komponen apapun → arsitektur perlu didesain
 - **Configuration-driven** — Ubah config (YAML/JSON), bukan code
 - **Feature toggles** — On/off flag untuk ablation study
 
-  Contoh config YAML dengan feature toggles:
-  ```yaml
-  model:
-    type: cnn          # IV: ganti "rf" untuk kondisi baseline
-  features:
-    use_temporal: true  # toggle komponen temporal
-    use_normalization: true  # toggle preprocessing
-  experiment:
-    seed: 42
-    runs: 5
-  ```
-  Dengan pendekatan ini, berbeda kondisi eksperimen = berbeda satu baris config, **tanpa mengubah kode**.
-
 ### Research vs Engineering
 
 | Aspek | Engineering | Research |
@@ -65,41 +50,31 @@ Jika variabel tidak bisa di-map ke komponen apapun → arsitektur perlu didesain
 | Konfigurasi | Sering hardcoded | Dieksternalisasi ke config file |
 | Fitur tambahan | Menambah nilai user | Menambah noise jika tidak terkait RQ |
 
-### Istilah Penting
-
-- **Artifact** — Objek yang sengaja dibuat untuk memecahkan masalah atau menguji proposisi
-- **Traceability** — Kemampuan menelusuri hubungan RQ → variabel → komponen → output
-- **Variable Isolation** — Mengubah hanya satu variabel sambil menahan yang lain konstan
-- **Ablation Study** — Menguji kontribusi tiap komponen dengan melepasnya satu per satu
-- **Configuration-driven Execution** — Semua parameter di config file, bukan hardcoded
-
 ---
 
 ## Template A.6 — Mapping RQ ke Arsitektur Sistem
 
-```
-SYSTEM-EXPERIMENT MAPPING
+**SYSTEM-EXPERIMENT MAPPING**
 
-Research Question: Apakah perancangan prototype antarmuka mobile menggunakan pendekatan Design Thinking menghasilkan skor System Usability Scale (SUS) dan waktu penyelesaian tugas (Time on Task) yang secara signifikan lebih baik dibandingkan antarmuka website My CIC eksisting berdasarkan pengujian terhadap mahasiswa?
+**Research Question:** Bagaimana tingkat usabilitas fitur Kartu Hasil Studi (KHS) pada SIM UPB jika diukur menggunakan metode *System Usability Scale* (SUS) dibandingkan dengan standar *acceptable score*?
 
-Variable → Component Mapping:
-| Variabel | Tipe | Komponen Sistem | Cara Manipulasi/Pengukuran |
+**Variable → Component Mapping:**
+| Variabel | Tipe | Komponen Sistem / Instrumen | Cara Manipulasi/Pengukuran |
 |----------|------|-----------------|---------------------------|
-| Jenis Antarmuka | IV   | URL Link Lingkungan Uji | Swap / mengganti link pengujian antara tautan Website kampus eksisting dengan tautan Prototype Figma Mobile. |
-| Tingkat Usabilitas & Efisiensi | DV   | Google Form & Pengukur Waktu | Google Form mengukur skor komposit SUS (10 pertanyaan); Stopwatch / platform Maze mengukur durasi penyelesaian tugas (detik). |
-| Skenario Tugas & Responden | CV   | Dokumen Task Scenario | Skenario tugas (misal: "Cek nilai semester") dibakukan dalam teks instruksi tertulis yang sama persis untuk semua tester mahasiswa. |
+| Fitur KHS SIM UPB | IV | Antarmuka KHS (Sistem Berjalan) | Dibuat konstan; responden dipandu ke URL/Menu KHS yang sama. |
+| Tingkat Usabilitas | DV | Instrumen Evaluasi (Google Form SUS) | Skala Likert 1-5 direkam otomatis menjadi data *spreadsheet* interval. |
+| Beban Kognitif | CV | Modul Skenario Tugas (*Task Setup*) | Teks instruksi tugas dikunci (*hardcoded*) pada awal formulir. |
 
-4 Prinsip Desain:
-  [x] Traceability — Setiap komponen bisa ditelusuri ke variabel
-  [x] Variable Isolation — IV bisa diubah tanpa mengubah CV
-  [x] Measurement Integration — Pengukuran DV built-in
-  [x] Reproducibility — Setup bisa direkonstruksi
+**4 Prinsip Desain:**
+  [x] **Traceability** — Setiap instrumen pengukuran bisa ditelusuri ke variabel riset.
+  [x] **Variable Isolation** — Objek (SIM UPB) terpisah dari alat ukur (Form SUS).
+  [x] **Measurement Integration** — Pengukuran DV (*scoring*) rekap otomatis.
+  [x] **Reproducibility** — Setup skenario dan instrumen bisa direkonstruksi kapan saja.
 
-Experimental Setup:
-  Input data     : Interaksi klik/tap dari responden saat mengeksekusi skenario tugas (mencari KRS, melihat jadwal) pada antarmuka yang diberikan.
-  Parameter      : 10 butir pertanyaan terstandar SUS (skala 1-5); batas waktu maksimal per tugas (misal: timeout 3 menit); kriteria mahasiswa lintas jurusan.
-  Output format  : Spreadsheet tabulasi berisi skor mentah Likert per responden, konversi skor SUS akhir (0-100), dan durasi pencapaian tugas (Time on Task).
-```
+**Experimental Setup:**
+  **Input data** : Interaksi *user* merespons pertanyaan kuesioner pasca-penggunaan sistem.
+  **Parameter** : 10 Butir Pertanyaan SUS baku dengan *alternating tone* (positif/negatif).
+  **Output format** : Tabel *Spreadsheet* (*.csv / .xlsx*) berisi *raw score* tiap responden.
 
 ---
 
@@ -107,16 +82,16 @@ Experimental Setup:
 
 Gunakan RQ dan variabel dari WS-05. Petakan ke komponen sistem.
 
-**RQ:** Apakah perancangan prototype antarmuka mobile menggunakan pendekatan Design Thinking menghasilkan skor System Usability Scale (SUS) yang secara signifikan lebih tinggi dibandingkan antarmuka website My CIC eksisting?
+**RQ:** Bagaimana tingkat usabilitas fitur Kartu Hasil Studi (KHS) pada SIM UPB jika diukur menggunakan metode *System Usability Scale* (SUS)?
 
 | Variabel | Tipe | Komponen Sistem | Cara Manipulasi / Pengukuran |
 |----------|------|-----------------|---------------------------|
-| Tipe Antarmuka | IV | Platform (Website ↔ Prototype Mobile) | Mengganti URL / device pengujian untuk subjek eksperimen |
-| Tingkat Usabilitas | DV | Google Form Kuesioner SUS | Tabulasi otomatis skor Likert 1-5 menjadi skor SUS (0-100) |
-| Skenario Pengujian | CV | Dokumen Instruksi Skenario (Task Prompt) | Instuksi dibagikan secara seragam; tidak boleh ada improvisasi panduan saat tes |
+| Objek Sistem Akademik | IV | Layar Antarmuka KHS SIM UPB | Menjaga kondisi sistem agar tidak berubah selama periode pengambilan data (konstan). |
+| Tingkat Usabilitas Pengguna | DV | Komponen Kuesioner SUS | Menggunakan fitur *auto-calculation* di Excel/Sheets untuk mengubah Likert 1-5 menjadi skor 0-100. |
+| Kesetaraan Pengujian | CV | Skenario Instruksi Tugas (*Task*) | Instruksi baku: "Login -> Pilih Menu KHS -> Ganti Semester -> Cari Nilai IPK". |
 
 **Apakah semua variabel bisa di-map?** [x] Ya / [ ] Tidak
-> Jika tidak, komponen apa yang perlu ditambahkan? _________
+> **Jika tidak, komponen apa yang perlu ditambahkan?** (Semua variabel telah berhasil dipetakan ke dalam arsitektur eksperimen observasional UI/UX).
 
 ---
 
@@ -126,34 +101,31 @@ Evaluasi desain sistem terhadap 4 prinsip.
 
 | Prinsip | Status | Bukti / Penjelasan |
 |---------|--------|-------------------|
-| Traceability | ✅ | Alat pengukur Google Form terhubung langsung dan eksklusif untuk melayani variabel Usability (DV). |
-| Modularity | ✅ | Desain mobile (Figma) diuji secara terpisah dari website tanpa perlu membongkar kode/sistem database asli milik kampus. |
-| Controllability | ✅ | Tugas/beban kognitif dieksternalisasi menjadi "Dokumen Skenario" yang dikunci ketat (CV) agar adil untuk kedua antarmuka. |
-| Measurability | ✅ | Skor SUS dihitung dengan formula matematika yang pasti, dan waktu (Time on Task) menghasilkan angka rasio mutlak. |
+| **Traceability** | ✅ Terpenuhi | Variabel "Usabilitas" langsung terlacak ke instrumen 10-item SUS. |
+| **Modularity** | ✅ Terpenuhi | Instrumen form SUS terpisah dari SIM UPB; jika ingin menguji fitur KRS, form tidak perlu diubah ulang. |
+| **Controllability** | ⚠️ Parsial | Instruksi (CV) dapat dikunci, namun perangkat (*device/browser*) yang digunakan responden saat uji berada di luar kendali (*uncontrolled environment*). |
+| **Measurability** | ✅ Terpenuhi | Skala Likert pada Google Form memberikan *output* data terstruktur (CSV) tanpa intervensi manual. |
 
-**Prinsip mana yang paling sulit dipenuhi?** Controllability (Keterkontrolan Lingkungan)
+**Prinsip mana yang paling sulit dipenuhi?** Controllability.
 **Strategi untuk mengatasinya:**
-> Jika pengujian dilakukan secara jarak jauh (remote testing), sangat sulit mengontrol distraksi lingkungan responden atau perbedaan kecepatan internet mereka yang bisa memengaruhi metrik Time on Task. Strategi mitigasinya adalah melakukan pengujian secara Moderated In-Person (didampingi langsung dalam satu ruangan dengan koneksi Wi-Fi yang seragam), atau menggunakan tools seperti Maze Design (seperti pada studi Winandy et al., 2024) yang bisa membatasi sesi jika terdeteksi koneksi tidak stabil.
+> Menambahkan pertanyaan prasyarat (*screening*) di awal kuesioner untuk mengelompokkan responden berdasarkan perangkat yang digunakan (*Mobile* vs *Desktop*) sebagai data demografi tambahan untuk melacak anomali jika terjadi.
 
 ---
 
 ## Latihan 3 — Ablation Study Planning
 
-Sistem prototype mobile memiliki 3 fitur komponen utama untuk dievaluasi.
+*(Adaptasi UX Evaluation: Ablation Study dalam pengujian antarmuka diterjemahkan sebagai isolasi Skenario Tugas (Task Isolation) untuk menemukan komponen UI mana yang paling menurunkan usabilitas).*
 
-> **Panduan jumlah kondisi:** Untuk 3 komponen (A, B, C), kondisi minimal yang direkomendasikan:
-> Full + (-A) + (-B) + (-C) = **4 kondisi dasar**. Jika waktu memungkinkan, tambahkan kombinasi ganda: (-A,-B), (-A,-C), (-B,-C) = **7 kondisi**. Sesuaikan dengan *computational cost* dan tenggat waktu penelitian.
-
-| Kondisi | Komponen A (Search Bar Cepat) | Komponen B (Reminder Notifikasi) | Komponen C (Dashboard Card-Based) | Hasil yang Diharapkan |
+| Kondisi (Skenario) | Komponen A (Navigasi Menu) | Komponen B (Tabel Nilai) | Komponen C (Fungsi Cetak/PDF) | Hasil yang Diharapkan |
 |---------|-----------|-----------|-----------|----------------------|
-| Full | ✅ Ada Search Bar | ✅ Ada Reminder | ✅ Desain Card-Based | Baseline penuh: Waktu penyelesaian tercepat dan SUS tertinggi. |
-| – A | ❌ (Tanpa Search Bar) | ✅ | ✅ | Responden butuh waktu navigasi lebih lama untuk mencari menu spesifik (KRS/Jadwal) lewat hamburger menu. |
-| – B | ✅ | ❌ (Tanpa Reminder) | ✅ | Responden mungkin kebingungan melihat status tenggat waktu akademik, butuh klik ekstra ke menu profil. |
-| – C | ✅ | ✅ | ❌ (Ganti List teks biasa) | Nilai dimensi "Satisfaction" pada SUS berpotensi turun karena antarmuka terasa kaku dan kurang modern. |
+| **Full Task** | ✅ (*Login & Akses*) | ✅ (*Baca Nilai & IPK*) | ✅ (*Download PDF*) | *Baseline* skor SUS gabungan seluruh fitur KHS. |
+| **– A** | ❌ (*Lewati Navigasi, beri URL langsung*) | ✅ | ✅ | Menguji apakah navigasi menu/sidebar yang bikin rumit. |
+| **– B** | ✅ | ❌ (*Tabel disembunyikan*) | ✅ | Menguji seberapa mudah tombol *Cetak* ditemukan tanpa distraksi tabel. |
+| **– C** | ✅ | ✅ | ❌ (*Tanpa instruksi Cetak*) | Menguji kenyamanan baca tabel secara visual saja tanpa fungsi aksi. |
 
-**Komponen mana yang diprediksi paling berkontribusi?** Komponen A (Search Bar Cepat)
+**Komponen mana yang diprediksi paling berkontribusi (pada penurunan skor usabilitas)?** Komponen C (Fungsi Cetak/PDF) dan Navigasi.
 **Mengapa?**
-> Sistem informasi akademik sangat sarat akan data. Mahasiswa biasanya membuka aplikasi dengan satu tujuan spesifik (contoh: hanya ingin melihat nilai matkul tertentu). Keberadaan Search Bar memotong seluruh hierarki navigasi (clicks), sehingga memanipulasi fitur ini secara langsung akan memberikan dampak paling drastis pada peningkatan metrik Time on Task (efisiensi).
+> Seringkali antarmuka akademik menampilkan tabel dengan baik (Komponen B biasanya standar), namun peletakan tombol aksi (*Download/Print*) kerap tersembunyi atau menghasilkan *output* cetak yang terpotong. Mengisolasi tugas ini akan membuktikan asumsi tersebut.
 
 ---
 
@@ -162,5 +134,6 @@ Sistem prototype mobile memiliki 3 fitur komponen utama untuk dievaluasi.
 > Apa risiko jika sistem dibangun seperti produk (monolitik, fitur lengkap) lalu baru dilakukan eksperimen? Mengapa arsitektur modular penting untuk riset?
 
 **Jawaban:**
-> Jika sistem dibangun langsung jadi dengan fitur lengkap (monolitik) lalu diuji dan hasilnya "bagus", peneliti akan terjebak dalam masalah Credit Assignment Problem. Peneliti tidak akan bisa membuktikan secara spesifik fitur mana yang membuat sistem itu bagus. Apakah karena warnanya? Apakah karena navigasinya? Atau karena performanya?
-> Arsitektur modular dalam riset DSR (Design Science Research) sangat penting karena memungkinkan peneliti melakukan Variable Isolation. Dengan modularitas, kita bisa menghidupkan atau mematikan satu fitur tertentu (seperti pada Ablation Study) sambil menahan fitur lainnya tetap konstan. Hal ini memungkinkan kita menarik kesimpulan kausalitas sebab-akibat yang kuat dan valid secara ilmiah.
+> Dalam konteks pengujian UI/UX, jika kita mengevaluasi sebuah sistem informasi secara monolitik (misalnya, menyuruh responden menilai "SIM UPB" secara keseluruhan tanpa isolasi fitur), kita akan mendapatkan satu skor SUS "gelondongan". Jika skornya rendah, peneliti tidak akan tahu fitur mana yang menjadi biang keroknya (apakah KHS, KRS, Profil, atau Jadwal?). 
+> 
+> Arsitektur yang modular (memecah instrumen pengujian berdasarkan fitur spesifik) sangat penting agar eksperimen memiliki daya telusur (*traceability*). Hal ini memungkinkan kita menemukan akar masalah (*root cause*) secara presisi dan menghasilkan rekomendasi perbaikan yang tepat sasaran, bukan sekadar asumsi buta.

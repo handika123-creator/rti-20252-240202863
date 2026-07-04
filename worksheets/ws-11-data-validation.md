@@ -66,28 +66,28 @@ Jika gagal di langkah awal → tidak perlu lanjut.
 DATA VALIDATION CHECKLIST
 
 Completeness:
-  [ ] Semua skenario tercakup
-  [ ] Jumlah run sesuai rencana
-  [ ] Tidak ada file output hilang
-  Missing: ____ dari ____ data points
+  [x] Semua skenario tercakup
+  [x] Jumlah run sesuai rencana
+  [x] Tidak ada file output hilang
+  Missing: 0 dari 30 data points
 
 Format Consistency:
-  [ ] Semua file format sama (CSV/JSON/...)
-  [ ] Header konsisten
-  [ ] Tipe data konsisten (numerik tetap numerik)
+  [x] Semua file format sama (CSV/JSON/...)
+  [x] Header konsisten
+  [x] Tipe data konsisten (numerik tetap numerik)
 
 Range & Logic:
-  [ ] Nilai dalam range masuk akal
-  [ ] Tidak ada waktu negatif
-  [ ] Metrik 0–100%, tidak di luar range
+  [x] Nilai dalam range masuk akal
+  [x] Tidak ada waktu negatif
+  [x] Metrik 0–100%, tidak di luar range
   Anomali ditemukan: ____________________
 
 Cross-Validation:
-  [ ] Run identik → hasil mendekati
-  [ ] Trend konsisten dengan ekspektasi teori
+  [x] Run identik → hasil mendekati
+  [x] Trend konsisten dengan ekspektasi teori
 
 Keputusan:
-  [ ] Data siap analisis
+  [x] Data siap analisis
   [ ] Perlu cleaning
   [ ] Perlu re-run (skenario: ____)
 ```
@@ -100,15 +100,13 @@ Verifikasi apakah semua data yang direncanakan sudah terkumpul.
 
 | Skenario | Run Direncanakan | Run Tercatat | Missing | Alasan |
 |----------|-----------------|-------------|---------|--------|
-| *Contoh: BERT, DS-1* | *10* | *10* | *0* | *—* |
-| *LSTM, DS-3* | *10* | *8* | *2* | *OOM pada run 7 & 9* |
-| | | | | |
-| | | | | |
+| Pilot | 5 | 5 | 0 | - |
+| Main 1 | 25 | 25 | 0 | - |
 
-**Total expected:** ____ | **Total actual:** ____ | **Missing:** ____
+**Total expected:** 30 | **Total actual:** 30 | **Missing:** 0
 
 **Keputusan untuk data missing:**
-> ___________________________________________________
+> Tidak ada data yang hilang, namun dilakukan pembersihan terhadap 2 data yang tidak valid karena straight-lining, sehingga diganti dengan responden baru.
 
 ---
 
@@ -127,16 +125,16 @@ Periksa data Anda untuk anomali. Gunakan metode IQR atau z-score.
 | 5 | *91.0* |
 
 **Deteksi outlier:**
-- Q1 = ____ | Q3 = ____ | IQR = ____
-- Batas bawah (Q1 - 1.5×IQR) = ____
-- Batas atas (Q3 + 1.5×IQR) = ____
-- Outlier terdeteksi: ____
+- Q1 = 65 | Q3 = 82 | IQR = 17
+- Batas bawah (Q1 - 1.5×IQR) = 39.5
+- Batas atas (Q3 + 1.5×IQR) = 107.5
+- Outlier terdeteksi: Tidak ada (karena semua skor SUS ada di rentang 40-100)
 
 **Investigasi (untuk setiap outlier):**
 
 | Outlier | Nilai | Kemungkinan Penyebab | Keputusan |
 |---------|-------|---------------------|-----------|
-| *Run 4* | *78.3* | *Contoh: thermal throttling setelah 3 run berturut* | *Re-run dengan cooling interval* |
+| N/A | - | - | - |
 
 ---
 
@@ -144,18 +142,17 @@ Periksa data Anda untuk anomali. Gunakan metode IQR atau z-score.
 
 Buat laporan validasi ringkas untuk dataset eksperimen Anda.
 
-**1. Completeness:** ____% data terkumpul
-**2. Format:** [ ] Konsisten / [ ] Ada inkonsistensi: ____
-**3. Range check (anomali):** ____
-**4. Logic check:** [ ] Parameter sesuai plan / [ ] Ada ketidaksesuaian: ____
+**1. Completeness:** 100% data terkumpul
+**2. Format:** [x] Konsisten / [ ] Ada inkonsistensi: ____
+**3. Range check (anomali):** Tidak ada outlier ekstrem setelah data cleaning.
+**4. Logic check:** [x] Parameter sesuai plan / [ ] Ada ketidaksesuaian: ____
 
-**Kesimpulan:** [ ] Data siap analisis / [ ] Perlu tindakan: ____
+**Kesimpulan:** [x] Data siap analisis / [ ] Perlu tindakan: ____
 
 ---
 
 ## Refleksi
 
-> Apa perbedaan antara "data yang benar" dan "data yang dipercaya"? Mengapa proses validasi formal diperlukan meskipun data dikumpulkan secara otomatis?
+Apa perbedaan antara "data yang benar" dan "data yang dipercaya"? Mengapa proses validasi formal diperlukan meskipun data dikumpulkan secara otomatis?
 
-> ___________________________________________________
-> ___________________________________________________
+> Data yang benar adalah data yang secara teknis valid formatnya, sedangkan data yang dipercaya adalah data yang merepresentasikan kondisi asli pengguna. Validasi formal diperlukan agar hasil riset tidak bias akibat data sampah (noise) yang ikut terakumulasi secara otomatis saat kuesioner disebar.

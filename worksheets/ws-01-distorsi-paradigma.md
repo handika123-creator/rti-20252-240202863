@@ -61,82 +61,80 @@ Dalam DSR, artefak **bukan tujuan akhir** — ia adalah instrumen untuk menghasi
 ## Template A.1 — Research Mindset Self-Assessment
 
 ```
-Nama Peneliti    : HANDIKA DWI ARDIYANTO
-Tanggal          : 20/04/2026
+**Nama Peneliti**    : Handika Dwi Ardiyanto  
+**Tanggal**          : 03/07/2026  
 
-1. Ketika membaca klaim "metode X 95% akurat":
-   - Pertanyaan pertama saya: Bagaimana karakteristik responden atau sampel mahasiswa yang digunakan untuk menguji validitas desain tersebut, dan apakah instrumen pengukurannya (seperti kuesioner) sudah teruji reliabilitasnya?
-   - Data yang dibutuhkan untuk verifikasi: Skor System Usability Scale (SUS) dari pengguna, data perbandingan waktu pengerjaan tugas (time on task) antara sistem lama dan sistem baru, serta rincian demografi responden.
+**1. Ketika membaca klaim "Sistem Informasi Akademik ini sudah sangat layak dan mudah digunakan":**
+*   **Pertanyaan pertama saya:** Apakah klaim kelayakan tersebut dibuktikan melalui pengukuran kuantitatif menggunakan instrumen yang tervalidasi, atau hanya asumsi subjektif?
+*   **Data yang dibutuhkan untuk verifikasi:** Skor kuantitatif usabilitas dari responden target (mahasiswa) menggunakan instrumen *System Usability Scale* (SUS).
 
-2. Posisi paradigma:
-   - Pendekatan: [ ] Positivis  [ ] Interpretivis  [x] Design Science  [ ] Mixed
-   - Alasan: Riset ini berfokus pada pembuatan artefak berupa prototype desain aplikasi mobile menggunakan Figma untuk memberikan solusi praktis atas permasalahan layanan informasi akademik.
+**2. Posisi paradigma:**
+*   **Pendekatan:** [x] Positivis  [ ] Interpretivis  [ ] Design Science  [ ] Mixed
+*   **Alasan:** Riset ini bertujuan mengukur fenomena subjektif (pengalaman pengguna pada KHS) menjadi data metrik numerik yang objektif melalui eksperimen pengukuran terstandar.
 
-3. Identifikasi distorsi:
-   - Asumsi tersembunyi: Peneliti berasumsi bahwa mengubah platform dari berbasis web ke mobile device secara otomatis akan meningkatkan intensitas kunjungan dan pemahaman mahasiswa terhadap informasi akademik.
-   - Sumber bias potensial: Selection bias saat wawancara awal, di mana keluhan "kurang menarik dan membosankan" mungkin hanya mewakili opini segelintir mahasiswa dan bersifat sangat subjektif.
-   - Langkah mitigasi: Melakukan pengujian usabilitas secara formal kepada kelompok mahasiswa yang lebih luas dan menggunakan metrik standar (seperti SUS) untuk mengubah opini kualitatif menjadi data kuantitatif yang objektif.
+**3. Identifikasi distorsi:**
+*   **Asumsi tersembunyi:** Ketiadaan keluhan formal ke pihak admin diasumsikan tidak ada masalah pada antarmuka KHS SIM UPB.
+*   **Sumber bias potensial:** *Sampling bias* jika responden didominasi *expert users* (mahasiswa tingkat akhir).
+*   **Langkah mitigasi:** Menerapkan *purposive sampling* agar representasi responden merata lintas angkatan dan program studi.
 
-4. Komitmen etika:
-   - Data yang tidak akan dimanipulasi: Hasil umpan balik negatif dari pengguna mengenai kekurangan prototype dan data statistik jumlah pengunjung website My CIC yang sebenarnya.
-   - Batasan yang diakui sejak awal: Penelitian ini hanya terbatas pada perancangan desain UI/UX (prototype) dan tidak mencakup implementasi pengkodean (coding) atau integrasi basis data secara nyata. 
-```
+**4. Komitmen etika:**
+*   **Data yang tidak akan dimanipulasi:** Skor mentah kuesioner SUS, termasuk *outlier* yang menunjukkan ketidakpuasan ekstrem.
+*   **Batasan yang diakui sejak awal:** Evaluasi berfokus murni pada aspek antarmuka (UI/UX) halaman KHS, tanpa mengevaluasi performa server/backend.
 
 ---
 
 ## Latihan 1 — Identifikasi Distorsi
 
-analisis mendalam terhadap jurnal "Perancangan UI/UX My CIC".
-
 **Paper yang dipilih:**
-> Judul: Perancangan UI/UX Aplikasi My CIC Layanan Informasi Akademik Mahasiswa Menggunakan Aplikasi Figma
-> Penulis (Tahun): M. Agus Muhyidin, Muhammad Afif Sulhan, Agus Sevtiana (2020)
-> Sumber/Link DOI: JURNAL DIGIT Vol. 10, No.2
+> **Judul:** Usability Testing pada Sistem Informasi Akademik IAIN Salatiga Menggunakan Metode System Usability Scale
+> **Penulis (Tahun):** Mei Prabowo & Agung Suprapto (2021)
+> **Sumber/Link DOI:** JISKa, Vol. 6, No. 1, 2021
 
 | Tahap | Apa yang Dilakukan | Potensi Distorsi |
 |-------|-------------------|-----------------|
-| Reality → Data | Mengumpulkan keluhan mahasiswa melalui wawancara mengenai tampilan website yang membosankan dan informasi yang kurang lengkap. | Sampling Bias: Peneliti hanya mengambil data dari "beberapa mahasiswa" , sehingga tidak merepresentasikan populasi seluruh mahasiswa Universitas CIC. |
-| Data → Processing |Mengelompokkan masalah ke dalam kategori desain antarmuka (UI) yang kurang menarik dan fitur yang belum lengkap (seperti KRS, jadwal, dan nilai).|Confirmation Bias: Peneliti mengarahkan masalah agar bisa diselesaikan melalui desain (Figma), mengabaikan kemungkinan masalah pada backend sistem.|
-| Processing → Analysis |Menggunakan elemen desain (warna, tipografi, ukuran) untuk merancang solusi visual yang minimalis dan modern.|Halo Effect: Adanya asumsi bahwa desain yang terlihat "modern" secara otomatis meningkatkan kinerja dan kualitas pelayanan tanpa pengujian metrik.|
-| Analysis → Inference |Merumuskan bahwa solusi masalah adalah dengan merancang prototype aplikasi berbasis mobile device.|Asumsi Kausalitas: Peneliti menyimpulkan bahwa aplikasi mobile adalah solusi mutlak untuk meningkatkan kunjungan, tanpa membandingkan jika web yang diperbaiki sudah cukup.|
-| Inference → Knowledge |Menyimpulkan bahwa Figma efektif untuk mendesain tampilan aplikasi My CIC yang menarik dan modern sesuai kebutuhan mahasiswa.|Overgeneralization: Pengetahuan yang dihasilkan baru sebatas kemampuan alat desain, bukan efektivitas nyata aplikasi terhadap performa akademik mahasiswa.|
+| **Reality → Data** | Menyebarkan kuesioner SUS kepada mahasiswa untuk menilai Sistem Informasi Akademik. | **Satisficing Bias:** Responden asal mengisi skala netral agar cepat selesai tanpa membaca teliti. |
+| **Data → Processing** | Mengonversi skor Likert mentah menjadi aturan hitung *System Usability Scale* (0-100). | **Kesalahan Kalkulasi:** Kesalahan saat *reverse coding* pada pertanyaan negatif (nomor genap). |
+| **Processing → Analysis** | Menggabungkan seluruh skor individu menjadi satu skor rata-rata sistem (*mean score*). | **Pengabaian Konteks:** Rata-rata yang tinggi menutupi fakta ada fitur spesifik yang skornya sangat rendah. |
+| **Analysis → Inference** | Menyimpulkan bahwa sistem secara keseluruhan masuk kategori *Acceptable* (Layak). | **Halo Effect:** Menganggap status *Acceptable* berarti sistem sempurna dan tidak butuh iterasi desain lagi. |
+| **Inference → Knowledge** | Menetapkan bahwa SIAKAD tersebut sudah optimal melayani mahasiswa. | **External Validity Threat:** Menganggap keberhasilan UI/UX di kampus tersebut pasti sama jika diterapkan di kampus lain. |
 
-**Distorsi paling besar di tahap:** Reality → Data dan Inference → Knowledge.
+**Distorsi paling besar di tahap:** Data → Processing dan Processing → Analysis.
+
 **Dua distorsi spesifik yang teridentifikasi:**
-1. Selection Bias pada Data Awal: Peneliti mendasarkan seluruh perancangan pada wawancara dengan "beberapa mahasiswa" tanpa rincian jumlah responden, sehingga data ketidakpuasan bersifat sangat subjektif dan rawan bias.
-2. Ketiadaan Validitas Eksternal (Usability Testing): Meskipun menghasilkan prototype , penelitian ini tidak menyertakan pengujian pengguna secara formal (seperti kuesioner SUS) untuk membuktikan secara ilmiah bahwa desain baru lebih mudah dipahami daripada desain lama.
+1. *Satisficing & Acquiescence Bias* saat pengambilan data kuesioner.
+2. Ketergantungan absolut pada nilai rata-rata yang dapat menutupi *outlier* keluhan dari pengguna.
 
 ---
 
 ## Latihan 2 — Analisis Kasus Etika
 
-Skenario: Seorang peneliti menemukan bahwa jika 3 data point outlier dihapus, hasil eksperimennya menjadi signifikan. Dengan outlier, hasilnya tidak signifikan.
+**Skenario:** Seorang peneliti menemukan bahwa jika 3 data point outlier dihapus, hasil eksperimennya menjadi signifikan. Dengan outlier, hasilnya tidak signifikan.
 
 | Perspektif | Analisis |
 |------------|---------|
-| Kejujuran ilmiah | Peneliti harus tetap melaporkan keberadaan outlier tersebut karena dalam riset UI/UX, outlier sering kali mewakili pengguna dengan kebutuhan khusus atau hambatan teknis yang nyata. Menghapus data ini tanpa penjelasan logis berarti mengabaikan realitas pengalaman pengguna. |
-| Transparansi |Peneliti wajib memaparkan hasil desain sebelum dan sesudah data tersebut diolah, serta memberikan alasan teknis mengapa outlier itu muncul (misalnya: anomali pada perangkat mahasiswa atau kesalahan saat pengisian instrumen).|
-| Peer review |Dengan menyajikan data secara utuh, penguji atau penelaah jurnal dapat memvalidasi apakah solusi desain yang ditawarkan benar-benar inklusif untuk semua mahasiswa atau hanya efektif untuk kelompok mayoritas saja.|
+| **Kejujuran ilmiah** | Peneliti wajib mempertahankan data outlier dalam dataset asli. Menghapus data tanpa justifikasi metodologis adalah bentuk manipulasi (*cherry-picking*). |
+| **Transparansi** | Melaporkan analisis utama dengan outlier, dan dapat menyertakan analisis tambahan (tanpa outlier) beserta kronologis teknis penyebab munculnya anomali tersebut. |
+| **Peer review** | Memberikan kesempatan bagi penguji untuk mengevaluasi batasan nyata dari eksperimen dan mendiskusikan variabel pengganggu (*confounding variables*). |
 
 **Keputusan akhir dan justifikasi:**
-> Peneliti harus melaporkan kedua versi hasil tersebut. Dalam pengembangan aplikasi pendidikan seperti My CIC, data outlier sangat berharga untuk mengidentifikasi pain points ekstrem yang mungkin tidak dirasakan pengguna lain. Menghapus data hanya demi signifikansi statistik melanggar prinsip objektivitas dan menghambat pengembangan fitur yang benar-benar solutif bagi seluruh civitas akademika.
+> Peneliti **tidak boleh** menghapus data outlier tersebut. Dalam pengujian usabilitas, outlier berupa skor rendah sering merepresentasikan minoritas pengguna yang menghadapi hambatan nyata. Membuang data ini melanggar prinsip objektivitas dan membiaskan realitas.
 
 ---
 
 ## Latihan 3 — Posisi Paradigma
 
-**Topik riset:** Perancangan UI/UX Aplikasi My CIC Layanan Informasi Akademik Mahasiswa Menggunakan Aplikasi Figma.
+**Topik riset:** Evaluasi Usabilitas Fitur Kartu Hasil Studi (KHS) pada Sistem Informasi Manajemen (SIM) UPB Menggunakan Metode System Usability Scale (SUS).
 
 > **Skala 1–5:** 1 = tidak sesuai sama sekali dengan topik ini, 5 = sangat sesuai dan dominan digunakan pada riset bertopik serupa.
 
 | Kriteria | Positivis | Interpretivis | Design Science |
 |----------|-----------|---------------|----------------|
-| Kesesuaian dengan topik (1–5) | 3 — Sesuai jika riset bertujuan menguji hipotesis efisiensi sistem melalui angka atau statistik. | 4 — Sesuai karena riset ini diawali dengan menggali persepsi mahasiswa mengenai tampilan yang "membosankan". | 5 — Sangat sesuai karena fokus utama riset adalah membangun artefak (prototype aplikasi) untuk memecahkan masalah. |
-| Jenis data yang dikumpulkan | Metrik kuantitatif seperti jumlah pengunjung website atau skor kuesioner. | Hasil wawancara mengenai pengalaman subjektif dan pemahaman mahasiswa terhadap tombol/menu | Dokumentasi perancangan, elemen visual UI, alur kerja desain (workflow), dan purwarupa sistem. |
-| Limitasi paradigma |Angka statistik tidak mampu menjelaskan secara mendalam alasan psikologis di balik ketidakpuasan pengguna.|Temuan riset sangat bergantung pada konteks subjektif mahasiswa Universitas CIC sehingga sulit digeneralisasi. |Artefak yang dihasilkan (prototype) belum tentu diimplementasikan secara teknis pada sistem backend universitas.|
+| **Kesesuaian dengan topik (1–5)** | **5** — Sangat sesuai; mengukur usabilitas menjadi metrik kuantitatif terstandar (SUS). | **2** — Tidak sesuai; tidak menggali kedalaman makna secara kualitatif. | **1** — Tidak sesuai; tidak berfokus membangun artefak (sistem/desain) baru. |
+| **Jenis data yang dikumpulkan** | Metrik interval numerik (Skor SUS), rata-rata, standar deviasi. | Transkrip wawancara terbuka, observasi lapangan mendalam. | Arsitektur, wireframe, purwarupa, pengujian iteratif produk. |
+| **Limitasi paradigma** | Tidak mampu menceritakan konteks spesifik di balik kebingungan responden pada elemen tertentu. | Rentan terhadap bias subjektivitas peneliti. | Membutuhkan waktu dan sumber daya yang difokuskan pada kreasi, bukan evaluasi objektif. |
 
-**Paradigma yang dipilih:** Design Science Research (DSR).
-**Alasan:** Riset ini mengedepankan proses penciptaan sebuah artefak teknologi informasi berupa rancangan desain UI/UX mobile apps My CIC sebagai solusi atas masalah tampilan dan kelengkapan informasi pada platform web sebelumnya. Melalui paradigma ini, desain yang dibuat (Figma) berfungsi sebagai instrumen untuk menghasilkan pengetahuan baru mengenai kebutuhan antarmuka mahasiswa.
+**Paradigma yang dipilih:** Positivis.  
+**Alasan:** Riset ini menggunakan kuesioner terstandar untuk menghasilkan data kuantitatif dalam menguji kelayakan sistem. Fokus utamanya adalah observasi objektif dan pengukuran empiris, bukan perancangan atau interpretasi makna kualitatif.
 
 ---
 
@@ -145,12 +143,4 @@ Skenario: Seorang peneliti menemukan bahwa jika 3 data point outlier dihapus, ha
 > Sebelum membaca materi ini, apakah pernah mempertanyakan klaim "95% akurat"? Setelah memahami rantai distorsi, pertanyaan apa yang sekarang akan diajukan saat membaca paper?
 
 **Jawaban:**
-> Sebelum mempelajari materi tentang rantai distorsi ini, saya cenderung menerima klaim seperti "desain ini lebih menarik dan modern" atau "aplikasi ini 100% lebih baik" secara mentah-mentah, terutama jika tampilan visual rancangannya (seperti pada Figma) memang terlihat memanjakan mata. Saya sering kali terjebak pada Halo Effect, di mana tampilan yang bagus dianggap otomatis menyelesaikan masalah usability tanpa mempertanyakan asal-usul kesimpulan tersebut.
-
-> Namun, setelah memahami bagaimana data bisa mengalami distorsi di setiap tahapannya—dari Reality hingga menjadi Knowledge—pola pikir saya sebagai peneliti berubah. Sekarang, setiap kali membaca paper yang mengklaim keberhasilan sebuah metode atau desain, pertanyaan utama yang akan langsung saya ajukan adalah:
-
-      "Mana bukti objektifnya?" (Apakah klaim "mudah digunakan" ini dibuktikan dengan metrik yang valid seperti System Usability Scale (SUS), atau hanya opini subjektif peneliti?)
-
-      "Siapa yang mengujinya?" (Apakah sampel pengujian terhindar dari Sampling Bias? Berapa banyak respondennya dan apakah mereka merepresentasikan end-user yang sebenarnya?)
-
-      "Apakah ada asumsi tersembunyi?" (Apakah ada faktor lain yang membuat sistem lama terlihat buruk yang sengaja tidak disebutkan untuk menonjolkan sistem baru?)
+> Sebelum mempelajari modul ini, saya cenderung langsung menerima klaim efektivitas suatu sistem tanpa kritis terhadap asal data. Sekarang, saya akan mempertanyakan validitas pengukuran dan keterwakilan sampel: *"Apa instrumen yang digunakan untuk membuktikan angka tersebut, dan apakah populasi pengujiannya terbebas dari sampling bias?"*

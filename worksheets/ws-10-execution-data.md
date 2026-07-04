@@ -68,24 +68,23 @@ Run gagal/anomali tidak boleh dihapus tanpa dokumentasi. Bisa jadi:
 ```
 EXECUTION PLAN
 
-| Run # | Skenario | Seed | Parameter | Status | Waktu | Output File |
-|-------|----------|------|-----------|--------|-------|-------------|
-| 1     |          |      |           |        |       |             |
-| 2     |          |      |           |        |       |             |
-| 3     |          |      |           |        |       |             |
-| ...   |          |      |           |        |       |             |
+| Run # | Skenario | Seed/Batch | Parameter | Status | Waktu | Output File |
+|-------|----------|------------|-----------|--------|-------|-------------|
+| 1 | Pilot Study | Batch 1 | N/A | Selesai | Juli 2026 | Pilot_Data.csv |
+| 2 | Main Study | Batch 2 | N/A | Rencana | Juli 2026 | Main_Data_T.csv |
+| 3 | Main Study | Batch 3 | N/A | Rencana | Juli 2026 | Main_Data_NT.csv |
 
-Jumlah runs per skenario : ____
-Total runs               : ____
+Jumlah runs per skenario : 1 (menggunakan kuesioner sebagai instrumen)
+Total runs               : 30 (responden)
 
 DATA LOG (per run):
-  Run ID    : ____________________
-  Timestamp : ____________________
-  Skenario  : ____________________
-  Input     : ____________________
-  Output    : ____________________
-  Anomali   : ____________________
-  Catatan   : ____________________
+  Run ID    : RES-001 (Contoh)
+  Timestamp : Otomatis (Google Forms)
+  Skenario  : Evaluasi KHS SIM UPB
+  Input     : Skor Likert 1-5
+  Output    : Skor komposit SUS 0-100
+  Anomali   : N/A
+  Catatan   : Perangkat (Desktop/Mobile)
 ```
 
 ---
@@ -94,17 +93,15 @@ DATA LOG (per run):
 
 Susun execution plan untuk eksperimen Anda. Tentukan skenario, jumlah run, dan seed sebelum eksekusi.
 
-| Run # | Skenario | Seed | Parameter Kunci | Status |
-|-------|----------|------|----------------|--------|
-| *1* | *Contoh: BERT-base, DS-1* | *42* | *lr=2e-5, epoch=10* | *Planned* |
-| *2* | *BERT-base, DS-1* | *123* | *lr=2e-5, epoch=10* | *Planned* |
-| 3 | | | | |
-| 4 | | | | |
-| 5 | | | | |
+| Run # | Skenario | Seed/Batch | Parameter Kunci | Status |
+|-------|----------|------------|----------------|--------|
+| 1-5 | Akses KHS | Pilot | N/A | Planned |
+| 6-20 | Akses KHS | Batch 2 | N/A | Planned |
+| 21-30 | Akses KHS | Batch 3 | N/A | Planned |
 
-**Total skenario:** ____
-**Run per skenario:** ____
-**Total run keseluruhan:** ____
+**Total skenario:** 1
+**Run per skenario:** 30
+**Total run keseluruhan:** 30
 
 ---
 
@@ -113,27 +110,23 @@ Susun execution plan untuk eksperimen Anda. Tentukan skenario, jumlah run, dan s
 Desain format data log untuk eksperimen Anda. Tentukan field apa saja yang akan dicatat.
 
 **Identitas:**
-| Field | Contoh |
+Field | Contoh |
 |-------|--------|
-| Run ID | *run-001* |
-| Timestamp | *2025-03-15T10:30:00* |
-| | |
+| Run ID | RES-001 |
+| Timestamp | 2026-07-03T10:00:00 |
 
 **Konfigurasi:**
 | Field | Contoh |
 |-------|--------|
-| Seed | *42* |
-| Code version | *commit abc1234* |
-| | |
+| Seed | N/A |
+| Code version | SIM-UPB-v1 |
 
 **Hasil:**
 | Metrik | Tipe Data | Range Valid |
 |--------|----------|-------------|
-| *Contoh: Accuracy* | *float* | *0.0 – 1.0* |
-| | | |
-| | | |
+| Skor SUS | float | 0.0 – 100.0 |
 
-**Format output:** [ ] CSV / [ ] JSON / [ ] Database / [ ] Lainnya: ____
+**Format output:** [x] CSV / [ ] JSON / [ ] Database / [ ] Lainnya: ____
 
 ---
 
@@ -143,12 +136,18 @@ Rencanakan bagaimana menangani anomali. Untuk setiap jenis, tentukan langkah yan
 
 | Jenis Anomali | Contoh | Tindakan |
 |---------------|--------|----------|
-| Run gagal (crash) | *Contoh: OOM pada batch_size=64* | *Contoh: Dokumentasi, re-run batch_size=32, catat perubahan* |
-| Hasil ekstrem | | |
-| Waktu eksekusi anomali | | |
-| Inkonsistensi dengan run lain | | |
+| Run gagal (crash) | Google Form tidak bisa diakses | Re-invite responden |
+| Hasil ekstrem | Skor 0 atau 100 | Investigasi validitas |
+| Waktu eksekusi anomali | Pengisian < 1 menit | Delete entry (Straight-lining) |
+| Inkonsistensi | Skor Q1 dan Q2 bertolak belakang | Data Cleaning |
 
-**Prinsip:** Detect → Investigate → Document → Decide
+**Prinsip:**
+Meskipun lingkungan eksternal tidak bisa dikontrol 100%, saya akan memitigasinya dengan cara:
+
+1. Memberikan instruksi skenario tugas yang baku di awal survei agar setiap responden memiliki beban kognitif awal yang sama.
+
+2. Menambahkan pertanyaan screening (seperti: 'Apakah Anda menggunakan perangkat Desktop/Mobile?') untuk mengelompokkan data. Jika nanti ditemukan anomali,
+  saya bisa melihat apakah anomali tersebut disebabkan oleh faktor teknis (perangkat) atau murni karena masalah desain antarmuka KHS.
 
 ---
 
@@ -157,6 +156,6 @@ Rencanakan bagaimana menangani anomali. Untuk setiap jenis, tentukan langkah yan
 > Pernahkah Anda melaporkan hasil riset/tugas dari single run? Apa risikonya? Bagaimana multiple run mengubah kepercayaan terhadap hasil?
 
 **Pengalaman sebelumnya:**
-> ___________________________________________________
+> Hanya mengandalkan asumsi, risiko bias konfirmasi tinggi.
 **Yang akan dilakukan berbeda:**
-> ___________________________________________________
+> Menerapkan protokol data cleaning yang ketat agar riset lebih objektif dan saintifik.
