@@ -8,13 +8,11 @@
 
 ### Experiment Execution Pipeline
 
-```
-Design → Execution Plan → Controlled Execution → Data Collection → Data Logging → Dataset for Analysis
-```
+> Design → Execution Plan → Controlled Execution → Data Collection → Data Logging → Dataset for Analysis
 
 ### Multiple Run = Non-Negotiable
 
-Single run **tidak pernah cukup** untuk klaim ilmiah. Minimum 5-10 run per skenario dengan seed berbeda. Multiple run menghasilkan:
+Single run **tidak pernah cukup** untuk klaim ilmiah. Minimum 5-10 run per skenario dengan seed berbeda. Dalam konteks riset kuesioner, minimum 30 run (responden) menghasilkan:
 - Mean, std, confidence interval
 - Distribusi hasil → uji statistik
 - Variabilitas → error bar di grafik
@@ -22,70 +20,68 @@ Single run **tidak pernah cukup** untuk klaim ilmiah. Minimum 5-10 run per skena
 ### Execution Plan
 
 Setiap eksperimen harus memiliki plan sebelum eksekusi:
-- Daftar skenario
-- Jumlah run per skenario
-- Random seed per run (pre-determined!)
-- Urutan eksekusi (randomisasi/counterbalancing)
+- Daftar skenario (Kriteria Inklusi Responden)
+- Jumlah run per skenario (Target Responden)
+- Random seed per run (Penyebaran Acak/Purposive)
+- Urutan eksekusi (Pilot Test & Main Execution)
 - Pre-execution checklist
 
 ### Data Logging Komprehensif
 
 Setiap run menghasilkan log terstruktur:
 1. **Identitas** — Run ID, timestamp, skenario
-2. **Konfigurasi** — Semua parameter, seed, code version
-3. **Hasil** — Semua metrik, output detail
-4. **Metadata** — Waktu eksekusi, resource usage, warning/error
+2. **Konfigurasi** — Semua parameter, kriteria aktif
+3. **Hasil** — Semua metrik, skor SUS
+4. **Metadata** — Waktu eksekusi, kelengkapan data
 
-Format: CSV/JSON/database — **bukan stdout yang di-copy-paste**.
+Format: Excel/CSV — **bukan stdout yang di-copy-paste**.
 
 ### Engineering vs Research Execution
 
-| Aspek | Engineering | Research |
-|-------|-----------|---------|
-| Run | Sekali (deploy) | Multiple (min 5-10, seed berbeda) |
-| Logging | Error log, access log | Semua parameter, metrik, metadata |
-| Anomali | Bug → fix → redeploy | Investigasi → dokumentasi → analisis |
-| Urutan | Tidak penting | Bisa bias — perlu randomisasi |
+| Aspek | Engineering (Asal Jalan) | Research (Valid) |
+|---|---|---|
+| Run | Sekali (deploy) | Multiple (min 30 responden) |
+| Logging | Error log, access log | Semua parameter, raw data, skor akhir |
+| Anomali | Bug → fix → redeploy | Investigasi → dokumentasi → drop/cleaning |
+| Urutan | Tidak penting | Bisa bias — perlu screening awal |
 
 ### Anomali = Dokumentasi, Bukan Hapus
 
 Run gagal/anomali tidak boleh dihapus tanpa dokumentasi. Bisa jadi:
 - **Bug** → fix & re-run (dokumentasikan!)
-- **Batas kemampuan metode** → DNF = temuan
-- **Data yang bias** jika hanya simpan run "berhasil"
+- **Batas kemampuan metode** → Drop data invalid
+- **Data yang bias** jika hanya simpan run "berhasil" (Misal: Straight-lining)
 
 ### Jebakan Kognitif
 
 1. "Satu angka cukup" → tanpa distribusi, tidak bisa diuji
-2. "Seed tidak penting" → bahkan algoritma deterministik bisa dipengaruhi library stokastik
-3. "Run gagal langsung hapus" → kehilangan temuan potensial
-4. "Semua run harus hari ini" → thermal throttling, fatigue
+2. "Seed tidak penting" → pengumpulan sampel acak memengaruhi validitas
+3. "Run gagal langsung hapus" → kehilangan temuan potensial (wajib log di WS-11)
+4. "Semua run harus hari ini" → fatigue (kuesioner disebar bertahap)
 
 ---
 
 ## Template A.10 — Execution Plan & Data Log
 
-```
-EXECUTION PLAN
+**EXECUTION PLAN**
 
-| Run # | Skenario | Seed/Batch | Parameter | Status | Waktu | Output File |
-|-------|----------|------------|-----------|--------|-------|-------------|
-| 1 | Pilot Study | Batch 1 | N/A | Selesai | Juli 2026 | Pilot_Data.csv |
-| 2 | Main Study | Batch 2 | N/A | Rencana | Juli 2026 | Main_Data_T.csv |
-| 3 | Main Study | Batch 3 | N/A | Rencana | Juli 2026 | Main_Data_NT.csv |
+| Batch # | Skenario / Fase | Target Sampling | Rentang Waktu | Status | Output File |
+|---|---|---|---|---|---|
+| 1 | Pilot Test & Sebar Awal | 4 Responden | 4 - 5 Juli 2026 | Selesai | Data_KHS_Raw.xlsx |
+| 2 | Penyebaran Utama (Part 1) | 11 Responden | 6 - 9 Juli 2026 | Selesai | Data_KHS_Raw.xlsx |
+| 3 | Penyebaran Utama (Part 2) | 15 Responden | 10 - 11 Juli 2026 | Selesai | Data_KHS_Raw.xlsx |
 
-Jumlah runs per skenario : 1 (menggunakan kuesioner sebagai instrumen)
-Total runs               : 30 (responden)
+Jumlah target responden  : 30
+Total aktual terkumpul   : 30
 
-DATA LOG (per run):
-  Run ID    : RES-001 (Contoh)
-  Timestamp : Otomatis (Google Forms)
-  Skenario  : Evaluasi KHS SIM UPB
-  Input     : Skor Likert 1-5
-  Output    : Skor komposit SUS 0-100
-  Anomali   : N/A
-  Catatan   : Perangkat (Desktop/Mobile)
-```
+**DATA LOG (per run / baris Excel):**
+- Run ID    : R-001 s.d. R-030
+- Timestamp : [Otomatis dari Google Forms]
+- Skenario  : Evaluasi antarmuka KHS SIM UPB
+- Input     : Jawaban Likert 1-5 (Q1 - Q10)
+- Output    : Kalkulasi Skor SUS (0 - 100)
+- Anomali   : Deteksi std deviasi (Straight-lining)
+- Catatan   : Validasi screening KHS
 
 ---
 
@@ -93,15 +89,15 @@ DATA LOG (per run):
 
 Susun execution plan untuk eksperimen Anda. Tentukan skenario, jumlah run, dan seed sebelum eksekusi.
 
-| Run # | Skenario | Seed/Batch | Parameter Kunci | Status |
-|-------|----------|------------|----------------|--------|
-| 1-5 | Akses KHS | Pilot | N/A | Planned |
-| 6-20 | Akses KHS | Batch 2 | N/A | Planned |
-| 21-30 | Akses KHS | Batch 3 | N/A | Planned |
+| Run # / Batch | Skenario | Seed / Kriteria | Parameter Kunci | Status |
+|---|---|---|---|---|
+| 1 | Pilot (Uji Form) | Mahasiswa UPB | Aktif fitur KHS | Selesai |
+| 2 | Main Execution | Mahasiswa UPB | Aktif fitur KHS | Selesai |
+| 3 | Final Follow-up | Mahasiswa UPB | Aktif fitur KHS | Selesai |
 
-**Total skenario:** 1
-**Run per skenario:** 30
-**Total run keseluruhan:** 30
+**Total skenario:** 1 (Evaluasi SUS KHS)
+**Run per skenario (Target):** 30
+**Total run keseluruhan (Aktual):** 30
 
 ---
 
@@ -110,23 +106,26 @@ Susun execution plan untuk eksperimen Anda. Tentukan skenario, jumlah run, dan s
 Desain format data log untuk eksperimen Anda. Tentukan field apa saja yang akan dicatat.
 
 **Identitas:**
-Field | Contoh |
-|-------|--------|
-| Run ID | RES-001 |
-| Timestamp | 2026-07-03T10:00:00 |
+| Field | Contoh |
+|---|---|
+| Run ID | R-001 |
+| Timestamp | 2026-07-04T22:35:22 |
+| Nama/Prodi | Febri Muhsinin / Ilmu Komputer |
 
 **Konfigurasi:**
 | Field | Contoh |
-|-------|--------|
-| Seed | N/A |
-| Code version | SIM-UPB-v1 |
+|---|---|
+| Kriteria Screening | Akses KHS Sebelumnya = Ya |
+| Form Version | Final SUS 10-Item |
 
 **Hasil:**
 | Metrik | Tipe Data | Range Valid |
-|--------|----------|-------------|
-| Skor SUS | float | 0.0 – 100.0 |
+|---|---|---|
+| Jawaban Q1-Q10 | Integer | 1 - 5 |
+| Skor SUS | Float | 0.0 - 100.0 |
+| Kritik/Saran | String | Bebas |
 
-**Format output:** [x] CSV / [ ] JSON / [ ] Database / [ ] Lainnya: ____
+**Format output:** [ ] CSV / [ ] JSON / [ ] Database / [x] Lainnya: Excel (.xlsx)
 
 ---
 
@@ -135,19 +134,13 @@ Field | Contoh |
 Rencanakan bagaimana menangani anomali. Untuk setiap jenis, tentukan langkah yang diambil.
 
 | Jenis Anomali | Contoh | Tindakan |
-|---------------|--------|----------|
-| Run gagal (crash) | Google Form tidak bisa diakses | Re-invite responden |
-| Hasil ekstrem | Skor 0 atau 100 | Investigasi validitas |
-| Waktu eksekusi anomali | Pengisian < 1 menit | Delete entry (Straight-lining) |
-| Inkonsistensi | Skor Q1 dan Q2 bertolak belakang | Data Cleaning |
+|---|---|---|
+| Run gagal (Missing Data) | Responden lupa isi Q5 | Form diset "Wajib Diisi", tolak submit jika kosong |
+| Hasil ekstrem (Straight-lining) | Menjawab angka 3 semua | Hitung Std Deviasi. Jika = 0, hapus baris, catat di log |
+| Waktu eksekusi anomali | Submit dalam 5 detik | Flag sebagai data mencurigakan (speeding) |
+| Inkonsistensi kriteria | Belum pernah akses KHS | Drop data dari perhitungan rata-rata akhir |
 
-**Prinsip:**
-Meskipun lingkungan eksternal tidak bisa dikontrol 100%, saya akan memitigasinya dengan cara:
-
-1. Memberikan instruksi skenario tugas yang baku di awal survei agar setiap responden memiliki beban kognitif awal yang sama.
-
-2. Menambahkan pertanyaan screening (seperti: 'Apakah Anda menggunakan perangkat Desktop/Mobile?') untuk mengelompokkan data. Jika nanti ditemukan anomali,
-  saya bisa melihat apakah anomali tersebut disebabkan oleh faktor teknis (perangkat) atau murni karena masalah desain antarmuka KHS.
+**Prinsip:** Detect → Investigate → Document → Decide
 
 ---
 
@@ -156,6 +149,7 @@ Meskipun lingkungan eksternal tidak bisa dikontrol 100%, saya akan memitigasinya
 > Pernahkah Anda melaporkan hasil riset/tugas dari single run? Apa risikonya? Bagaimana multiple run mengubah kepercayaan terhadap hasil?
 
 **Pengalaman sebelumnya:**
-> Hanya mengandalkan asumsi, risiko bias konfirmasi tinggi.
+> Sering menguji aplikasi hanya berbekal opini sendiri atau 1-2 teman terdekat (*single run*). Risikonya, hasilnya sangat bias dan tidak mewakili populasi mahasiswa secara umum.
+
 **Yang akan dilakukan berbeda:**
-> Menerapkan protokol data cleaning yang ketat agar riset lebih objektif dan saintifik.
+> Menerapkan *multiple runs* dengan target 30 responden riil menggunakan metrik SUS. Ini menghasilkan data berdistribusi normal, rata-rata (mean) yang dapat dipertanggungjawabkan, dan meminimalisir bias subjektivitas.

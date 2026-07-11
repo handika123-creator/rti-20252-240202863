@@ -86,31 +86,34 @@ Prediksi pertanyaan berdasarkan kategori:
 DEFENSE PREPARATION
 
 Slide Deck Plan:
-  Total slides   : ____ (target: 10-12 konten + title/closing)
-  Time per slide : ~2 min
-  Total time     : ____ menit
+  Total slides   : 9 slide konten utama (10 dengan slide penutup)
+  Time per slide : ~1.5 menit
+  Total time     : 15 menit
 
-Slide Outline:
+**Slide Outline:**
 | # | Pesan Utama | Visual | Waktu |
-|---|-------------|--------|-------|
-| 1 | Title       |        | 30s   |
-| 2 | Problem     |        | 2min  |
-| 3 | Gap + RQ    |        | 2min  |
-| ..|             |        |       |
+|---|---|---|---|
+| 1 | Title | Logo Kampus + Judul Riset | 30s |
+| 2 | Problem | Foto UI KHS + Kutipan keluhan mahasiswa | 2min |
+| 3 | Gap + RQ | Skema riset (Fokus KHS vs Keseluruhan SIM) | 1.5min |
+| 4 | Method | Diagram Purposive Sampling (N=30) & Instrumen SUS | 2min |
+| 5 | Key Result (Data) | Tabel 10 Item Pertanyaan & Rata-rata 63.33 | 2min |
+| 6 | Key Result (Grafik) | Histogram Distribusi Skor KHS (Garis Target 68) | 2min |
+| 7 | Interpretation | Penjelasan Adjektif SUS (Marginal / Poor) | 2min |
+| 8 | Limitation | Keterbatasan (Sample Size & Fokus Modul) | 1.5min |
+| 9 | Conclusion | Rekomendasi redesign UI *Mobile Responsive* | 1.5min |
 
-Anticipatory Defense Matrix:
+**Anticipatory Defense Matrix:**
 | Kategori | Pertanyaan Potensial | Jawaban (CER) |
-|----------|---------------------|---------------|
-| Problem  |                     |               |
-| Gap      |                     |               |
-| Method   |                     |               |
-| Results  |                     |               |
-| Generalization |               |               |
+|---|---|---|
+| Method | Mengapa hanya 30 responden? | **[C]** Cukup untuk statistik parametrik **[E]** N=30 adalah standar Central Limit Theorem agar berdistribusi normal **[R]** Uji T-Test sudah bisa memvalidasi signifikansi. |
+| Method | Mengapa memakai skala SUS, bukan kuesioner buatan sendiri? | **[C]** Karena reliabilitasnya sudah teruji global **[E]** SUS memiliki standar benchmark baku (skor 68.0) **[R]** Menghindari bias validitas jika menyusun butir soal sendiri tanpa uji reliabilitas Alpha Cronbach. |
+| Results | Skor 63.33 itu artinya gagal dong sistem kampusnya? | **[C]** Tidak gagal total, tapi perlu perbaikan **[E]** Menurut literatur Bangor (2008), masuk Grade D (Marginal) **[R]** Fitur fungsi dasar (*utility*) berjalan, tapi antarmuka (*usability*) membingungkan. |
 
-Latihan:
-  Latihan 1: [tanggal] — [catatan timing & feedback]
-  Latihan 2: [tanggal] — [catatan timing & feedback]
-  Latihan 3: [tanggal] — [catatan timing & feedback]
+**Latihan:**
+- Latihan 1: H-3 UAS — Fokus durasi
+- Latihan 2: H-2 UAS — Fokus kelancaran transisi antar slide
+- Latihan 3: H-1 UAS — Simulasi Q&A
 ```
 
 ---
@@ -120,18 +123,18 @@ Latihan:
 Rencanakan presentasi 15 menit untuk riset Anda.
 
 | # | Pesan Utama | Visual yang Digunakan | Waktu |
-|---|-------------|----------------------|-------|
-| 1 | *Contoh: Judul + konteks — rekomendasi vs kepuasan* | *Title slide, gambar sistem* | *1 min* |
-| 2 | *Contoh: Problem — RMSE tinggi tapi satisfaction rendah (45/100)* | *Bar chart: satisfaction vs RMSE per sistem* | *2 min* |
-| 3 | *Contoh: Gap + RQ — belum ada CF+context untuk satisfaction* | *Tabel gap literatur* | *1.5 min* |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
+|---|---|---|---|
+| 1 | Judul & Konteks: Riset Usability SIM UPB | Title Slide formal | 1 min |
+| 2 | Masalah: Portal kaku, mahasiswa bingung cek IPK/KHS di HP. | Screenshot antarmuka tabel KHS di layar mobile yang terpotong. | 2 min |
+| 3 | RQ: Berapa skor aktual usabilitas fitur ini secara saintifik? | Teks rumusan masalah besar di tengah slide. | 1.5 min |
+| 4 | Metode: 30 Responden, Instrumen SUS, Kalkulasi Statistik. | Ikon 30 user, Skema Likert (1-5), Logo SPSS/Python. | 2 min |
+| 5 | Hasil 1 (Deskriptif): Nilai Rata-rata cuma 63.33 | Angka 63.33 besar berwarna kuning/merah. | 1.5 min |
+| 6 | Hasil 2 (Visualisasi): Meleset dari target global (68.0) | Histogram sebaran data dengan 2 garis vertikal (Mean vs Target). | 2 min |
+| 7 | Analisis (Failure): Letak masalah pada responsivitas & navigasi | Word-cloud atau kutipan saran perbaikan dari responden. | 2 min |
+| 8 | Limitasi: Hanya mengevaluasi 1 modul (KHS) | Bullet points batasan penelitian. | 1 min |
+| 9 | Kesimpulan: Perlu UI Redesign | Ringkasan eksekutif poin temuan. | 2 min |
 
-**Total waktu estimasi:** ____ menit
+**Total waktu estimasi:** 15 menit
 
 ---
 
@@ -140,12 +143,12 @@ Rencanakan presentasi 15 menit untuk riset Anda.
 Prediksi 5 pertanyaan yang mungkin diajukan penguji, lalu siapkan jawaban CER.
 
 | # | Kategori | Pertanyaan | Claim | Evidence | Reasoning |
-|---|----------|-----------|-------|----------|-----------|
-| 1 | *Problem* | *Contoh: Mengapa fokus kepuasan, bukan akurasi?* | *Akurasi tinggi tidak menjamin kepuasan* | *Survey: 45/100 satisfaction meski RMSE 0.87* | *Gap antara metrik teknis dan pengalaman pengguna* |
-| 2 | *Method* | *Contoh: Mengapa hanya 3 dataset?* | *3 dataset mewakili variasi: small-clean, medium-clean, medium-noisy* | *Tabel karakteristik dataset di Bab Method* | *Generalisasi perlu validasi lanjut — tercatat sebagai limitasi* |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
+|---|---|---|---|---|---|
+| 1 | Problem | KHS kan diakses setahun cuma 2x, kenapa repot diteliti? | Frekuensi rendah, kepentingannya tinggi (Krusial) | KHS syarat mutlak KRS semester depan | Jika proses KHS terhambat, siklus akademik mahasiswa tertunda, menimbulkan kepanikan *(UX bottleneck)*. |
+| 2 | Method | Yakin tidak ada mahasiswa yang isi *Straight-lining* (Asal klik angka 3)? | Datanya bersih dan valid | Skor Standar Deviasi per baris responden > 0 di WS-11 | Tidak ada anomali tebak-tebakan, semua membaca soal dengan baik. |
+| 3 | Results | Ini 63 kan mepet ke 68, harusnya bisa dibulatkan jadi bagus kan? | Tidak bisa, ini signifikan secara statistik | Uji One-Sample T-test menunjukkan p < 0.05 | Perbedaan angka bukan sekadar pembulatan, tapi gap nyata kualitas. |
+| 4 | Genrzltn | Apa temuan KHS ini otomatis berlaku juga buat modul KRS? | Belum tentu, perlu riset terpisah | UI/UX fitur KRS memiliki kerumitan *(task flow)* berbeda dari KHS | Hasil ini spesifik untuk fitur pembacaan tabel nilai, bukan form input. |
+| 5 | Solusi | Terus, apa saran konkrit kamu untuk pihak IT kampus? | Redesign tampilan Mobile (*Mobile-first*) | Responden mengeluhkan tabel yang harus digeser ke kanan-kiri di HP | Mayoritas mahasiswa mengakses SIM via *smartphone*, antarmuka KHS harus diubah jadi format *Card* atau tabel responsif. |
 
 ---
 
@@ -153,16 +156,16 @@ Prediksi 5 pertanyaan yang mungkin diajukan penguji, lalu siapkan jawaban CER.
 
 Minta teman/kolega mengajukan 3 pertanyaan tentang riset Anda. Catat pertanyaan dan evaluasi jawaban Anda.
 
-| # | Pertanyaan | Jawaban Saya | Evaluasi |
-|---|-----------|-------------|---------|| *1* | *Contoh: "Mengapa tidak membandingkan dengan metode Y?"* | *Contoh: "Karena Y memerlukan dataset labeled yang tidak tersedia. Disebutkan sebagai limitasi di halaman X."* | *[✓] Direct [✓] Data-based [✓] Honest* || 1 | | | [ ] Direct [ ] Data-based [ ] Honest |
-| 2 | | | [ ] Direct [ ] Data-based [ ] Honest |
-| 3 | | | [ ] Direct [ ] Data-based [ ] Honest |
+| # | Pertanyaan (Simulasi) | Jawaban Saya | Evaluasi |
+|---|---|---|---|
+| 1 | "Kamu nyebar kuesionernya random atau pilih-pilih?" | "Purposive pak/bu. Ada pertanyaan screening di awal Form. Kalau dia pilih belum pernah buka KHS, datanya tidak saya ikutkan ke hitungan akhir." | [x] Direct [x] Data-based [x] Honest |
+| 2 | "Adakah dosen yang kamu libatkan sebagai responden?" | "Tidak ada. Fokus instrumen ini adalah untuk *end-user* utama fitur KHS, yaitu mahasiswa S1." | [x] Direct [x] Data-based [x] Honest |
 
 **Pertanyaan yang paling sulit dijawab:**
-> ___________________________________________________
+> Kalau nilai 63.33 itu marginal, lalu bagian fitur KHS mana spesifiknya yang paling parah membuat skornya anjlok?
 
 **Apa yang perlu disiapkan lebih baik:**
-> ___________________________________________________
+> Membuka kembali data Excel (Data_KHS_Raw), lalu mengecek rata-rata skor pada masing-masing pertanyaan (Q1 s/d Q10) untuk melihat pertanyaan mana yang paling sering mendapat nilai jelek dari responden.
 
 ---
 
@@ -171,7 +174,7 @@ Minta teman/kolega mengajukan 3 pertanyaan tentang riset Anda. Catat pertanyaan 
 > Dari seluruh proses WS-01 sampai WS-16 — dari paradigma riset hingga presentasi — bagian mana yang paling mengubah cara Anda berpikir tentang riset? Apa satu hal yang akan selalu Anda terapkan di riset berikutnya?
 
 **Insight terbesar:**
-> ___________________________________________________
+Bagian yang paling mengubah cara pandang saya adalah *Failure Analysis* (WS-14) dan *Visualization Bias* (WS-12). Saya dulunya takut jika skor eksperimen saya "jelek" karena mengira risetnya gagal. Ternyata, membuktikan secara kuantitatif bahwa sebuah sistem memiliki *usability* buruk adalah kontribusi nyata yang berharga. Nilai jelek adalah temuan, bukan dosa.
 
 **Yang akan selalu diterapkan:**
-> ___________________________________________________
+Konsep Data *Logging* yang ketat (WS-10 & WS-11) dan menjauhi kebiasaan menghapus data ekstrem secara diam-diam. Validitas hasil tidak ditentukan dari seberapa tinggi angka akhirnya, melainkan seberapa jujur *pipeline* *preprocessing* yang dilakukan.
