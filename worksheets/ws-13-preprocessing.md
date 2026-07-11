@@ -66,6 +66,7 @@ Data leakage dalam survei terjadi ketika peneliti memanipulasi data mentah agar 
 - **Jumlah data awal :** 30 responden
 
 **Cleaning:**
+
 | Masalah | Jumlah Kasus | Penanganan | Justifikasi |
 |---|---|---|---|
 | Missing | 0 | Tidak ada (Listwise jika ada) | Fitur *Required* diaktifkan di Google Form |
@@ -73,6 +74,7 @@ Data leakage dalam survei terjadi ketika peneliti memanipulasi data mentah agar 
 | Error | 0 | Filter tipe data | Input otomatis terbatasi skala linear 1-5 |
 
 **Transformation:**
+
 | Transformasi | Variabel | Detail | Alasan |
 |---|---|---|---|
 | Kalkulasi SUS | Q1 - Q10 | (Skor Ganjil - 1) + (5 - Skor Genap) x 2.5 | Aturan baku kalkulasi System Usability Scale (SUS) untuk mengonversi Likert (1-5) menjadi rentang persentil (0-100) |
@@ -88,7 +90,7 @@ Data leakage dalam survei terjadi ketika peneliti memanipulasi data mentah agar 
   [x] Data mentah (Likert) dipertahankan sebagai *backup*
 
 - **Jumlah data akhir :** 30 records siap analisis
-- **Script tersedia :** [x] Ya → path: `Master_SUS_Calculator.py` / `.xlsx` | [ ] Belum
+- **Script tersedia :** [x] Ya → path: `sus_calculator.py` | [ ] Belum
 
 ---
 

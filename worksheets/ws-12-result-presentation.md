@@ -65,11 +65,13 @@ Keduanya **saling melengkapi**:
 - **Metrik Utama :** Skor System Usability Scale (SUS) 0-100.
 
 **Tabel Hasil:**
+
 | Skenario / Sistem | Skor SUS (mean ± std) | Interpretasi Adjektif | n |
 |---|---|---|---|
 | Evaluasi KHS SIM UPB | 63.33 ± 11.75 | Marginal / OK | 30 |
 
 **Visualisasi yang Direncanakan:**
+
 | # | Jenis Grafik | Pesan Utama | Metrik |
 |---|---|---|---|
 | 1 | Histogram dengan Garis Target | Menunjukkan distribusi skor mayoritas responden berada di bawah standar global (68.0) | Frekuensi Skor SUS |

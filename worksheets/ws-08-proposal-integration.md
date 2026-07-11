@@ -82,6 +82,7 @@ Jika ada lompatan (section B tidak menjawab pertanyaan section A), red thread pu
   [x] Tidak ada klaim "pasti berhasil" atau "meningkatkan signifikan" (karena sifatnya observasional).
 
 **Rubrik Self-Assessment:**
+
 | Kriteria     | 1 (Lemah)                                        | 2 (Cukup)                                     | 3 (Baik)                                           | Skor |
 |------------- |--------------------------------------------------|-----------------------------------------------|----------------------------------------------------|------|
 | **Koherensi** | >2 koneksi vertikal terputus                     | 1-2 koneksi lemah, argumen masih bisa diikuti | Semua 6 koneksi terhubung, *red thread* jelas      | 3    |

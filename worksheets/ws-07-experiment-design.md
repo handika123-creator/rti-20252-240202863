@@ -64,6 +64,7 @@ Ancaman validitas harus diidentifikasi **sebelum** eksperimen dan mitigasinya di
 **Tipe Eksperimen   :** [x] Comparison (Komparasi terhadap Standar Referensi)  [ ] Ablation  [ ] Parameter
 
 **Kondisi Eksperimen (Desain Komparatif Referensi):**
+
 | Kondisi | Deskripsi | IV Value (Objek) | CV Settings (Parameter Kontrol) |
 |---------|-----------|----------|-------------|
 | **Control** (*Baseline*) | Ambang batas kelayakan usabilitas global menurut literatur. | Skor Konstan: 68 | Aturan *Curved Grading Scale* (A-F). |
@@ -77,6 +78,7 @@ Ancaman validitas harus diidentifikasi **sebelum** eksperimen dan mitigasinya di
   [x] Metrik evaluasi sama (Skala SUS 0-100).
 
 **Threat Analysis:**
+
 | Threat Type | Ancaman Spesifik | Mitigasi |
 |-------------|-----------------|----------|
 | **Internal** | *Acquiescence Bias* (Responden malas membaca dan menjawab setuju semua). | Menyaring data yang memiliki pola jawaban garis lurus (*straight-lining*) dan memastikan kalkulasi inversi skor berjalan benar. |
@@ -113,7 +115,7 @@ Evaluasi apakah desain eksperimen di Latihan 1 sudah *fair*.
 | Kriteria | Status | Detail |
 |----------|--------|--------|
 | **Dataset identik** | ✅ Setara | Sampel responden ditarik dari populasi yang sama (mahasiswa UPB aktif) yang memiliki beban kepentingan yang sama terhadap KHS. |
-| **Preprocessing setara** | ✅ Setara | Perlakuan pembersihan data (*data cleaning*) diberlakukan sama pada semua entri responden sebelum diolah di *spreadsheet*. |
+| **Preprocessing setara** | ✅ Setara | Perlakuan pembersihan data (*data cleaning*) diberlakukan sama pada semua entri responden sebelum diolah dengan Python. |
 | **Tuning effort setara** | ✅ Setara | Tidak ada manipulasi antarmuka/bantuan tambahan (*prompting*) yang diberikan kepada responden saat mereka mengerjakan skenario tugas. |
 | **Environment identik** | ✅ Setara | Instruksi tugas dan skenario navigasi dikunci agar setiap responden memulai evaluasi dengan beban kognitif awal yang sama. |
 | **Metrik evaluasi sama** | ✅ Setara | Pembandingan dilakukan secara persis antara skor komposit SUS (0-100) melawan nilai target standar (68). |
@@ -132,7 +134,7 @@ Identifikasi ancaman validitas untuk desain eksperimen ini.
 | **Internal** | Responden kebingungan dengan pertanyaan genap SUS yang menggunakan kalimat bernada negatif (*negative phrasing*). | Menyertakan penjelasan singkat di bagian *header* formulir, dan mengeliminasi data responden yang skornya saling bertolak belakang ekstrim. |
 | **External** | Desain fitur KHS berubah di tengah-tengah masa penyebaran kuesioner karena *update patch* dari kampus. | Membatasi durasi pengambilan data survei (maksimal 1-2 minggu) untuk memastikan sistem yang diuji tidak mengalami *update version*. |
 | **Construct** | Responden menjawab asal-asalan karena merasa kuesionernya terlalu panjang atau tidak ada untungnya bagi mereka (*Survey Fatigue*). | Menjaga agar kuesioner tetap ringkas (hanya 10 item inti SUS + 1 kolom saran) tanpa menambah variabel pengganggu lainnya. |
-| **Conclusion** | Kesalahan penarikan kesimpulan akibat salah menghitung pola skor inversi (pertanyaan ganjil dikurangi 1, pertanyaan genap 5 dikurangi nilai jawaban). | Menggunakan *template/formula* perhitungan otomatis yang sudah terverifikasi (misalnya perhitungan bawaan Excel untuk standar SUS) daripada menghitung manual. |
+| **Conclusion** | Kesalahan penarikan kesimpulan akibat salah menghitung pola skor inversi (pertanyaan ganjil dikurangi 1, pertanyaan genap 5 dikurangi nilai jawaban). | Menggunakan *template/formula* perhitungan otomatis yang sudah terverifikasi (misalnya perhitungan bawaan Python untuk standar SUS) daripada menghitung manual. |
 
 **Ancaman mana yang paling sulit dimitigasi?** **External Threat** (Perubahan sistem tanpa pemberitahuan dari *developer* kampus).
 **Mengapa?**

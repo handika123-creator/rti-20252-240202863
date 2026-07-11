@@ -81,25 +81,26 @@ Hardware:
 Software:
   OS        : Windows 11 Home Single Language
   Runtime   : Web Browser (Chrome/Edge untuk Google Forms)
-  Framework : Google Forms (Instrumen) & Microsoft Excel (Analisis)
+  Framework : Google Forms (Instrumen) & Python (Analisis)
 
 Dependencies:
+
 | Library/Tool | Version | Sumber | Peran / Fungsi |
 |---------|---------|--------|---------------|
 | Google Forms | 2026 Build | cloud | Platform perekaman Skala Likert responden |
-| MS Excel | Office 2021 | lokal | Kalkulasi *reverse coding* (Inversi skor SUS) |
-| IBM SPSS | v26.0 | lokal | Pengujian hipotesis (*One-Sample T-Test*) |
+| Python (Pandas) | v3 | lokal | Kalkulasi *reverse coding* (Inversi skor SUS) |
+| Python (SciPy) | v1 | lokal | Pengujian hipotesis (*One-Sample T-Test*) |
 
 Konfigurasi:
-  Config file     : Template Excel Master_SUS_Calculator.xlsx
+  Config file     : Skrip Python sus_calculator.py
   Random seed     : Kriteria Inklusi Responden Acak Berstrata
   Hyperparameters : Threshold Baseline SUS = 68, Alpha = 0.05
 
 Reproducibility Check:
   [x] File data mentah (*raw data* .csv) tersimpan aman dan tidak dimanipulasi.
-  [x] Rumus kalkulasi (inversi skor SUS) didokumentasikan dalam file Master_SUS_Calculator.xlsx.
+  [x] Rumus kalkulasi (inversi skor SUS) didokumentasikan dalam skrip sus_calculator.py.
   [x] File data mentah dan *file* analisis terpisah secara fisik untuk menjaga integritas data.
-  [x] README instruksi reproduksi mencakup langkah *data cleaning* dan prosedur statistik di SPSS.
+  [x] README instruksi reproduksi mencakup langkah *data cleaning* dan prosedur statistik dengan Python.
 ```
 
 ---
@@ -114,7 +115,7 @@ Dokumentasikan environment untuk eksperimen Anda (boleh environment saat ini ata
 | **RAM** | 8 GB |
 | **GPU** | AMD Radeon(TM) Graphics |
 | **OS** | Windows 11 Home Single Language |
-| **Runtime** | Chrome Browser & Excel Engine |
+| **Runtime** | Chrome Browser & Python |
 | **Framework** | Google Forms |
 | **Kriteria Input** | Mahasiswa UPB aktif (divalidasi via pertanyaan screening di Google Form) |
 
@@ -123,8 +124,8 @@ Dokumentasikan environment untuk eksperimen Anda (boleh environment saat ini ata
 | Library/Tool | Version | Alasan Dibutuhkan |
 |---------|---------|-------------------|
 | Google Forms | Latest | Pengumpulan data SUS 10-item yang terstruktur dan mudah di-*export*. |
-| Microsoft Excel | Office 2021 | Validasi data, *data cleaning* (straight-lining), dan kalkulasi skor SUS. |
-| IBM SPSS | v26 | Uji hipotesis statistik (*One-Sample T-Test*) untuk membandingkan skor SUS dengan threshold 68. |
+| Python (Pandas) | v3 | Validasi data, *data cleaning* (straight-lining), dan kalkulasi skor SUS. |
+| Python (SciPy) | v1 | Uji hipotesis statistik (*One-Sample T-Test*) untuk membandingkan skor SUS dengan threshold 68. |
 | Google Drive | Sync-v2 | Penyimpanan *raw data* yang aman dan sinkronisasi antar perangkat. |
 | SUS Scoring Template | v1.0 | Standarisasi perhitungan agar tidak ada *human error* dalam rumus konversi. |
 
@@ -145,9 +146,9 @@ ___________________________________________________
 
 **Checklist kontrol yang sudah diterapkan:**
 - [x] Tautan kuesioner ditutup (*closed accepting responses*) sebelum diekspor ke CSV.
-- [x] Rumus kalkulasi di Excel dikunci (*protected sheet*) agar tidak berubah.
+- [x] Rumus kalkulasi di dalam Python dapat divalidasi keakuratannya.
 - [x] File *Raw Data* dipisahkan dari file *Analysis Data*.
-- [x] Parameter *Test Value* (68) di SPSS diketik secara absolut.
+- [x] Parameter *Test Value* (68) di Python diketik secara absolut.
 
 ---
 
@@ -159,12 +160,12 @@ Tulis README minimum untuk eksperimen Anda (6 komponen wajib).
 # Judul Eksperimen: Evaluasi Komparatif Usabilitas Portal Akademik (SIAKAD Universitas Putra Bangsa)
 
 ## 1. Environment
-> Hardware: AMD Ryzen 3 7320U, 8GB RAM, 256GB SSD, Radeon Graphics; OS: Windows 11 Home; Runtime: Microsoft Excel (Office 2021) dan IBM SPSS v26.
+> Hardware: AMD Ryzen 3 7320U, 8GB RAM, 256GB SSD, Radeon Graphics; OS: Windows 11 Home; Runtime: Python v3.
 
 ## 2. Installation
 > Unduh repositori ini.
-> Buka 'Master_SUS_Calculator.xlsx' menggunakan MS Excel.
-> Pastikan IBM SPSS sudah terpasang untuk tahap pengujian hipotesis akhir.
+> Buka terminal / IDE Python.
+> Pastikan library Pandas dan SciPy sudah terpasang.
 
 ## 3. Data
 > Sumber: Kuesioner primer Google Forms (Juni/Juli 2026).
@@ -173,9 +174,9 @@ Tulis README minimum untuk eksperimen Anda (6 komponen wajib).
 
 ## 4. Execution
 > Salin kolom item pertanyaan SUS (Q1-Q10) dari Raw_KHS_Responses.csv.
-> Tempelkan ke Sheet "Input" pada file Master_SUS_Calculator.xlsx.
+> Simpan data respons mentah ke file `Data_KHS_Raw.csv` di folder `04-data`.
 > Buka Sheet "Result" untuk melihat skor rata-rata komposit secara otomatis.
-> Salin kolom "Total Skor SUS Individu" ke SPSS dan jalankan One-Sample T-Test terhadap nilai 68.
+> Jalankan skrip `sus_calculator.py` untuk menghitung skor dan uji T-Test secara otomatis.
 
 ## 5. Configuration
 > Reverse Coding Positif (Ganjil): Jawaban - 1
@@ -184,7 +185,7 @@ Tulis README minimum untuk eksperimen Anda (6 komponen wajib).
 
 ## 6. Expected Output
 > Rata-rata Skor SUS (Angka 0-100) dan penempatan huruf mutu (Grade A-F).
-> Output SPSS menunjukkan nilai signifikansi (P-Value < 0.05).
+> Output console Python menunjukkan nilai signifikansi (P-Value < 0.05).
 ```
 
 ---
@@ -195,4 +196,4 @@ Tulis README minimum untuk eksperimen Anda (6 komponen wajib).
 
 **Level saat ini:** [ ] Repeatability / [x] Reproducibility / [ ] Belum keduanya
 **Komponen yang belum terdokumentasi:**
-> Komponen yang sudah terdokumentasi meliputi raw data yang di-anonymized serta template rumus Excel. Dengan instruksi di README, pihak lain (dosen/peneliti lain) dapat melakukan kalkulasi ulang dan mendapatkan hasil yang konsisten dengan riset saya.
+> Komponen yang sudah terdokumentasi meliputi raw data yang di-anonymized serta kode sumber perhitungan Python. Dengan instruksi di README, pihak lain (dosen/peneliti lain) dapat melakukan kalkulasi ulang dan mendapatkan hasil yang konsisten dengan riset saya.

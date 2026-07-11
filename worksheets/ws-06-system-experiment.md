@@ -59,10 +59,11 @@ Jika variabel tidak bisa di-map ke komponen apapun → arsitektur perlu didesain
 **Research Question:** Bagaimana tingkat usabilitas fitur Kartu Hasil Studi (KHS) pada SIM UPB jika diukur menggunakan metode *System Usability Scale* (SUS) dibandingkan dengan standar *acceptable score*?
 
 **Variable → Component Mapping:**
+
 | Variabel | Tipe | Komponen Sistem / Instrumen | Cara Manipulasi/Pengukuran |
 |----------|------|-----------------|---------------------------|
 | Fitur KHS SIM UPB | IV | Antarmuka KHS (Sistem Berjalan) | Dibuat konstan; responden dipandu ke URL/Menu KHS yang sama. |
-| Tingkat Usabilitas | DV | Instrumen Evaluasi (Google Form SUS) | Skala Likert 1-5 direkam otomatis menjadi data *spreadsheet* interval. |
+| Tingkat Usabilitas | DV | Instrumen Evaluasi (Google Form SUS) | Skala Likert 1-5 direkam otomatis menjadi data CSV. |
 | Beban Kognitif | CV | Modul Skenario Tugas (*Task Setup*) | Teks instruksi tugas dikunci (*hardcoded*) pada awal formulir. |
 
 **4 Prinsip Desain:**
@@ -74,7 +75,7 @@ Jika variabel tidak bisa di-map ke komponen apapun → arsitektur perlu didesain
 **Experimental Setup:**
   **Input data** : Interaksi *user* merespons pertanyaan kuesioner pasca-penggunaan sistem.
   **Parameter** : 10 Butir Pertanyaan SUS baku dengan *alternating tone* (positif/negatif).
-  **Output format** : Tabel *Spreadsheet* (*.csv / .xlsx*) berisi *raw score* tiap responden.
+  **Output format** : File *CSV* (*.csv*) berisi *raw score* tiap responden.
 
 ---
 
@@ -87,7 +88,7 @@ Gunakan RQ dan variabel dari WS-05. Petakan ke komponen sistem.
 | Variabel | Tipe | Komponen Sistem | Cara Manipulasi / Pengukuran |
 |----------|------|-----------------|---------------------------|
 | Objek Sistem Akademik | IV | Layar Antarmuka KHS SIM UPB | Menjaga kondisi sistem agar tidak berubah selama periode pengambilan data (konstan). |
-| Tingkat Usabilitas Pengguna | DV | Komponen Kuesioner SUS | Menggunakan fitur *auto-calculation* di Excel/Sheets untuk mengubah Likert 1-5 menjadi skor 0-100. |
+| Tingkat Usabilitas Pengguna | DV | Komponen Kuesioner SUS | Menggunakan skrip Python untuk mengubah Likert 1-5 menjadi skor 0-100. |
 | Kesetaraan Pengujian | CV | Skenario Instruksi Tugas (*Task*) | Instruksi baku: "Login -> Pilih Menu KHS -> Ganti Semester -> Cari Nilai IPK". |
 
 **Apakah semua variabel bisa di-map?** [x] Ya / [ ] Tidak

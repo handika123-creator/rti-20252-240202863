@@ -34,6 +34,7 @@ Setiap paragraf menjawab satu pertanyaan dan memicu pertanyaan berikutnya. Alur 
 Setiap elemen yang dijanjikan di Introduction harus hadir di Discussion/Conclusion.
 
 **Consistency Matrix (Contoh Kasus):**
+
 | Elemen | Intro | Method | Result | Discuss | Conclude |
 |---|:---:|:---:|:---:|:---:|:---:|
 | RQ1 | ✓ | ✓ | ✓ | ✓ | ✓ |
@@ -115,7 +116,7 @@ Buat outline paper untuk riset Anda menggunakan struktur IMRAD.
 | **Abstract** | Portal akademik SIM UPB krusial bagi aktivitas mahasiswa, namun fitur KHS sering memicu keluhan terkait kemudahan akses nilainya. Studi ini mengevaluasi tingkat *usability* fitur KHS menggunakan instrumen System Usability Scale (SUS) yang disebar secara acak terkontrol kepada 30 mahasiswa aktif pengguna portal. Hasil analisis kuantitatif menghasilkan rata-rata skor SUS sebesar 63.33, yang menunjukkan kualitas antarmuka berada di bawah batas kelayakan kelulusan global (> 68.0). | 200-250 |
 | **Introduction** | Konteks: Pentingnya portal akademik digital dalam ekosistem kampus modern untuk efisiensi informasi nilai. Gap: Evaluasi mandiri terhadap antarmuka spesifik KHS SIM UPB belum pernah terdokumentasi secara empiris di tengah keluhan mahasiswa di lapangan. RQ: Bagaimana tingkat *usability* serta kenyamanan interaksi pengguna pada fitur KHS SIM UPB jika diukur dengan instrumen standar? | 500-700 |
 | **Related Work** | Tinjauan terhadap studi terdahulu mengenai evaluasi sistem informasi kampus menggunakan SUS. Penjabaran posisi penelitian yang memfokuskan amatan pada sub-modul transaksional (KHS) daripada penilaian portal secara menyeluruh untuk presisi rekomendasi perbaikan. | 700-1000 |
-| **Method** | Eksperimen berbasis pengujian survei terkontrol dengan skenario tugas instruksional (mengakses nilai semester). Menggunakan instrumen baku kuesioner SUS 10-item berskala Likert 1-5 dengan melibatkan 30 responden riil lewat *purposive sampling*. Analisis inferensial dijalankan dengan metode *One-Sample T-Test* di SPSS. | 800-1200 |
+| **Method** | Eksperimen berbasis pengujian survei terkontrol dengan skenario tugas instruksional (mengakses nilai semester). Menggunakan instrumen baku kuesioner SUS 10-item berskala Likert 1-5 dengan melibatkan 30 responden riil lewat *purposive sampling*. Analisis inferensial dijalankan dengan metode *One-Sample T-Test* menggunakan skrip Python. | 800-1200 |
 | **Results** | Penyajian tabel deskriptif data mentah respons pengguna dan ringkasan konversi skor SUS individual (Min: 40.0, Max: 90.0, Median: 66.25). Menampilkan grafik histogram 2D visualisasi sebaran frekuensi data yang memperlihatkan konsentrasi skor mayoritas sampel di bawah 68.0. | 500-800 |
 | **Discussion** | Interpretasi atas rata-rata skor final 63.33 yang masuk dalam kategori *Marginal Passive* dengan peringkat *OK/Poor*. Analisis kualitatif terhadap kolom kritik/saran mengungkap kendala utama ada pada responsivitas tabel di *mobile screen*. Pembahasan limitasi sampel riset kuantitatif skala kecil (n=30). | 600-900 |
 | **Conclusion** | Kesimpulan tegas menjawab RQ bahwa fitur KHS SIM UPB belum mencapai target kelayakan *usability*. Kontribusi riset berupa penyediaan data empiris pertama bagi tim developer internal kampus untuk melakukan *redesign* berbasis hierarki informasi. | 200-400 |

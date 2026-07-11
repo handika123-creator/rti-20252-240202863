@@ -31,6 +31,7 @@ Setiap jawaban defense harus memiliki:
 3. **Reasoning** — Logika yang menghubungkan evidence ke claim
 
 **Contoh:**
+
 | Pertanyaan | Bad Answer | Good Answer (CER) |
 |-----------|-----------|-------------------|
 | "Kenapa hanya 3 dataset?" | "Tiga sudah cukup" | "3 dataset mewakili variasi: small-clean, medium-clean, medium-noisy [E]. Generalisasi perlu validasi lanjut — listed as limitation [R]" |
@@ -91,6 +92,7 @@ Slide Deck Plan:
   Total time     : 15 menit
 
 **Slide Outline:**
+
 | # | Pesan Utama | Visual | Waktu |
 |---|---|---|---|
 | 1 | Title | Logo Kampus + Judul Riset | 30s |
@@ -104,6 +106,7 @@ Slide Deck Plan:
 | 9 | Conclusion | Rekomendasi redesign UI *Mobile Responsive* | 1.5min |
 
 **Anticipatory Defense Matrix:**
+
 | Kategori | Pertanyaan Potensial | Jawaban (CER) |
 |---|---|---|
 | Method | Mengapa hanya 30 responden? | **[C]** Cukup untuk statistik parametrik **[E]** N=30 adalah standar Central Limit Theorem agar berdistribusi normal **[R]** Uji T-Test sudah bisa memvalidasi signifikansi. |
@@ -127,7 +130,7 @@ Rencanakan presentasi 15 menit untuk riset Anda.
 | 1 | Judul & Konteks: Riset Usability SIM UPB | Title Slide formal | 1 min |
 | 2 | Masalah: Portal kaku, mahasiswa bingung cek IPK/KHS di HP. | Screenshot antarmuka tabel KHS di layar mobile yang terpotong. | 2 min |
 | 3 | RQ: Berapa skor aktual usabilitas fitur ini secara saintifik? | Teks rumusan masalah besar di tengah slide. | 1.5 min |
-| 4 | Metode: 30 Responden, Instrumen SUS, Kalkulasi Statistik. | Ikon 30 user, Skema Likert (1-5), Logo SPSS/Python. | 2 min |
+| 4 | Metode: 30 Responden, Instrumen SUS, Kalkulasi Statistik. | Ikon 30 user, Skema Likert (1-5), Logo Python. | 2 min |
 | 5 | Hasil 1 (Deskriptif): Nilai Rata-rata cuma 63.33 | Angka 63.33 besar berwarna kuning/merah. | 1.5 min |
 | 6 | Hasil 2 (Visualisasi): Meleset dari target global (68.0) | Histogram sebaran data dengan 2 garis vertikal (Mean vs Target). | 2 min |
 | 7 | Analisis (Failure): Letak masalah pada responsivitas & navigasi | Word-cloud atau kutipan saran perbaikan dari responden. | 2 min |
@@ -165,7 +168,7 @@ Minta teman/kolega mengajukan 3 pertanyaan tentang riset Anda. Catat pertanyaan 
 > Kalau nilai 63.33 itu marginal, lalu bagian fitur KHS mana spesifiknya yang paling parah membuat skornya anjlok?
 
 **Apa yang perlu disiapkan lebih baik:**
-> Membuka kembali data Excel (Data_KHS_Raw), lalu mengecek rata-rata skor pada masing-masing pertanyaan (Q1 s/d Q10) untuk melihat pertanyaan mana yang paling sering mendapat nilai jelek dari responden.
+> Membuka kembali data CSV (Data_KHS_Raw), lalu mengecek rata-rata skor pada masing-masing pertanyaan (Q1 s/d Q10) untuk melihat pertanyaan mana yang paling sering mendapat nilai jelek dari responden.
 
 ---
 

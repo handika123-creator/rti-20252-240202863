@@ -34,7 +34,7 @@ Setiap run menghasilkan log terstruktur:
 3. **Hasil** — Semua metrik, skor SUS
 4. **Metadata** — Waktu eksekusi, kelengkapan data
 
-Format: Excel/CSV — **bukan stdout yang di-copy-paste**.
+Format: CSV — **bukan stdout yang di-copy-paste**.
 
 ### Engineering vs Research Execution
 
@@ -74,7 +74,7 @@ Run gagal/anomali tidak boleh dihapus tanpa dokumentasi. Bisa jadi:
 Jumlah target responden  : 30
 Total aktual terkumpul   : 30
 
-**DATA LOG (per run / baris Excel):**
+**DATA LOG (per baris data):**
 - Run ID    : R-001 s.d. R-030
 - Timestamp : [Otomatis dari Google Forms]
 - Skenario  : Evaluasi antarmuka KHS SIM UPB
@@ -106,6 +106,7 @@ Susun execution plan untuk eksperimen Anda. Tentukan skenario, jumlah run, dan s
 Desain format data log untuk eksperimen Anda. Tentukan field apa saja yang akan dicatat.
 
 **Identitas:**
+
 | Field | Contoh |
 |---|---|
 | Run ID | R-001 |
@@ -113,19 +114,21 @@ Desain format data log untuk eksperimen Anda. Tentukan field apa saja yang akan 
 | Nama/Prodi | Febri Muhsinin / Ilmu Komputer |
 
 **Konfigurasi:**
+
 | Field | Contoh |
 |---|---|
 | Kriteria Screening | Akses KHS Sebelumnya = Ya |
 | Form Version | Final SUS 10-Item |
 
 **Hasil:**
+
 | Metrik | Tipe Data | Range Valid |
 |---|---|---|
 | Jawaban Q1-Q10 | Integer | 1 - 5 |
 | Skor SUS | Float | 0.0 - 100.0 |
 | Kritik/Saran | String | Bebas |
 
-**Format output:** [ ] CSV / [ ] JSON / [ ] Database / [x] Lainnya: Excel (.xlsx)
+**Format output:** [x] CSV / [ ] JSON / [ ] Database / [ ] Lainnya
 
 ---
 

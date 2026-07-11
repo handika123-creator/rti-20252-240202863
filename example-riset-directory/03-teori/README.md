@@ -1,18 +1,14 @@
 # 03-teori
 
-Arsitektur, desain, dan landasan teori sistem — hasil **Tahap 1**.
+Arsitektur eksperimen, desain pengukuran, dan landasan teori instrumen — hasil **Tahap 1**.
 
 ## Isi yang diharapkan
 
-- Diagram alur resolusi kunci (mitigasi JWKS flooding)
-- Skema database PostgreSQL (`signing_keys`, `rate_limit_counters`)
-- Skema Redis (positive/negative cache)
-- Diagram arsitektur komponen (Gateway, Redis, PostgreSQL)
+- Diagram alur eksperimen (interaksi user hingga pengisian instrumen)
+- Kerangka operasionalisasi variabel (IV, DV, CV)
+- Skema perhitungan skor *System Usability Scale* (SUS)
+- Struktur data *spreadsheet* untuk konversi nilai Likert
 
 ## Berkas
 
-- [arsitektur-dan-skema.md](arsitektur-dan-skema.md) — diagram Mermaid (arsitektur komponen, alur resolusi kunci, fail-closed/fail-open, ERD database), skema Redis, dan pemetaan ke implementasi kode
-
-## Acuan
-
-Detail teknis lengkap Tahap 1 (status: selesai): [../09-docs/tahap-1-arsitektur-dan-skema-database.md](../09-docs/tahap-1-arsitektur-dan-skema-database.md)
+- [arsitektur-dan-skema.md](arsitektur-dan-skema.md) — dokumen yang berisi diagram Mermaid (alur eksperimen komparatif, pemetaan variabel), serta skema perhitungan dan konversi data *reverse coding* SUS.

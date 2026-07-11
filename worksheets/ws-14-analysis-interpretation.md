@@ -65,6 +65,7 @@ Hipotesis yang ditolak adalah **temuan yang berharga**. Partial failure + deep a
 **ANALYSIS & INTERPRETATION**
 
 **1. Statistik Deskriptif:**
+
 | Skenario | Mean | Std | Median | Min | Max | n |
 |---|---|---|---|---|---|---|
 | Fitur KHS SIM UPB | 63.33 | 11.75 | 66.25 | 40.0 | 90.0 | 30 |
@@ -85,6 +86,7 @@ Hipotesis yang ditolak adalah **temuan yang berharga**. Partial failure + deep a
 - **Perbandingan literatur:** Rata-rata global batas bawah kelayakan SUS adalah 68.0 (Sauro, 2011). SIM UPB (63.33) berada pada kategori *Marginal (Grade D)* yang berarti sistem bekerja namun membutuhkan perbaikan antarmuka segera.
 
 **5. Limitation:**
+
 | Jenis | Ancaman | Dampak | Mitigasi |
 |---|---|---|---|
 | Statistical | *Sample size* minimum (n=30) | Kekuatan *power test* terbatas jika dipecah per-fakultas | Data hanya dianalisis secara agregat untuk seluruh populasi, tidak dipecah sub-grup. |
@@ -118,6 +120,7 @@ Tentukan uji statistik yang tepat untuk eksperimen Anda.
 Gunakan data berikut (atau data riil Anda) untuk berlatih interpretasi.
 
 **Data:**
+
 | Model / Sistem | Accuracy/SUS (mean ± std) | n |
 |---|---|---|
 | KHS SIM UPB | 63.33 ± 11.75 | 30 |
@@ -149,6 +152,7 @@ Latih kemampuan failure analysis: hipotesis TIDAK didukung. Apa yang bisa dipela
 | Apakah layak dilaporkan? Mengapa? | Sangat layak. Melaporkan nilai rendah pada sistem internal institusi adalah bentuk evaluasi kritis akademis yang dapat mendrive inovasi nyata bagi pihak universitas. |
 
 **Limitation terkait:**
+
 | Jenis | Ancaman | Dampak |
 |---|---|---|
 | *External* | Mahasiswa yang sudah terbiasa dengan UI lama mungkin bias dan memberi nilai terlalu tinggi (Toleransi). | Memperkecil deteksi *pain point* (Skor bisa saja lebih rendah dari 63.33 jika diujikan pada mahasiswa baru). |

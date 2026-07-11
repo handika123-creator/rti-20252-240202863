@@ -69,7 +69,7 @@ Jika gagal di langkah awal → tidak perlu lanjut.
   Missing: 0 dari 30 data points
 
 **Format Consistency:**
-  [x] Semua file format sama (Excel / .xlsx)
+  [x] Semua file format sama (CSV / .csv)
   [x] Header konsisten
   [x] Tipe data konsisten (numerik tetap numerik)
 
