@@ -67,7 +67,7 @@ Jika rantai ini tidak lengkap, RQ belum mature. Bi-directional: RQ yang tidak bi
 **Gap Statement** : Ketiadaan evaluasi empiris terisolasi menggunakan instrumen SUS secara spesifik pada fitur Kartu Hasil Studi (KHS) di lingkungan Sistem Informasi Manajemen (SIM) UPB.
 
 **Research Question:**
-* **Tipe** : [ ] Comparison  [ ] Improvement  [x] Exploratory
+* **Tipe** : [x] Comparison  [ ] Improvement  [ ] Exploratory
 * **Formulasi** : Bagaimana tingkat usabilitas fitur Kartu Hasil Studi (KHS) pada SIM UPB jika diukur menggunakan metode *System Usability Scale* (SUS) dibandingkan dengan standar *acceptable score*?
 * **Variabel IV** : Fitur KHS pada SIM UPB eksisting
 * **Variabel DV** : Tingkat Usabilitas Pengguna
@@ -113,7 +113,7 @@ Gunakan gap yang ditemukan di WS-03. Transformasikan menjadi Research Question.
 | **Baseline** | Tidak | Tidak ada standar acuan kelayakan sebagai pembanding. |
 | **Dataset/konteks** | Ya | Lingkungan SIM UPB dan partisipan mahasiswa. |
 
-**Tipe RQ:** [ ] Comparison / [ ] Improvement / [x] Exploratory
+**Tipe RQ:** [x] Comparison / [ ] Improvement / [ ] Exploratory
 
 **RQ versi revisi (setelah evaluasi):**
 > Bagaimana tingkat usabilitas fitur Kartu Hasil Studi (KHS) pada SIM UPB jika diukur menggunakan metode *System Usability Scale* (SUS) dibandingkan dengan standar *acceptable score* (68)?
