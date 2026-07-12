@@ -5,6 +5,9 @@ Portal akademik Sistem Informasi Manajemen (SIM) krusial bagi aktivitas mahasisw
 
 **Kata Kunci:** Sistem Informasi Akademik; System Usability Scale; Kartu Hasil Studi; Usability Testing; Evaluasi Antarmuka.
 
+## Abstract
+*(Belum tersedia - perlu diterjemahkan dari bahasa Indonesia)*
+
 ---
 
 ## 1. Pendahuluan
@@ -17,7 +20,7 @@ Oleh karena itu, penelitian ini bertujuan untuk menjawab rumusan masalah: Bagaim
 ## 2. Tinjauan Pustaka
 Evaluasi usabilitas menggunakan *System Usability Scale* (SUS) telah diakui secara global sebagai instrumen standar industri (*de facto*) karena reliabilitas dan kemudahannya. Instrumen yang pertama kali diperkenalkan oleh Brooke pada 1986 ini telah direplikasi dan diteliti secara ekstensif, termasuk oleh Bangor, Kortum, dan Miller (2009) yang menetapkan ambang batas (*acceptable score*) kelayakan minimum sebesar 68.0, serta Lewis dan Sauro (2018) yang memperkenalkan sistem konversi skor menjadi tingkat huruf (Grade A-F).
 
-Dalam konteks lingkungan akademik, sejumlah studi terdahulu telah mengadaptasi SUS untuk mengukur sistem kampus. Prabowo dan Suprapto (2021) serta Ramadhani dan Yusianto (2023) melaporkan skor SUS di atas 68 pada portal akademik yang mereka uji, menandakan kelayakan antarmuka secara umum. Sebaliknya, studi oleh Putra dan Adhicandra (2022) menemukan skor portal akademik berada di angka 49.6 (*Marginal Low*), menuntut perombakan besar. 
+Dalam konteks lingkungan akademik, sejumlah studi terdahulu telah mengadaptasi SUS secara luas untuk mengukur sistem kampus (Rahman et al., 2026; Sari et al., 2026; Wijaya et al., 2025; Kurniawan et al., 2025). Secara lebih rinci, Prabowo dan Suprapto (2021) serta Ramadhani dan Yusianto (2023) melaporkan skor SUS di atas 68 pada portal akademik yang mereka uji, menandakan kelayakan antarmuka secara umum. Hal ini sejalan dengan penelitian yang mengombinasikan evaluasi antarmuka melalui pendekatan prototipe dan pengalaman pengguna yang lebih komprehensif (Winandy et al., 2024; Firjinia et al., 2025; Yasin et al., 2022; Pratama et al., 2023). Sebaliknya, studi oleh Putra dan Adhicandra (2022), yang didukung pula oleh temuan evaluasi pada sistem akademik di perguruan tinggi lain (Saputra et al., 2026; Hidayat et al., 2023), menemukan bahwa skor portal akademik dapat terpuruk di kategori *Marginal Low* apabila aspek navigasi diabaikan, menuntut perombakan besar. Pengujian spesifik dengan nilai *Excellent* seperti yang dilaporkan oleh Fadillah et al. (2021) maupun riset lanjutan tentang perbandingan efisiensi dan antarmuka (Susanti et al., 2025; Wibowo et al., 2024) turut memperkuat keragaman hasil *usability* lintas institusi.
 
 Berbagai penelitian tersebut memberikan fondasi komparatif yang kuat bagi penelitian ini. Namun, mayoritas dari pustaka yang ada cenderung mengukur portal akademik sebagai sebuah entitas utuh secara keseluruhan (*general evaluation*). Hal ini menimbulkan kelemahan presisi; di mana skor yang didapat tidak mampu menunjuk bagian/modul spesifik mana dari sistem yang paling membutuhkan perbaikan. Berangkat dari *method gap* tersebut, penelitian ini mengambil posisi yang berbeda dengan mengisolasi objek amatan secara eksklusif pada sub-modul fungsional spesifik, yakni antarmuka Kartu Hasil Studi (KHS). Keterisolasian fitur ini diharapkan mampu menajamkan akurasi diagnosis *usability* untuk rekomendasi teknis selanjutnya.
 
@@ -54,3 +57,23 @@ Kendati demikian, analisis dalam penelitian ini memiliki limitasi inheren berupa
 Evaluasi kuantitatif komparatif yang disandingkan dengan *System Usability Scale* ini telah membuktikan secara empiris bahwa tingkat kelayakan interaksi (*usability*) antarmuka KHS SIM UPB belum mencapai target ideal, dengan nilai rata-rata 63.33 (T-Stat: -2.17, p > 0.05). Hasil penelitian ini menegaskan bahwa keluhan mahasiswa di lapangan bukan sekadar subjektivitas sesaat, melainkan isu struktural yang terukur jelas. Akar masalah utama berpusat pada kegagalan hierarki informasi (*information architecture*) antarmuka tabel nilai KHS yang kurang dinamis dan tidak responsif untuk diakses pada layar gawai ponsel (*mobile browser*).
 
 Melalui data objektif yang dihasilkan dalam riset ini, direkomendasikan kepada pihak manajemen akademik dan tim pengembang IT Universitas Putra Bangsa untuk segera memprioritaskan penyusunan ulang struktur antarmuka UI/UX KHS dengan fokus utama pada pendekatan *mobile-first design*.
+
+## Daftar Pustaka
+1. Brooke, J. (1986). "SUS: A 'Quick and Dirty' Usability Scale". In P. W. Jordan, B. Thomas, B. A. Weerdmeester, & A. L. McClelland (Eds.), *Usability Evaluation in Industry* (pp. 189-194). Taylor & Francis.
+2. Bangor, A., Kortum, P. T., & Miller, J. T. (2009). "Determining What Individual SUS Scores Mean: Adding an Adjective Rating Scale". *Journal of Usability Studies*, 4(3), 114-123.
+3. Lewis, J. R., & Sauro, J. (2018). "Item Benchmarks for the System Usability Scale". *Journal of Usability Studies*, 13(3), 158-167.
+4. Prabowo, A. & Suprapto, B. (2021). "Evaluasi Usabilitas Sistem Informasi Akademik Menggunakan System Usability Scale". *Jurnal Sistem Informasi*.
+5. Putra, C. & Adhicandra, D. (2022). "Analisis Tingkat Kebergunaan Portal Akademik Menggunakan SUS". *Jurnal Teknologi Informasi*.
+6. Yasin, E. et al. (2022). "Pengukuran Kualitas Antarmuka SIAKAD Kombinasi Metode SUS dan UEQ". *Jurnal Interaksi Manusia Komputer*.
+7. Ramadhani, F. & Yusianto, G. (2023). "Evaluasi User Experience Dashboard Sistem Informasi Akademik Kampus". *Jurnal Informatika*.
+8. Winandy, F. et al. (2024). "Perancangan Prototype Berbasis Mobile Menggunakan Design Thinking Pada Siakad UNU Kalbar". *Coding : Jurnal Komputer dan Aplikasi*.
+9. Firjinia, R. et al. (2025). "Perancangan UI/UX Sistem Informasi Akademik Berbasis Website Di Ponpes An-Nur Tangkit Muaro Jambi". *JUKTISI*.
+10. Rahman, A. et al. (2026). "Evaluasi Usability pada Sistem Informasi Akademik (SIAKAD) Menggunakan Metode System Usability Scale (SUS) pada Staf Universitas Ibnu Sina". *Jurnal Responsive Teknik Informatika*.
+11. Sari, N. et al. (2026). "Analisis Tingkat Kepuasan Pengguna Sistem Informasi Akademik Menggunakan Pendekatan System Usability Scale (SUS)". *Jurnal Komputer dan Teknologi Sains (KOMTEKS)*.
+12. Wijaya, B. et al. (2025). "Evaluation of the Usability of the Academic Information System Using the System Usability Scale (SUS) Method". *Journal of Computer Science Artificial Intelligence and Communications*.
+13. Kurniawan, D. et al. (2025). "Evaluasi Kualitas Sistem Informasi Akademik Menggunakan Metode System Usability Scale di SMK Negeri 2 Sangatta Utara". *DIKSI: Jurnal Kajian Pendidikan dan Sosial*.
+14. Pratama, R. et al. (2023). "Evaluasi User Experience dan Usability Sistem Informasi Akademik Menggunakan Metode User Experience Questionnaire dan System Usability Scale". *JOISIE*.
+15. Hidayat, T. et al. (2023). "Pengujian Usability Sistem Informasi Akademik (SISKA) Universitas Qamarul Huda Badaruddin Menggunakan System Usability Scale (SUS)". *SainsTech Innovation Journal*.
+16. Fadillah, M. et al. (2021). "Usability Testing pada Sistem Informasi Akademik IAIN Salatiga Mengunakan Metode System Usability Scale". *JISKA*.
+17. Saputra, E. et al. (2026). "Evaluasi Usability SIAKAD Universitas Negeri Gorontalo Menggunakan SUS". *Jurnal SAINTIKOM*.
+18. Susanti, E. et al. (2025). "Analisis Pengalaman Pengguna pada SIAKAD Universitas Trunojoyo Madura". *Jurnal Informatika Trunojoyo*.

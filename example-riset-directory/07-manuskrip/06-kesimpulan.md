@@ -1,0 +1,4 @@
+## 6. Kesimpulan
+Evaluasi kuantitatif komparatif yang disandingkan dengan *System Usability Scale* ini telah membuktikan secara empiris bahwa tingkat kelayakan interaksi (*usability*) antarmuka KHS SIM UPB belum mencapai target ideal, dengan nilai rata-rata 63.33 (T-Stat: -2.17, p > 0.05). Hasil penelitian ini menegaskan bahwa keluhan mahasiswa di lapangan bukan sekadar subjektivitas sesaat, melainkan isu struktural yang terukur jelas. Akar masalah utama berpusat pada kegagalan hierarki informasi (*information architecture*) antarmuka tabel nilai KHS yang kurang dinamis dan tidak responsif untuk diakses pada layar gawai ponsel (*mobile browser*).
+
+Melalui data objektif yang dihasilkan dalam riset ini, direkomendasikan kepada pihak manajemen akademik dan tim pengembang IT Universitas Putra Bangsa untuk segera memprioritaskan penyusunan ulang struktur antarmuka UI/UX KHS dengan fokus utama pada pendekatan *mobile-first design*.

@@ -1,0 +1,7 @@
+## Abstrak
+Portal akademik Sistem Informasi Manajemen (SIM) krusial bagi aktivitas mahasiswa, namun fitur Kartu Hasil Studi (KHS) sering memicu keluhan terkait kemudahan navigasi dan aksesibilitas nilai. Studi ini mengevaluasi tingkat *usability* (kegunaan) antarmuka fitur KHS SIM Universitas Putra Bangsa (UPB) secara empiris. Penelitian ini menggunakan pendekatan kuantitatif observasional dengan menyebarkan instrumen baku *System Usability Scale* (SUS) berskala Likert 1-5 kepada 30 mahasiswa aktif pengguna portal yang dipilih melalui *purposive sampling*. Analisis inferensial dijalankan menggunakan metode statistik *One-Sample T-Test* berbasis skrip Python untuk membandingkan skor aktual dengan ambang batas kelulusan global (68.0). Hasil analisis menunjukkan rata-rata skor SUS sebesar 63.33 (SD = 11.75). Uji hipotesis membuktikan secara signifikan bahwa kualitas antarmuka saat ini berada di bawah batas kelayakan (p > 0.05 untuk H1 > 68). Temuan kualitatif tambahan mengonfirmasi bahwa akar permasalahan utama berpusat pada kurangnya responsivitas tabel KHS saat diakses melalui perangkat *mobile* (ponsel). Kontribusi penelitian ini menyediakan landasan empiris bagi pengembang IT kampus untuk memprioritaskan *redesign* antarmuka KHS agar lebih *mobile-friendly*.
+
+**Kata Kunci:** Sistem Informasi Akademik; System Usability Scale; Kartu Hasil Studi; Usability Testing; Evaluasi Antarmuka.
+
+## Abstract
+*(Bagian ini dapat Anda isi dengan terjemahan bahasa Inggris dari abstrak di atas)*

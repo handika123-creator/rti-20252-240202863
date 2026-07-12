@@ -11,5 +11,5 @@
    - Menyusun satu *file* dokumen Laporan Eksekutif untuk konsumsi laporan internal/tugas akhir kepada pihak kampus.
 
 ## Deliverable
-- Manuskrip Artikel Ilmiah Final (Tersimpan di `07-manuskrip/draf-manuskrip-final.md`).
+- Manuskrip Artikel Ilmiah Final (Tersimpan di `07-manuskrip/naskah-jurnal.md`).
 - Dokumen Laporan Riset Internal (Tersimpan di `08-laporan/laporan-penelitian.md`).

@@ -14,7 +14,7 @@ Catatan kronologis pelaksanaan tiap tahap (sumber: penyelesaian dokumen Workshee
 | 2026-07-05 | Tahap Instrumen | **Penyiapan Instrumen Digital:** Memindahkan kuesioner ke Google Forms dan membuat skrip Python (`sus_calculator.py`) untuk otomatisasi konversi skor dan uji statistik. | `Google Forms`, `sus_calculator.py` |
 | 2026-07-11 | Eksekusi Riset | **Pengumpulan Data:** Telah terkumpul 30 respons dari responden mahasiswa UPB. Data mentah telah diunduh ke `Data_KHS_Raw.csv`. | `Data_KHS_Raw.csv` |
 | 2026-07-12 | Analisis Data | **Otomatisasi & Hitung SUS:** Menjalankan skrip Python `sus_calculator.py` untuk mengolah data, menghasilkan rata-rata 63.33 (H1 Ditolak). | `Data_KHS_Processed.csv` |
-| 2026-07-12 | Tahap Akhir | **Penulisan Laporan:** Penyelesaian worksheet WS-12 s.d. WS-16, pembuatan draf manuskrip, dan penulisan laporan akhir penelitian. | `draf-manuskrip-final.md`, `laporan-penelitian.md` |
+| 2026-07-12 | Tahap Akhir | **Penulisan Laporan:** Penyelesaian worksheet WS-12 s.d. WS-16, pembuatan draf manuskrip, dan penulisan laporan akhir penelitian. | `naskah-jurnal.md`, `laporan-penelitian.md` |
 
 ## Status Ringkas
 
