@@ -102,5 +102,43 @@ def calculate_sus():
         print("Kesimpulan: H1 DITOLAK.")
         print(f"Sistem tidak memenuhi standar kelayakan usabilitas secara signifikan secara statistik.")
 
+    # === VISUALISASI DATA ===
+    try:
+        import matplotlib.pyplot as plt
+        import seaborn as sns
+        
+        # Set style
+        sns.set_theme(style="whitegrid")
+        
+        # 1. Histogram (dengan 2 garis vertikal)
+        plt.figure(figsize=(10, 6))
+        sns.histplot(df['Skor_SUS'], bins=10, kde=True, color='skyblue', edgecolor='black')
+        plt.axvline(mean_sus, color='red', linestyle='dashed', linewidth=2, label=f'Rata-rata: {mean_sus:.2f}')
+        plt.axvline(baseline, color='green', linestyle='dashed', linewidth=2, label=f'Standar (Baseline): {baseline}')
+        plt.title('Histogram Distribusi Skor SUS Fitur KHS SIM UPB', fontsize=14)
+        plt.xlabel('Skor SUS', fontsize=12)
+        plt.ylabel('Frekuensi', fontsize=12)
+        plt.legend()
+        hist_path = os.path.join(output_dir, 'histogram_sus.png')
+        plt.savefig(hist_path, bbox_inches='tight')
+        plt.close()
+        print(f"Berhasil menyimpan plot Histogram di: {hist_path}")
+        
+        # 2. Box Plot Horizontal
+        plt.figure(figsize=(10, 4))
+        sns.boxplot(x=df['Skor_SUS'], color='lightgreen')
+        plt.axvline(baseline, color='red', linestyle='dashed', linewidth=2, label=f'Standar (Baseline): {baseline}')
+        plt.title('Box Plot Horizontal Skor SUS', fontsize=14)
+        plt.xlabel('Skor SUS', fontsize=12)
+        plt.legend()
+        box_path = os.path.join(output_dir, 'boxplot_sus.png')
+        plt.savefig(box_path, bbox_inches='tight')
+        plt.close()
+        print(f"Berhasil menyimpan plot Box Plot di: {box_path}")
+        
+    except ImportError:
+        print("\n[INFO] Library matplotlib atau seaborn belum terinstal. Pembuatan grafik dilewati.")
+        print("Jika ingin menghasilkan grafik, jalankan: pip install matplotlib seaborn")
+
 if __name__ == "__main__":
     calculate_sus()

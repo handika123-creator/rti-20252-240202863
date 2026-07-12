@@ -14,13 +14,13 @@ Catatan kronologis pelaksanaan tiap tahap (sumber: penyelesaian dokumen Workshee
 | 2026-07-05 | Tahap Instrumen | **Penyiapan Instrumen Digital:** Memindahkan kuesioner ke Google Forms dan membuat skrip Python (`sus_calculator.py`) untuk otomatisasi konversi skor dan uji statistik. | `Google Forms`, `sus_calculator.py` |
 | 2026-07-11 | Eksekusi Riset | **Pengumpulan Data:** Telah terkumpul 30 respons dari responden mahasiswa UPB. Data mentah telah diunduh ke `Data_KHS_Raw.csv`. | `Data_KHS_Raw.csv` |
 | 2026-07-12 | Analisis Data | **Otomatisasi & Hitung SUS:** Menjalankan skrip Python `sus_calculator.py` untuk mengolah data, menghasilkan rata-rata 63.33 (H1 Ditolak). | `Data_KHS_Processed.csv` |
-| 2026-07-12 | Tahap Akhir | **Penulisan Laporan:** Penyelesaian worksheet WS-12 s.d. WS-16, pembuatan draf manuskrip, dan penulisan laporan akhir penelitian. | `naskah-jurnal.md`, `laporan-penelitian.md` |
+| 2026-07-12 | Tahap Akhir | **Penulisan Laporan & Visualisasi:** Penyelesaian worksheet WS-12 s.d. WS-16, otomasi *generate* grafik (Histogram & Box Plot), penyusunan draf manuskrip, dan penulisan laporan. | `naskah-jurnal.md`, `laporan-penelitian.md`, `06-output/` |
 
 ## Status Ringkas
 
 - **Tahap Perencanaan & Desain (WS-01 s.d. WS-11)**: Selesai 100%. 
 - **Tahap Instrumen & Eksekusi**: Selesai 100%. 
-- **Tahap Pemrosesan & Analisis (WS-12 s.d. WS-14)**: Selesai 100%. Data berhasil diolah menggunakan Python dengan skor rata-rata SUS 63.33.
+- **Tahap Pemrosesan & Analisis (WS-12 s.d. WS-14)**: Selesai 100%. Data berhasil diolah menggunakan Python dengan skor rata-rata SUS 63.33, lengkap dengan *output* grafik.
 - **Tahap Publikasi & Laporan (WS-15 s.d. WS-16)**: Selesai 100%. Manuskrip draf jurnal dan laporan akhir riset telah berhasil disusun.
 
 ## Item Tindak Lanjut (Checklist Sebelum Pengumpulan Data)
@@ -38,6 +38,7 @@ Catatan kronologis pelaksanaan tiap tahap (sumber: penyelesaian dokumen Workshee
 - [x] Menghitung dan mengonversi skor SUS menggunakan formulasi yang sudah ditentukan
 - [x] Melakukan uji statistik (One-Sample T-Test)
 - [x] Mengerjakan worksheet analisis dan presentasi hasil (WS-12 s.d. WS-16)
+- [x] Menghasilkan plot visualisasi (Histogram & Box Plot) dan mengintegrasikannya ke dalam naskah
 - [x] Menyusun dokumen draf publikasi/manuskrip ilmiah dan laporan akhir riset
 
 ## Korespondensi

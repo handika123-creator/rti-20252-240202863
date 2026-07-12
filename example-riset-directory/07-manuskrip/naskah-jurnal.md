@@ -37,7 +37,13 @@ Proses pengumpulan data berlangsung singkat selama masa perkuliahan aktif untuk 
 ### 4.1. Statistik Deskriptif Skor SUS
 Hasil kalkulasi otomatis melalui skrip Python pada dataset menunjukkan perolehan skor SUS individual yang sangat bervariasi. Skor minimum yang diberikan oleh responden adalah 40.0, sedangkan skor maksimum mencapai 90.0, dengan nilai median sebesar 66.25. 
 
-Secara agregat, dari 30 sampel data responden, didapatkan nilai rata-rata (*mean*) Skor Komposit SUS sebesar **63.33** dengan angka Standar Deviasi (SD) sebesar 11.75.
+Secara agregat, dari 30 sampel data responden, didapatkan nilai rata-rata (*mean*) Skor Komposit SUS sebesar **63.33** dengan angka Standar Deviasi (SD) sebesar 11.75. Sebaran frekuensi dan titik lokasi nilai rata-rata tersebut terhadap batas standar kelayakan (68.0) dapat diamati melalui histogram pada Gambar 1.
+
+![Gambar 1. Histogram Distribusi Skor SUS](../06-output/histogram_sus.png)
+
+Selain itu, observasi mendalam terhadap sebaran data menggunakan analisis kuartil membuktikan integritas respons yang baik tanpa adanya titik pencilan ekstrem (*outlier*) di luar batas rentang interkuartil. Hal ini divisualisasikan pada *box plot* di bawah ini (Gambar 2).
+
+![Gambar 2. Box Plot Horizontal Sebaran Skor SUS](../06-output/boxplot_sus.png)
 
 ### 4.2. Uji Hipotesis *One-Sample T-Test*
 Uji komparatif *One-Sample T-Test* dilakukan untuk menguji Hipotesis Alternatif (H1) yang menyatakan bahwa rata-rata skor SUS populasi fitur KHS SIM UPB secara signifikan lebih besar daripada nilai ambang batas kelayakan global 68. 
