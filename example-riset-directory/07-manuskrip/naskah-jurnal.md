@@ -37,7 +37,20 @@ Proses pengumpulan data berlangsung singkat selama masa perkuliahan aktif untuk 
 ### 4.1. Statistik Deskriptif Skor SUS
 Hasil kalkulasi otomatis melalui skrip Python pada dataset menunjukkan perolehan skor SUS individual yang sangat bervariasi. Skor minimum yang diberikan oleh responden adalah 40.0, sedangkan skor maksimum mencapai 90.0, dengan nilai median sebesar 66.25. 
 
-Secara agregat, dari 30 sampel data responden, didapatkan nilai rata-rata (*mean*) Skor Komposit SUS sebesar **63.33** dengan angka Standar Deviasi (SD) sebesar 11.75. Sebaran frekuensi dan titik lokasi nilai rata-rata tersebut terhadap batas standar kelayakan (68.0) dapat diamati melalui histogram pada Gambar 1.
+Secara agregat, dari 30 sampel data responden, didapatkan nilai rata-rata (*mean*) Skor Komposit SUS sebesar **63.33** dengan angka Standar Deviasi (SD) sebesar 11.75. Rangkuman statistik deskriptif ini disajikan pada Tabel 1.
+
+**Tabel 1. Statistik Deskriptif Skor SUS**
+
+| Metrik Statistik | Nilai |
+| :--- | :--- |
+| Jumlah Responden (N) | 30 |
+| Skor Minimum | 40.0 |
+| Skor Maksimum | 90.0 |
+| Nilai Tengah (Median) | 66.25 |
+| Nilai Rata-rata (*Mean*) | 63.33 |
+| Standar Deviasi (SD) | 11.75 |
+
+Sebaran frekuensi dan titik lokasi nilai rata-rata tersebut terhadap batas standar kelayakan (68.0) dapat diamati melalui histogram pada Gambar 1.
 
 ![Gambar 1. Histogram Distribusi Skor SUS](../06-output/histogram_sus.png)
 
@@ -48,7 +61,7 @@ Selain itu, observasi mendalam terhadap sebaran data menggunakan analisis kuarti
 ### 4.2. Uji Hipotesis *One-Sample T-Test*
 Uji komparatif *One-Sample T-Test* dilakukan untuk menguji Hipotesis Alternatif (H1) yang menyatakan bahwa rata-rata skor SUS populasi fitur KHS SIM UPB secara signifikan lebih besar daripada nilai ambang batas kelayakan global 68. 
 
-Hasil uji *T-Test* menghasilkan nilai statistik T sebesar -2.175. Mengingat rata-rata sampel (63.33) lebih kecil daripada *test value* (68), maka perhitungan probabilitas searah (1-tailed p-value untuk H1 > 68) menghasilkan angka signifikansi sebesar 0.9810 (p > 0.05). Oleh karena itu, H1 ditolak. Secara statistik, rata-rata skor SUS antarmuka fitur KHS SIM UPB terbukti berada di bawah standar kelayakan.
+Hasil uji *T-Test* menghasilkan nilai statistik T sebesar -2.175. Mengingat rata-rata sampel (63.33) lebih kecil daripada *test value* (68), maka perhitungan probabilitas searah (1-tailed p-value untuk H1 > 68) menghasilkan angka signifikansi sebesar 0.9810 (p > 0.05). Oleh karena itu, H1 ditolak. Secara statistik, rata-rata skor SUS antarmuka fitur KHS SIM UPB terbukti berada di bawah standar kelayakan. Penurunan skor ini juga didukung oleh perhitungan *effect size* (Cohen's d = 0.39) yang bersifat *medium effect*, serta rentang *Confidence Interval* (CI) 95% yang berada pada [59.0, 67.7].
 
 ## 5. Pembahasan
 Penolakan hipotesis H1 (p > 0.05) pada uji statistik secara meyakinkan mengkonfirmasi asumsi awal bahwa antarmuka KHS SIM UPB saat ini masih menyimpan masalah *usability* struktural. Rata-rata skor final sebesar 63.33 membawa sistem KHS UPB ke dalam kategori peringkat huruf 'D', tergolong *Marginal Passive* atau berkualifikasi *Poor* (kurang layak). Angka ini menunjukkan bahwa sistem tidak sampai pada tahap "mustahil digunakan", namun interaksi yang berlangsung tidak mulus dan memicu frustrasi, membuat pengguna enggan menggunakan sistem tersebut jika bukan karena kewajiban akademis mutlak.
